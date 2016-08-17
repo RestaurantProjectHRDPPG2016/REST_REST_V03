@@ -1,0 +1,165 @@
+#bshow,#bcomment:hover{
+	cursor: pointer;
+}
+.fcate,.scate{
+	cursor: pointer;
+}
+.tcate{
+	cursor: default;
+}
+.arrowdown{
+	font-size: 18px;
+	color:white;
+	padding-top:12px;
+	padding-bottom:12px;
+	padding-right: 10px;
+	float: right;
+	cursor: pointer;
+}
+.arrowup{
+	font-size: 18px;
+	color:white;
+	padding-top:12px;
+	padding-bottom:12px;
+	padding-right: 10px;
+	float: right;
+	cursor: pointer;
+}
+.sarrowdown{
+	font-size: 18px;
+	color:white;
+	padding-top:12px;
+	padding-bottom:12px;
+	padding-right: 10px;
+	float: right;
+	cursor: pointer;
+}
+.sarrowup{
+	font-size: 18px;
+	color:white;
+	padding-top:12px;
+	padding-bottom:12px;
+	padding-right: 10px;
+	float: right;
+	cursor: pointer;
+}
+.cur:hover{
+	cursor: pointer;
+	opacity: 0.9;
+}
+/* body{
+	background-color: #BDBDBD;
+} */
+
+
+@media screen and (min-width: 100px) and (max-width: 992px) {
+    #info1{
+        padding: 0px;
+        padding-right: 10px;
+    }
+    #info2{
+    	padding: 0px;
+        margin-top :0px;
+        padding-left: 10px;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 2000px) {
+	#info1{
+		padding: 0px;
+	}
+	#info2{
+		padding: 0px;
+		margin-top:30px;
+	}
+}
+#eachfood{
+	background-color:#F5F5F5;
+	display:none;
+	border-top:1px solid #BDBDBD;
+}
+#eachphoto{
+	width:200px;
+	margin-top:20px;
+}
+#addcart{
+	 height:40px;
+	 background-color:#616161;
+	 margin-top:10px;
+	 margin-bottom:5px;
+}
+#cancel{
+	 height:40px;
+	 background-color:#212121;
+	 margin-top:10px;
+	 margin-bottom:5px;
+}
+#addcart a{
+	 text-align: center;
+	 text-transform: inherit;
+}
+#cancel a{
+	 text-align: center;
+}
+/* /raaany */
+
+
+ .mydetail ul {         
+          padding:0px;
+          margin:0px;
+      }
+      .mydetail ul li {     
+          list-style:none;
+          margin-bottom:10px;           
+      }
+      .mydetail ul li img {
+          cursor: pointer;
+      }
+      .modal-body {
+          padding:5px !important;
+      }
+      .modal-content {
+          border-radius:0;
+      }
+      .modal-dialog img {
+          text-align:center;
+          margin:0 auto;
+      }
+    .controls{          
+        width:50px;
+        display:block;
+        font-size:11px;
+        padding-top:8px;
+        font-weight:bold;          
+    }
+    .next {
+        float:right;
+        text-align:right;
+    }
+      /*override modal for demo only*/
+      .modal-dialog {
+          max-width:70%;
+          padding-top: 90px;
+      }
+      @media screen and (min-width: 768px){
+          .modal-dialog {
+              width:70%;
+              padding-top: 90px;
+          }          
+      }
+      @media screen and (max-width:1500px){
+          #ads {
+              display:none;
+          }
+      }
+      
+      .searchfound h1,h2{
+			border-bottom: dashed 2px gray;
+			padding: 20px;
+			margin: 10px 0px 30px 0px;
+			color: red;
+		}
+		.searchfound{
+			border: solid 3px #DDDDDD;
+			border-radius: 5px;
+		}

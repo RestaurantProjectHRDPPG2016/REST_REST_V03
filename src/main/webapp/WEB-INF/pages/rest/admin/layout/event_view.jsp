@@ -1,0 +1,1 @@
+<%@include file="../include/event_view.jsp" %>

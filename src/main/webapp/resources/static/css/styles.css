@@ -1,0 +1,332 @@
+@CHARSET "UTF-8";
+/* Youra CSS */
+h1{
+	color:red;
+}
+body{
+	background-color: #E8E8E8;
+}
+/*=============this header====================*/
+
+.navbar.navbar-default 
+{
+  background-color: #151729;
+}
+.collapse.navbar-collapse ul li a
+{
+  color:#ffffff;
+  padding: 20px;
+
+}
+.collapse.navbar-collapse ul li a:hover
+{
+ color: red;
+
+}
+.collapse.navbar-collapse ul li a:hover
+{
+  color:red;
+
+}
+.navbar-fixed-top{
+  z-index: 9999999999;
+}
+
+/*=====================endheader======================*/
+.border{
+  border: 1px #000000 solid;
+}
+.rowpadding{
+  padding:auto 10px;
+}
+#nopadding{
+  padding-left: 0px; padding-right: 0px; z-index: -999999;
+}
+.nopadding{
+  padding: 0px;
+}
+.headerleft{
+	margin-top:10px;
+}
+.headerright{
+	margin-top: 0px;
+}
+#mg-left{
+  margin-left: -20px;
+/*  padding-right: 20px;*/
+}
+.user {
+  display: inline-block;
+  width: 70px;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.col-lg-6{
+	padding-bottom: 10px;
+}
+.w3-btn-block{
+	background-color: #F6F7F9;
+}
+/*search*/
+
+.stylish-input-group .input-group-addon3{
+    background: white !important; 
+}
+.stylish-input-group .form-control{
+	border-right:0; 
+	box-shadow:0 0 0; 
+	border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+/*fab*/
+.fab-menu{
+   border:none;
+    font-size:1.5em;
+    padding: 5px;
+    color:white;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    -webkit-box-shadow: 2px 3px 3px 0px rgba(41, 41, 41, .3);
+       -moz-box-shadow: 2px 3px 3px 0px rgba(41, 41, 41, .3);
+            box-shadow: 2px 3px 3px 0px rgba(41, 41, 41, .3);
+}
+.fab {
+	  border:none;
+    font-size:1.5em;
+    color:white;
+    background-color: #1F4C73;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    -webkit-box-shadow: 2px 3px 3px 0px rgba(41, 41, 41, .3);
+       -moz-box-shadow: 2px 3px 3px 0px rgba(41, 41, 41, .3);
+            box-shadow: 2px 3px 3px 0px rgba(41, 41, 41, .3);
+}
+
+.fab:hover {
+  background-color: #ff4060;
+}
+/*price*/
+.price{
+  padding:3px 10px; background-color: red; border-radius: 3px; color: #ffffff;
+}
+
+/*font style*/
+.fonstyle{color:#fff;
+background-color:#696969;
+font-size: 25px;
+text-shadow:#ccc 0 1px 0, #c9c9c9 0 2px 0, #bbb 0 3px 0, #b9b9b9 0 4px 0, 
+#aaa 0 5px 0,rgba(0,0,0,.1) 0 6px 1px, rgba(0,0,0,.1) 0 0 5px, rgba(0,0,0,.3) 0 1px 3px,
+ rgba(0,0,0,.15) 0 3px 5px, rgba(0,0,0,.2) 0 5px 10px, rgba(0,0,0,.2) 0 10px 10px, rgba(0,0,0,.1) 0 20px 20px;}
+.bg-title{
+  background-color:#ffffff; padding: 10px ; width: 100%; margin-top: 10px; 
+  text-align: center; color:#4469A4; font-size: 22px;
+}
+
+
+
+/*
+seacrch*/
+#navsearch{
+    position: absolute;
+    top: 60px;
+  background-color: ;
+  z-index: 999999999;
+}
+#mysearch input{
+  margin-top:10px; width: 100%;
+}
+#mysearch button{
+  margin-top:10px;
+}
+/*category*/
+#category{
+  background-color: #E9E9E9;
+}
+#category span{
+  font-size: 20px; color: #ffffff;
+}
+.bg-category{
+  background-color: #000000; border: 0.3px #dddddd solid; /* -webkit-transition: width 3s; 
+    -webkit-transition-delay: 1s;
+    transition: width 3s;
+    transition-delay: 1s;*/
+}
+.bg-category:hover{
+  background-color: #686152;
+}
+.bg-category a:hover{
+  font-color: #000000; text-decoration: none;
+}
+
+.bg-category img{
+    transition: all 0.5s;
+    /*transition-delay: 1s;*/
+    position: relative;
+    left: 0px;
+}
+
+.bg-category img:hover{
+ /*transform: translateX(.5em);*/
+ left: 15px;
+}
+/*sub category*/
+#sub-category{
+
+}
+#sub1, #sub2, #sub3, #sub4, #sub5,#sub6,#sub7,#sub8,#sub9,#sub10,#sub11,#sub12,#sub13,#sub14,#sub15,#subcategory,#category{
+  display: none;
+}
+/*footer*/
+.bg-footer{
+  background-color: #000000; padding: 0px; margin: 0px; z-index: 99999999999999;
+
+}
+
+#search{
+   border-radius: 0px;
+}
+#footer h3{
+  color: #ffffff;
+}
+.bg-footer img{
+  margin: 0px; padding: 0px; color:
+}
+.myfooter p{
+  color: #ffffff;
+}
+.myfooter h4{
+  color: #ffffff;
+}
+.bg-footer span{
+  color: #ffffff;
+}
+.bg-footer hr{
+  background-color: #ffffff;
+}
+.l-left{
+  float: right;
+}
+#view-img{
+  width: 100%;
+  max-height: 150px;
+}
+.glyphicon-map-marker {
+  color:#123BF3;
+}
+.fab-location{
+  margin: 0px auto;
+   border:none;
+    font-size:1.5em;
+    color:white;
+    background-color: #F7584E;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    -webkit-box-shadow: 2px 3px 3px 0px rgba(41, 41, 41, .3);
+       -moz-box-shadow: 2px 3px 3px 0px rgba(41, 41, 41, .3);
+            box-shadow: 2px 3px 3px 0px rgba(41, 41, 41, .3);
+}
+.margintop-20{
+  margin-top: 20px; margin-left: 0px; margin-right: 0px;
+}
+.margintop-30{
+  margin-top: 30px;margin-left: 0px; margin-right: 0px; margin-bottom: 20px;
+}
+.margintop-10{
+    margin-top: 10px;
+}
+.margintop-20 hr{
+  padding: 0px; margin: 0px;
+}
+.margintop-50{
+  margin-top: 50px;
+}
+.margintop-65{
+  margin-top: 65px;
+}
+.marginbottom-20{
+  margin-bottom: 0px;
+}
+#col-3{
+   overflow-y: scroll;
+   height: 1870px;
+   margin-bottom: 0px;
+   padding-bottom: 0px;
+}
+#col-3 .w3-card{
+  border-left: -10px;
+}
+#col-3 img{
+  padding: 5px;
+   transition: all 0.5s;
+    /*transition-delay: 1s;*/
+    position: relative;
+    left: 0px;
+}
+#col-3 img:hover{
+  left: 15px;
+}
+/* admin page*/
+.display-none{
+  display: none;
+}
+#mymember{
+  display: none;
+}
+#searchrestaurant{
+  position: relative;
+  bottom:0px;
+}
+#resborder{
+  border-top: solid 1px #dddddd;
+   border-bottom: solid 1px #dddddd;
+   border-right: solid 1px #dddddd;
+}
+#border-right li{
+  border-right: 1px #dddddd solid;
+}
+#mypizza li a{
+  color: #000000;
+}
+#mypizza li{
+  list-style: none; 
+}
+.active{
+ z-index: 99999999999; background-color: #ffffff;
+  color: red !important;
+}
+.col-md-2 a{
+  padding: 5px;
+}
+.mycompany a{
+  padding: 10px;
+}
+.mycompany a:hover{
+  text-decoration: none;
+}
+#myCarousel{
+  z-index: -9999999 ;
+}
+#title{
+  color: #ffffff;
+}
+.w3-container a:hover{
+  text-decoration: none;
+}
+.paddingbottom-10{
+  padding-bottom: 10px;
+}
+.container li ,a, i:hover{ 
+  color: #000000;
+}
+/* END YOURA CSS */

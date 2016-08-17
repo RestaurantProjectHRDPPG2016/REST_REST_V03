@@ -1,0 +1,1 @@
+<%@include file="../include/location_view.jsp"%>ml>

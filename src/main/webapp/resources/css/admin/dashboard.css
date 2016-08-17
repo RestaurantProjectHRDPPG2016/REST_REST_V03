@@ -1,0 +1,57 @@
+@CHARSET "UTF-8";
+h1{
+	color:red;
+}
+/* admin page*/
+.display-none{
+  display: none;
+}
+#mymember{
+  display: none;
+}
+#searchrestaurant{
+  position: relative;
+  bottom:0px;
+}
+#resborder{
+  border-top: solid 1px #dddddd;
+   border-bottom: solid 1px #dddddd;
+   border-right: solid 1px #dddddd;
+}
+#border-right li{
+  border-right: 1px #dddddd solid;
+}
+#mypizza li a{
+  color: #000000;
+}
+#mypizza li{
+  list-style: none; 
+}
+.active{
+ z-index: 99999999999; background-color: #ffffff;
+  color: red !important;
+}
+.col-md-2 a{
+  padding: 5px;
+}
+.mycompany a{
+  padding: 10px;
+}
+.mycompany a:hover{
+  text-decoration: none;
+}
+#myCarousel{
+  z-index: -9999999 ;
+}
+#title{
+  color: #ffffff;
+}
+.w3-container a:hover{
+  text-decoration: none;
+}
+.paddingbottom-10{
+  padding-bottom: 10px;
+}
+.container li ,a, i:hover{ 
+  color: #000000;
+}

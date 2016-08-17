@@ -1,0 +1,1 @@
+<%@include file="../include/general_view.jsp"%>

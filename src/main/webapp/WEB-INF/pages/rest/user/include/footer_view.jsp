@@ -1,0 +1,74 @@
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<footer>
+<!-- footer vies_jsp -->
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3  col-md-3 col-sm-4 col-xs-6">
+                    <h3> Fresh Menu</h3>
+                    <ul>
+                        <li> <a href="#"> about us </a> </li>
+                        <li> <a href="#"> contact us </a> </li>
+                        <li> <a href="#"> our sponsor </a> </li>
+                        <li> <a href="#"> view image galary  </a> </li>
+                    </ul>
+                </div>
+      
+                <div class="col-lg-3  col-md-3 col-sm-4 col-xs-6">
+                    <h3> Lorem Ipsum </h3>
+                    <ul>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-3 col-sm-4 col-xs-6">
+                    <h3> Download Mobile App </h3>
+                    <ul>
+                        <li> <a href="#"><img src="resources/upload/playlist/img/appstore.png"/></a> </li>
+                        <li> <a href="#"><img src="resources/upload/playlist/img/googleplay.png"/> </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+                    <h3> Social Network </h3>
+               
+                    <ul class="social">
+                        <li> <a href="#"> <i class=" fa fa-facebook">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>
+                    </ul>
+                </div>
+            </div>
+            <!--/.row--> 
+        </div>
+        <!--/.container--> 
+    </div>
+    <!--/.footer-->
+    <!-- <felksksdcjs -->
+    <div class="footer-bottom">
+        <div class="container">
+        <center>
+            <p class="pull-center"> Copyright © Footer E-commerce Plugin 2014. All right reserved. </p>
+        </center>
+        </div>
+    </div>
+    <!--/.footer-bottom--> 
+</footer>
+
+<script src="resources/static/js/bootstrap.min.js"
+	type="text/javascript"></script>
+<script src="resources/script/user/index.js" type="text/javascript"></script>
+<script src="resources/script/admin/category.js" type="text/javascript"></script>
+<script src="resources/static/js/bootstrap.js" type="text/javascript"></script>
+
+
+
+<!-- Owner -->
+
+<script src="resources/script/owner/detail.js" type="text/javascript"></script>
+<!-- hello footer -->
+</body>
+</html>

@@ -1,0 +1,1 @@
+<%@include file="../include/history_view.jsp" %>
