@@ -30,7 +30,7 @@
 	<!-- My Styles -->
 			<link rel="stylesheet" type="text/css"
 				href="${pageContext.request.contextPath}/resources/css/admin/dashboard.css">
-	<!-- Youra Script -->
+	<!-- Youra of Script -->
 	<script src="${pageContext.request.contextPath}/resources/script/user/index.js" type="text/javascript"></script>
 
 	<!-- Rany Script -->
