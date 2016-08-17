@@ -417,6 +417,7 @@ app.controller('MyAdCtrl', function ($scope, $http, $window, $rootScope){
 		}).then(function(response){
 			console.log(response);
 			$scope.restByID=response.data.DATA;
+			
 	}, function(response){
 			console.log(response);
 			alert('failed To call all data');
@@ -432,20 +433,75 @@ app.controller('MyAdCtrl', function ($scope, $http, $window, $rootScope){
 app.controller('MyCatCtrl', function ($scope, $http, $window, $rootScope){
 	// GetRestaurant By ID
 //getRestaurantByCategory(Cate ID)
-$scope.getRestaurantByCategory= function(CateID){
-alert(CateID);
+	
+	//TODO: declare user object
+	var RESTAURANT = {};
+	
+	//TODO: default filter
+	$scope.filter = {
+		page: 1,
+		limit: 10
+	};
+	
+	//TODO: 
+	$scope.paging = {};
+	
+	//TODO: 
+	var PAGINATION = angular.element('#pagination'); 
+	
+	//TODO: load Pagination
+	RESTAURANT.loadPagination = function(response){
+		
+		//TODO: Initialize pagination setting
+		$scope.paging = {
+			totalPages: response.Pagination.TOTAL_PAGES,
+			totalRecords: response.Pagination.TOTAL_COUNT,
+			currentPage: response.Pagination.PAGE,
+			limit: response.Pagination.LIMIT
+		};
+		//TODO:
+		PAGINATION.bootpag({
+	        total: $scope.paging.totalPages,
+	        page: $scope.paging.currentPage,
+	        leaps: true,
+	        firstLastUse: true,
+	        first: '←',
+	        last: '→',
+	        next: 'Next',
+	        prev: 'Prev',
+	        maxVisible: 10
+	    });	    
+	};
+	
+	//TODO: add listener to page click
+	PAGINATION.on("page", function(event, pageNumber){
+		$scope.filter.page = pageNumber;
+		RESTAURANT.getRest();
+	});
+	
+	
+	
+	RESTAURANT.getRestaurantByCategory= function(cat_id){
+alert( "hell is my category is of me"+cat_id);
 	$http({
-		url: 'http://localhost:8888/restaurant/category/'+CateID,
+		url: 'http://localhost:8888/restaurant/category/'+cat_id,
+		params: $scope.filter,
 		method:'GET'
 	}).then(function(response){
 		console.log(response);
-		$scope.categories=response.data.DATA;
+		$scope.MyCategories=response.data.DATA;
+		RESTAURANT.loadPagination(response.data);
 	}, function(response){
 		console.log(response);
 		alert('failed to call Categories');
 	});
 }	
-$scope.getRestaurantByCategory(rest_id);
+	//TODO: Reload data again
+	$scope.reload = function(filter){
+		$scope.filter = filter;
+		RESTAURANT.getRestaurantByCategory(cat_id);
+	};
+	RESTAURANT.getRestaurantByCategory(cat_id);
 
 });
 //

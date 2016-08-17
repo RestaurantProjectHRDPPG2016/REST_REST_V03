@@ -1,12 +1,12 @@
-	<div class="container" style="background-color:#DDDDDD;margin-bottom:10px;padding:0px;margin-top:10px;" ng-controller="MyCatCtrl">
- 		<div class="col-lg-12 col-md-12  col-sm-12 col-xs-12" style="padding:0px;">
- 			<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="padding:0px;" ng-repeat="cat in categories">
+	<div class="container" style="background-color:#DDDDDD;margin-bottom:10px;padding:0px;margin-top:10px;">
+ 		<div class="col-lg-12 col-md-12  col-sm-12 col-xs-12" style="padding:0px;"  ng-controller="MyCatCtrl">
+ 			<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="padding:0px;" ng-repeat="cat in MyCategories">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:2px;">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hlist">
 						<div class="col-md-4" style="margin-top:50px;">
 						<div style="float:left; width: 100px; height:auto;">
 							<span ng-repeat="img in cat.url">
-							<img class="img-responsive" src="http://localhost:8888/{{img.images[0].url}}" alt="Food">
+							 <img class="img-responsive" src="http://localhost:8888/${pageContext.request.contextPath}/{{img.images[0].url}}" alt="Food"> 
 							</span>
 						</div>
 						</div>
@@ -33,5 +33,6 @@
 </div>
 
 <script>
-		rest_id = "${id}";
+		cat_id = "${id}";
+		alert("this is cat id"+cat_id);
 </script> 

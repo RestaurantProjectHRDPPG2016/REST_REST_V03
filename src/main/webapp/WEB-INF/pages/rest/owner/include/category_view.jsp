@@ -10,7 +10,7 @@
 		
 			<div id="div1"  ng-repeat="c in myCat">
 				<a href="/owner">
-					<img class="img-responsive " width="127px;" src="resources/upload/playlist/img/{{c.img1}}">
+					<img class="img-responsive " width="127px;" src="${pageContext.request.contextPath}/resources/upload/playlist/img/{{c.img1}}">
 				</a>
 	     	</div>
 	  	</div>
