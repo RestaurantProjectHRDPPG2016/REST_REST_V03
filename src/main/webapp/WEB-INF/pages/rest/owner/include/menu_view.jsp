@@ -34,5 +34,4 @@
 
 <script>
 		cat_id = "${id}";
-		alert("this is cat id"+cat_id);
 </script> 

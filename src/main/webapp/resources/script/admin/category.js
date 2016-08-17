@@ -482,7 +482,6 @@ app.controller('MyCatCtrl', function ($scope, $http, $window, $rootScope){
 	
 	
 	RESTAURANT.getRestaurantByCategory= function(cat_id){
-alert( "hell is my category is of me"+cat_id);
 	$http({
 		url: 'http://localhost:8888/restaurant/category/'+cat_id,
 		params: $scope.filter,
