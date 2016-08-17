@@ -41,7 +41,7 @@
 
 <!-- W3CSS -->
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-<!-- Login Page -->
+<!-- Login of Page -->
 <link href="${pageContext.request.contextPath}/resources/static/font-awesome/css/font-awesome.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/resources/css/user/user_login.css" rel="stylesheet">
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>

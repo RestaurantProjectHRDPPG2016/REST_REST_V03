@@ -66,7 +66,7 @@
 
 
 
-<!-- Owner -->
+<!-- Owner if -->
 
 <script src="${pageContext.request.contextPath}/resources/script/owner/detail.js" type="text/javascript"></script>
 <!-- hello footer -->
