@@ -1,6 +1,8 @@
 package org.khmeracademy.rest.pp.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -13,8 +15,9 @@ public class OwnerController {
 	public String aboutowner(){
 		return "owner/layout/about_view";
 	}
-	@RequestMapping(value="/detail")
-	public String detailowner(){
+	@RequestMapping(value="/detail/{id}")
+	public String detailowner(@PathVariable int id , ModelMap model){
+		model.addAttribute("id",id);
 		return "owner/layout/detail_view";
 	}
 	@RequestMapping(value="/search")

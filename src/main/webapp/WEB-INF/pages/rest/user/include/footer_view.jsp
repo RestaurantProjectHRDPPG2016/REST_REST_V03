@@ -58,17 +58,17 @@
     <!--/.footer-bottom--> 
 </footer>
 
-<script src="resources/static/js/bootstrap.min.js"
+<script src="${pageContext.request.contextPath}/resources/static/js/bootstrap.min.js"
 	type="text/javascript"></script>
-<script src="resources/script/user/index.js" type="text/javascript"></script>
-<script src="resources/script/admin/category.js" type="text/javascript"></script>
-<script src="resources/static/js/bootstrap.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/resources/script/user/index.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/resources/script/admin/category.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/resources/static/js/bootstrap.js" type="text/javascript"></script>
 
 
 
 <!-- Owner -->
 
-<script src="resources/script/owner/detail.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/resources/script/owner/detail.js" type="text/javascript"></script>
 <!-- hello footer -->
 </body>
 </html>

@@ -411,7 +411,6 @@ app.controller('MyAdCtrl', function ($scope, $http, $window, $rootScope){
 	// GetRestaurant By ID
 	
 	$scope.getRestByID = function(id){
-		alert(id);
 		$http({
 			url: 'http://localhost:8888/restaurant/'+id,
 			method:'GET'

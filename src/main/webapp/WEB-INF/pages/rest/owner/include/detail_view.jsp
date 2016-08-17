@@ -1,13 +1,13 @@
 <!-- detail -->
 <div class="container" id="catdetail" style="border:solid 1px #dddddd; border-radius:5px; margin-top:10px;">
-  <div ng-controller="restCtrl">
-	<div ng-repeat="r in rest"> 
+  <div ng-controller="MyAdCtrl">
+	<div ng-repeat="r in restByID"> 
         <div class="col-md-7">
 	        <section>  
 			    <span ng-repeat="image in r.images | limit: 1">
-			       <a class="example-image-link" href="{{image.url}}" 
+			       <a class="example-image-link" href="http://localhost:8888/{{image.url}}" 
 				     data-lightbox="example-set">
-				    <img class="example-image" src="{{image.url}}" alt="" /></a>
+				    <img class="example-image" src="http://localhost:8888/{{image.url}}" alt="" /></a>
 			  </span>
 			  </section>
           </div>  
@@ -45,3 +45,8 @@
 
 <!-- 
 detaile -->
+
+
+<script>
+		rest_id = "${id}";
+</script> 
