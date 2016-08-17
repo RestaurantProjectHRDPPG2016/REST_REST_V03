@@ -1,5 +1,5 @@
  <!-- Start Restaurant Category -->
-<div class="container" style=" padding: 0px;" id="mynavbar">
+<div class="container" style=" padding: 0px;" id="mynavbar" ng-controller="adminCtrl">
 	<div class="navbar-header">
 	   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#div0">
 	        <span class="glyphicon glyphicon-th-large"></span>

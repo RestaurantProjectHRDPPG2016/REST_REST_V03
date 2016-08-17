@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class OwnerController {
-	@RequestMapping(value="/owner")
-	public String homeowner(){
+	@RequestMapping(value="/owner/{id}")
+	public String homeowner(@PathVariable int id , ModelMap model){
+		model.addAttribute("id",id);
 		return "owner/layout/home_view";
 	}
 	@RequestMapping(value="/aboutowner")

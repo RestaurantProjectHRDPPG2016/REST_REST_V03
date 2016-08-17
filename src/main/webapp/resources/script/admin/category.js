@@ -429,8 +429,25 @@ app.controller('MyAdCtrl', function ($scope, $http, $window, $rootScope){
 
 /*ENd Restuarant Controller*/
 
+app.controller('MyCatCtrl', function ($scope, $http, $window, $rootScope){
+	// GetRestaurant By ID
+//getRestaurantByCategory(Cate ID)
+$scope.getRestaurantByCategory= function(CateID){
+alert(CateID);
+	$http({
+		url: 'http://localhost:8888/restaurant/category/'+CateID,
+		method:'GET'
+	}).then(function(response){
+		console.log(response);
+		$scope.categories=response.data.DATA;
+	}, function(response){
+		console.log(response);
+		alert('failed to call Categories');
+	});
+}	
+$scope.getRestaurantByCategory(rest_id);
 
-
+});
 //
 //GET rest By ID
 
