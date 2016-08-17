@@ -11,6 +11,8 @@
 			  </span>
 			  </section>
           </div>  
+          
+          <!-- hdjc -->
           <div class="col-md-5">
               <h2 style="text-align: center;">Hello Detail</h2>
               <div class="table-responsive">
