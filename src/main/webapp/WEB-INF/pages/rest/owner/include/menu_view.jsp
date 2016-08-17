@@ -32,6 +32,3 @@
 		</div>
 </div>
 
-<script>
-		cat_id = "${id}";
-</script> 
