@@ -25,8 +25,8 @@
 									<div><span><b style="color:red;">Opens: 10:00 AM - 11:00 PM</b></span></div>
 								</a>
 									<div style="margin-bottom:10px;">
-										<span class="sbtn">Like</span>
-										<a href="/locations"><span class="btn btn-default btn-xs" >Visit Map</span></a>
+										<span class="btn btn-sm btn-primary">Like</span>
+										<a href="/locations"><span class="btn btn-default btn-sm" >Visit Map</span></a>
 									</div>
 							
 							</div>
