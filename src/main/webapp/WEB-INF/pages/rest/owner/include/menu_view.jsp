@@ -13,23 +13,25 @@
 							<!-- </span> -->
 				</div>
 						</div>
+						</a>
 						<div class="col-md-8">
 							<div style="float:left;">
-								
+								<a href="/detail/{{cat.id}}">
 									<!-- <div><span  style="font-size:20px; font-weight: bolder;">{{cat.name}}</span></div> -->
 									<div><span style="font-size:13px;">{{cat.home}} St {{cat.street}} {{cat.commune}}</span></div>
 									<div><span style="font-size:13px;">{{cat.district}} {{cat.city}}</span></div>
 									<!-- <div><span style="font-size:13px;">Knowing that items is a JSON container received through a request, so that's why I'm using a key, value method.{{r.city}}</span></div> -->
 									<div ng-repeat="tele in cat.tel | limitTo:1"><span style="font-size:13px;">Tel: {{tele.tel}}</span></div>
 									<div><span><b style="color:red;">Opens: 10:00 AM - 11:00 PM</b></span></div>
+								</a>
 									<div style="margin-bottom:10px;">
-										<span class="sbtn">Like</span>
-										<a href="/locations"><span class="btn btn-default btn-xs" >Visit Map</span></a>
+										<span class="btn btn-sm btn-primary">Like</span>
+										<a href="/locations"><span class="btn btn-default btn-sm" >Visit Map</span></a>
 									</div>
 							
 							</div>
 						</div>
-						</a>
+						
 					</div>
 				</div>
 			</div>
