@@ -25,8 +25,9 @@ public class OwnerController {
 	public String searchlowner(){
 		return "owner/layout/search_view";
 	}
-	@RequestMapping(value="/locations")
-	public String locationowner(){
+	@RequestMapping(value="/locations/{id}")
+	public String locationowner(@PathVariable int id, ModelMap model){
+		model.addAttribute("id",id);
 		return "owner/layout/location_view";
 	}
 }

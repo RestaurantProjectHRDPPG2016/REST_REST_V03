@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="en"  ng-app="myApp">
 <head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>SabayNham</title>
 <meta name="description" content="">
@@ -36,9 +37,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/script/owner/category.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/resources/script/owner/detail.js" type="text/javascript"></script>
+
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/owner/lightbox.min.css">
    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/owner/lightbox.css">
-
+	 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/owner/star-rating.css" media="all">
 <!-- W3CSS -->
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <!-- Login of Page -->
@@ -49,10 +51,5 @@
 <script src="${pageContext.request.contextPath}/resources/script/owner/photo-gallery.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/resources/static/js/jquery.bootpage.min.js" type="text/javascript"></script>
 <script src="http://maps.googleapis.com/maps/api/js"></script>
-
-
-
-
-
 </head>
 <body>

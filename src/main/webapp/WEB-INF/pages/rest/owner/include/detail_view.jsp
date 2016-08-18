@@ -45,7 +45,7 @@
               	<td></td>
               	<td><div style="margin-top:10px;">
 					<span class="btn btn-sm btn-primary">Like</span>
-					<a href="/locations"><span class="btn btn-default btn-sm" >Visit Map</span></a>
+					<a href="/locations/{{r.id}}"><span class="btn btn-default btn-sm" >Visit Map</span></a>
 				</div></td>
               </tr>
               </table>
