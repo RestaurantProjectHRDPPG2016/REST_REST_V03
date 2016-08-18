@@ -69,6 +69,7 @@
 <!-- Owner if -->
 
 <script src="${pageContext.request.contextPath}/resources/script/owner/detail.js" type="text/javascript"></script>
+  <script src="${pageContext.request.contextPath}/resources/script/owner/lightbox-plus-jquery.min.js"></script>
 <!-- hello footer -->
 </body>
 </html>
