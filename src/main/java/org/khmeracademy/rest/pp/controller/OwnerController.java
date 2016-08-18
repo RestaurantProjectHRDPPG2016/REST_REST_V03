@@ -25,4 +25,8 @@ public class OwnerController {
 	public String searchlowner(){
 		return "owner/layout/search_view";
 	}
+	@RequestMapping(value="/locations")
+	public String locationowner(){
+		return "owner/layout/location_view";
+	}
 }

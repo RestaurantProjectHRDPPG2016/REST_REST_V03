@@ -48,6 +48,10 @@
 <script src="${pageContext.request.contextPath}/resources/script/user/ui_main.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/resources/script/owner/photo-gallery.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/resources/static/js/jquery.bootpage.min.js" type="text/javascript"></script>
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+
+
+
 
 
 </head>
