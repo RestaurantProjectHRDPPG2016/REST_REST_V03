@@ -355,7 +355,8 @@ app.controller('restCtrl', function ($scope, $http, $window, $rootScope){
 
 	
 	RESTAURANT.addRestaurant = function(){
-		alert("HEllo");
+		b=true;
+		$scope.btnButton='Save';
 		var frmData = new FormData();
 		var tel = $('input[name=tel]');
 
@@ -400,7 +401,82 @@ app.controller('restCtrl', function ($scope, $http, $window, $rootScope){
 			$scope.getRest();
 		});
 }		
+	var btnButton='';
+ 	$scope.event= function(){
+ 		if(b==true){ 
+ 			RESTAURANT.addRestaurant();
+ 		}
+ 		else{
+ 			console.log("UPDATEME");
+ 			RESTAURANT.updateRestaurant();
+ 		}
+ 	}
 	
+ 	$scope.addButton=function(){
+ 		b=true;
+ 		$scope.btnButton='ADD';
+ 	}
+	$scope.getupdateRestauratn= function(rest){
+	 	b=false;
+	 	$scope.btnButton='UPDATE';
+	 	console.log(rest);
+	 	id=rest.r.id;
+		 	$scope.name = rest.r.name;
+		 	$scope.category=rest.r.sub_id;
+		 	$scope.delivery = rest.r.delivery;
+		 	$scope.desc=rest.r.desc;
+		 	$scope.home=rest.r.home;
+		 	$scope.street=rest.r.street;
+		 	$scope.province=rest.r.province;
+		 	$scope.district = rest.r.district;
+		 	$scope.commune = rest.r.commune;
+	}
+	RESTAURANT.updateRestaurant= function(){
+	
+		var frmData = new FormData();
+		var tel = $('input[name=tel]');
+
+		$.each(tel, function(key, e){
+			frmData.append('telephones', $(e).val());
+		});
+		
+		
+		var restaurant_files = angular.element('#img')[0].files;
+		for(var i=0; i<restaurant_files.length; i++){
+			frmData.append("image", restaurant_files[i]);
+		}
+		
+		var menu_files = angular.element('#menus')[0].files;
+		
+		for(var i=0; i<menu_files.length; i++){
+			frmData.append("menus", menu_files[i]);
+		}
+		frmData.append('id',id);
+		frmData.append('name', $scope.name);
+		frmData.append('type', $rootScope.subCategoryId);
+		frmData.append('description', $scope.desc);
+		frmData.append('delivery', $scope.delivery);
+		frmData.append('home', $scope.home);
+		frmData.append('street', $scope.street);
+		frmData.append('province',$scope.province.id);
+		frmData.append('district', $scope.district.id);
+		frmData.append('commune', $scope.commune.id);
+		
+		$http({
+			url:'http://localhost:8888/restaurant',
+			method: 'PUT',
+			data: frmData,
+			transformRequest: angular.identity,
+            headers: {'Content-Type': undefined}
+		}).then(function(response){
+			console.log(response.data);
+			RESTAURANT.getRest();
+		}, function(error){
+			console.log(error.data);
+			alert('failed to upload data! Please Try again Youra !!!!!');
+			$scope.getRest();
+		});
+	}
 	
 		
 	
