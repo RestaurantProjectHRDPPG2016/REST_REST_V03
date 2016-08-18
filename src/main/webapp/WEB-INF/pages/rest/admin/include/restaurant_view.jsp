@@ -1,7 +1,10 @@
 <%@include file="header_view.jsp"%>
 <%-- <%@include file="menu_top_view.jsp" %> --%>
 <%@include file="menu_right_view.jsp"%>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <div id="page-wrapper" ng-controller="restCtrl">
 	<div class="container-fluid">
 		<!-- Page Heading -->
@@ -32,7 +35,7 @@
 				<div class="table-responsive">
 
 					<button class="btn btn-success" data-toggle="modal"
-						data-target="#myModal1">Add New</button>
+						data-target="#myModal1" ng-click="addButton()">Add New</button>
 
 					
 					<div>
@@ -57,7 +60,8 @@
 										<button class="btn btn-primary">
 											<span class="glyphicon glyphicon-trash"></span>
 										</button>
-										<button class="btn btn-primary">
+										<button class="btn btn-primary" data-toggle="modal"
+						data-target="#myModal1" ng-click="getupdateRestauratn(this)">
 											<span class="glyphicon glyphicon-pencil"></span>
 										</button>
 								
@@ -258,9 +262,11 @@
 									</div>
 								</div>
 								<div class="modal-footer">
-									<button type="button" class="btn btn-success"
-										data-dismiss="modal" ng-click="addRestaurant()">Save</button>
-									<button type="button" class="btn btn-default"
+								 <button ng-click='event()' type="button" data-dismiss="modal" class="btn btn-primary" 
+								 ng-disabled="">{{btnButton}}</button> 
+									<!-- <button type="button" class="btn btn-success"
+										data-dismiss="modal" ng-click="addRestaurant()">Save</button>-->
+									<button type="button" class="btn btn-default" 
 										data-dismiss="modal">Close</button>
 								</div>
 							</div>
