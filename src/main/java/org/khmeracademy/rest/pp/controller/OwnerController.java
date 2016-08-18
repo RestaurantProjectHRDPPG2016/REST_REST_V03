@@ -30,4 +30,9 @@ public class OwnerController {
 		model.addAttribute("id",id);
 		return "owner/layout/location_view";
 	}
+	@RequestMapping(value="/typerestaurant/{id}")
+	public String typerestaurant(@PathVariable int id , ModelMap model){
+		model.addAttribute("id",id);
+		return "owner/layout/home_view";
+	}
 }

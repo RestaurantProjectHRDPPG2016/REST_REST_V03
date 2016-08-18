@@ -502,6 +502,28 @@ app.controller('MyCatCtrl', function ($scope, $http, $window, $rootScope){
 	};
 	RESTAURANT.getRestaurantByCategory(cat_id);
 
+//	getRestaurantByType(Type ID)
+	RESTAURANT.getRestaurantByType = function(type_id){
+		$http({
+			url: 'http://localhost:8888/restaurant/type/'+type_id,
+			params: $scope.filter,
+			method:'GET'
+		}).then(function(response){
+			console.log(response);
+			$scope.MyRestType=response.data.DATA;
+			RESTAURANT.loadPagination(response.data);
+		}, function(response){
+			console.log(response);
+			alert('failed To call Restaurant Type');
+		});
+	}
+	//TODO: Reload data again
+	$scope.reload = function(filter){
+		$scope.filter = filter;
+		RESTAURANT.getRestaurantByType(type_id);
+	};
+	RESTAURANT.getRestaurantByType(type_id);
+	
 });
 //
 //GET rest By ID

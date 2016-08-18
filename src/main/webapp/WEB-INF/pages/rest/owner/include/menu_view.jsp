@@ -26,7 +26,7 @@
 								</a>
 									<div style="margin-bottom:10px;">
 										<span class="btn btn-sm btn-primary">Like</span>
-										<a href="/locations/{{cat.id}}"><span class="btn btn-default btn-sm" >Visit Map</span></a>
+										<a href="/locations"><span class="btn btn-default btn-sm" >Visit Map</span></a>
 									</div>
 							
 							</div>
@@ -42,5 +42,6 @@
 
 <script>
 	cat_id = "${id}";
+	type_id= "${type_id}";
 </script>
 

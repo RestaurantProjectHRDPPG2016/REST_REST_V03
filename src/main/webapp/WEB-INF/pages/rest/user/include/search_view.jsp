@@ -93,7 +93,7 @@
  
   </div>
   <br>
-            Type : &nbsp <a ng-repeat="r in myrestType" style="font-size:12px;">{{r.name}}</a>
+            Type : &nbsp <a  ng-repeat="r in myrestType" style="font-size:12px;" href="/typerestaurant/{{r.id}}">{{r.name}}</a>
 		
   
 </div>
