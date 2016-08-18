@@ -284,7 +284,7 @@ app.controller('restCtrl', function ($scope, $http, $window, $rootScope){
 	//TODO: default filter
 	$scope.filter = {
 		page: 1,
-		limit: 10
+		limit: 12
 	};
 	
 	//TODO: 
@@ -313,7 +313,7 @@ app.controller('restCtrl', function ($scope, $http, $window, $rootScope){
 	        last: '→',
 	        next: 'Next',
 	        prev: 'Prev',
-	        maxVisible: 10
+	        maxVisible: 12
 	    });	    
 	};
 	
@@ -421,6 +421,7 @@ app.controller('restCtrl', function ($scope, $http, $window, $rootScope){
 	 	$scope.btnButton='UPDATE';
 	 	console.log(rest);
 	 	id=rest.r.id;
+	 	console.log(id);
 		 	$scope.name = rest.r.name;
 		 	$scope.category=rest.r.sub_id;
 		 	$scope.delivery = rest.r.delivery;
@@ -432,11 +433,12 @@ app.controller('restCtrl', function ($scope, $http, $window, $rootScope){
 		 	$scope.commune = rest.r.commune;
 	}
 	RESTAURANT.updateRestaurant= function(){
-	
+		//console.log(id);
 		var frmData = new FormData();
 		var tel = $('input[name=tel]');
 
 		$.each(tel, function(key, e){
+			console.log(e);
 			frmData.append('telephones', $(e).val());
 		});
 		
@@ -462,9 +464,11 @@ app.controller('restCtrl', function ($scope, $http, $window, $rootScope){
 		frmData.append('district', $scope.district.id);
 		frmData.append('commune', $scope.commune.id);
 		
+		console.log(frmData);
+	
 		$http({
-			url:'http://localhost:8888/restaurant',
-			method: 'PUT',
+			url:'http://localhost:8888/restaurantUpdate',
+			method: 'POST',
 			data: frmData,
 			transformRequest: angular.identity,
             headers: {'Content-Type': undefined}
@@ -545,7 +549,7 @@ app.controller('MyCatCtrl', function ($scope, $http, $window, $rootScope){
 	        last: '→',
 	        next: 'Next',
 	        prev: 'Prev',
-	        maxVisible: 10
+	        maxVisible: 12
 	    });	    
 	};
 	

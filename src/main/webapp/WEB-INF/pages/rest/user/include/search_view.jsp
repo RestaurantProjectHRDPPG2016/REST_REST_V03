@@ -1,7 +1,7 @@
 
 <div class="container" id="search" ng-controller="adminCtrl">
 <div class="col-md-2 col-sm-2 col-xs-3" style="float:left">
-		<img class="img-responsive" style="padding:10px;" src="resources/upload/playlist/img/freshologo.png"/>
+		<img class="img-responsive" style="padding:10px;" src="${pageContext.request.contextPath}/resources/upload/playlist/img/freshologo.png"/>
 	</div>
 <div class="col-md-10">
  <div class="input-group col-md-8 col-sm-8 col-xs-8" id="adv-search">
@@ -49,11 +49,11 @@
  -->
  
  <div class="input-group col-md-12 col-sm-12 col-xs-12">
-                <input type="button" class="form-control" value="Phnom Penh, Tul Kork"/>
+                <input type="button" class="form-control" id="location"  value="Phnom Penh, Tul Kork"/>
                 <div class="input-group-btn">
                     <div class="btn-group" role="group">
                         <div class="dropdown dropdown-lg">
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="location" aria-expanded="false"><span class="caret"></span></button>
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
                             <div class="dropdown-menu dropdown-menu-right" role="menu" id="mylocation">
                                 <form class="form-horizontal" role="form">
                                   <div class="form-group">
@@ -99,4 +99,15 @@
 </div>
 </div>
 
+<script>
+
+$(document).ready(function() {
+
+	$("#location").click(function(){
+		$("#mylocation").toggle();
+	});
+
+
+});
+</script>
 
