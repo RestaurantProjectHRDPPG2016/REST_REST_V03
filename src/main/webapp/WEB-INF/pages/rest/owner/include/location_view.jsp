@@ -27,10 +27,55 @@
 		</div>
 	</div>
 	<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="padding: 0px;">		
-		<div class="google-maps">
+	
+		<!-- //map -->
+
+<script
+	src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAyC68lp95UX4v5CwpaiAaHrfcjLWqE6-8'></script>
+<div style='overflow: hidden; height: 400px; width: 520px;'>
+	<div id='gmap_canvas' style='height: 400px; width: 520px;'></div>
+	<style>
+#gmap_canvas img {
+	max-width: none !important;
+	background: none !important
+}
+</style>
+</div>
+<a href='https://embedmaps.org/'>embedding a google map</a>
+<script type='text/javascript'
+	src='https://embedmaps.com/google-maps-authorization/script.js?id=e42d15d3ac86099fdc2aea26f3228eea98aeab26'></script>
+<script type='text/javascript'>
+	function init_map() {
+		var myOptions = {
+			zoom : 16,
+			center : new google.maps.LatLng(11.576680820313506,
+					104.89330349671172),
+			mapTypeId : google.maps.MapTypeId.ROADMAP
+		};
+		map = new google.maps.Map(document.getElementById('gmap_canvas'),
+				myOptions);
+		marker = new google.maps.Marker({
+			map : map,
+			position : new google.maps.LatLng(11.576680820313506,
+					104.89330349671172)
+		});
+		infowindow = new google.maps.InfoWindow(
+				{
+					content : '<strong>Youra Houwse</strong><br>3333<br> Phnom Penh <br><br><img src="IMG_4728.JPG" style="width:20px;"/>'
+				});
+		google.maps.event.addListener(marker, 'click', function() {
+			infowindow.open(map, marker);
+		});
+		infowindow.open(map, marker);
+	}
+	google.maps.event.addDomListener(window, 'load', init_map);
+</script>
+	
+		
+		<!-- <div class="google-maps">
 		    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7098.94326104394!2d78.0430654485247!3d27.172909818538997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1385710909804" 
 		    width="1170" height="100" frameborder="0" style="border:0"></iframe>
-		</div>
+		</div> -->
 	</div>
   </div>
 </div>
