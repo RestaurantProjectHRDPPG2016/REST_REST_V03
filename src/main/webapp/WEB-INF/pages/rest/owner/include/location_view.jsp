@@ -1,6 +1,6 @@
 <div class="container" style="padding:0px; margin-top:5px; margin-bottom:5px;">
   <div style=" margin-top: 2px; margin-bottom: 5px;">
-	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="padding: 0px; background-color: #dddddd; border-right: 3px white solid;">
+	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="padding: 0px; background-color: #dddddd; border-right: 1px white solid;">
 		<div ng-controller="MyAdCtrl">
 			<div class="input-group" style="padding: 5px;">
 		      <input type="text" class="form-control" placeholder="Restaurant name...">
@@ -32,13 +32,24 @@
 
 <script
 	src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAyC68lp95UX4v5CwpaiAaHrfcjLWqE6-8'></script>
-<div style='overflow: hidden; height: 400px; width: 520px;'>
-	<div id='gmap_canvas' style='height: 400px; width: 520px;'></div>
+<div style='overflow: hidden; height: 550px; width: 780px;'>
+  <div class="mymap">
+	<div id='gmap_canvas' class="img-responsive" style='height: 100%; width: 100%;'></div>
+  </div>
 	<style>
 #gmap_canvas img {
+	position:relative;
+	padding-bottom: 75%;
 	max-width: none !important;
 	background: none !important
 }
+ .mymap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+ }
 </style>
 </div>
 <a href='https://embedmaps.org/'>embedding a google map</a>
@@ -70,12 +81,6 @@
 	}
 	google.maps.event.addDomListener(window, 'load', init_map);
 </script>
-	
-		
-		<!-- <div class="google-maps">
-		    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7098.94326104394!2d78.0430654485247!3d27.172909818538997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1385710909804" 
-		    width="1170" height="100" frameborder="0" style="border:0"></iframe>
-		</div> -->
 	</div>
   </div>
 </div>
