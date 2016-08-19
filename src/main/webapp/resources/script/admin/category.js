@@ -490,11 +490,21 @@ app.controller('MyCatCtrl', function ($scope, $http, $window, $rootScope){
 		console.log(response);
 		$scope.MyCategories=response.data.DATA;
 		RESTAURANT.loadPagination(response.data);
+		
+		if($scope.MyCategories.length <=0){
+			$scope.getNotFound();
+		}
+		
 	}, function(response){
 		console.log(response);
-		alert('failed to call Categories');
+		/*alert('failed to call Categories');*/
 	});
-}	
+}
+	
+	$scope.getNotFound= function(){
+		$window.location.href=("/404");
+	}
+	
 	//TODO: Reload data again
 	$scope.reload = function(filter){
 		$scope.filter = filter;
@@ -512,9 +522,14 @@ app.controller('MyCatCtrl', function ($scope, $http, $window, $rootScope){
 			console.log(response);
 			$scope.MyRestType=response.data.DATA;
 			RESTAURANT.loadPagination(response.data);
+			
+			if($scope.MyRestType.length <=0){
+				$scope.getNotFound();
+			}
+			
 		}, function(response){
 			console.log(response);
-			alert('failed To call Restaurant Type');
+			/*alert('failed To call Restaurant Type');*/
 		});
 	}
 	//TODO: Reload data again

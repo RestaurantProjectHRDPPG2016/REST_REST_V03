@@ -35,4 +35,9 @@ public class OwnerController {
 		model.addAttribute("id",id);
 		return "owner/layout/home_view";
 	}
+	@RequestMapping(value="/404")
+	public String notfound(){
+		
+		return "owner/layout/home_notfound";
+	}
 }
