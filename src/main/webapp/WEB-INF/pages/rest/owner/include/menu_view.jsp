@@ -11,7 +11,7 @@
 							<img class="img-responsive" style="width: 100px; height: 100px;" src="${pageContext.request.contextPath}/resources/upload/playlist/img/1-1.png"/>
 							 <%-- <img class="img-responsive" src="http://localhost:8888/${pageContext.request.contextPath}/{{img.images[0].url}}" alt="Food">  --%>
 							<!-- </span> -->
-				</div>
+						</div>
 						</div>
 						</a>
 						<div class="col-md-8">

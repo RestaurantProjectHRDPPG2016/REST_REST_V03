@@ -6,11 +6,12 @@
 	     </button>
 	</div>
 	<div>
-		<div id="div0" class="collapse navbar-collapse mycontain" >
+		<div class="collapse navbar-collapse mycontain" >
 		
-			<div id="div1"  ng-repeat="c in myCat">
+			<div class="thumbnail item"  ng-repeat="c in myCat">
 				<a href="/owner/{{c.id}}">
-					<img class="img-responsive " width="127px;" src="${pageContext.request.contextPath}/resources/upload/playlist/img/{{c.img1}}">
+					<img  src="${pageContext.request.contextPath}/resources/upload/playlist/img/{{c.img1}}" >
+					    <span class="caption">{{c.name}}</span>
 				</a>
 	     	</div>
 	  	</div>
