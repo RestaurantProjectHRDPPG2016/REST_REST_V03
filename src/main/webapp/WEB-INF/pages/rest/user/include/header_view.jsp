@@ -40,7 +40,6 @@
 
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/owner/lightbox.min.css">
    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/owner/lightbox.css">
-	 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/owner/star-rating.css" media="all">
 <!-- W3CSS -->
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <!-- Login of Page -->
@@ -52,4 +51,4 @@
 <script src="${pageContext.request.contextPath}/resources/static/js/jquery.bootpage.min.js" type="text/javascript"></script>
 
 </head>
-<body>
+<body onload="geoFindMe()">

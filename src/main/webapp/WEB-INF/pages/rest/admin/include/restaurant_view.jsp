@@ -108,7 +108,7 @@
 												<label for="name" class="cols-sm-2 control-label">Restaurant Category:</label>
 												<div class="cols-sm-10">
 													<div class="input-group col-md-5 col-sm-8">
-													<select ng-model="category" name="category">
+													<select class="form-control" ng-model="category" name="category">
 														<option ng-repeat="c in myCat" value="{{c.id}}">{{c.name}}</option>
 													</select>
 													</div>
@@ -164,8 +164,8 @@
 											<label for="name" class="cols-sm-2 control-label">City / Province:</label>
 											<div class="cols-sm-10">
 												<div class="input-group col-md-5 col-sm-8">
-													<select name="province" id="type" ng-model="province"  ng-change="getDistrict(province.id)"
-													ng-options="p as p.khmer_name for p in myProvince track by p.id">
+													<select class="form-control" name="province" id="type" ng-model="province"  ng-change="getDistrict(province.id)"
+													ng-options="p as p.khmer_name for p in myProvince track by p.khmer_name">
 
 														<option value="" style="display:none">
 															--  Please Select City or Province --
@@ -181,8 +181,8 @@
 												<label for="name" class="cols-sm-2 control-label">District:</label>
 												<div class="cols-sm-10">
 													<div class="input-group col-md-5 col-sm-8">
-														<select name="district" id="type" ng-model="district" ng-change="getCommune(district.id)" 
-															ng-options="d as d.khmer_name for d in myDistrict track by d.id">
+														<select class="form-control" name="district" id="type" ng-model="district" ng-change="getCommune(district.id)" 
+															ng-options="d as d.khmer_name for d in myDistrict track by d.khmer_name">
 															<option value="" style="display:none">-- Please Select District --</option>
 														</select>
 													</div>
@@ -193,8 +193,8 @@
 											<label for="name" class="cols-sm-2 control-label">Commune:</label>
 											<div class="cols-sm-10">
 												<div class="input-group col-md-5 col-sm-8">
-													<select name="commune" id="type" ng-model="commune"
-													ng-options="c as c.khmer_name for c in myCommune track by c.id">
+													<select class="form-control" name="commune" id="type" ng-model="commune"
+													ng-options="c as c.khmer_name for c in myCommune track by c.khmer_name">
 
 														<option value="" style="display:none">
 														-- Please Select Commune --
@@ -205,7 +205,28 @@
 
 											</div>
 										</div>
-
+											<div class="form-group">
+											<label for="name" class="cols-sm-2 control-label">Latitude:</label>
+											<div class="cols-sm-10">
+												<div class="input-group col-md-5 col-sm-8">
+													<span class="input-group-addon"><i
+														class="fa fa-user" aria-hidden="true"></i></span> <input
+														type="text" class="form-control" name="latitude" id="latitude"
+														ng-model="latitude" placeholder="Enter latitude" />
+												</div>
+											</div>
+										</div>
+											<div class="form-group">
+											<label for="name" class="cols-sm-2 control-label">Longitude:</label>
+											<div class="cols-sm-10">
+												<div class="input-group col-md-5 col-sm-8">
+													<span class="input-group-addon"><i
+														class="fa fa-user" aria-hidden="true"></i></span> <input
+														type="text" class="form-control" name="longitude" id="longitude"
+														ng-model="longitude" placeholder="Enter longitude" />
+												</div>
+											</div>
+										</div>
 
 										<div class="form-group">
 											<label for="name" class="cols-sm-2 control-label">Telephone:</label>
@@ -244,7 +265,7 @@
 											<div class="cols-sm-10">
 												<div class="input-group col-md-5">
 													<input type="file" name="img" id="img" ng-model="images"
-														multiple>
+														multiple class="file-loading" multiple>
 												</div>
 											</div>
 										</div>
@@ -254,7 +275,7 @@
 											<div class="cols-sm-10">
 												<div class="input-group col-md-5">
 													<input type="file" name="menus" id="menus" ng-model="menus"
-														multiple>
+														multiple class="file-loading" multiple>
 												</div>
 											</div>
 										</div>

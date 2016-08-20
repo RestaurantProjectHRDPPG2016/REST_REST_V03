@@ -277,14 +277,13 @@ app.controller('adminCtrl', function($scope, $http, $window, $rootScope){
 app.controller('restCtrl', function ($scope, $http, $window, $rootScope){
 //Pagination
 	
-
 	//TODO: declare user object
 	var RESTAURANT = {};
 	
 	//TODO: default filter
 	$scope.filter = {
 		page: 1,
-		limit: 10
+		limit: 12
 	};
 	
 	//TODO: 
@@ -313,7 +312,7 @@ app.controller('restCtrl', function ($scope, $http, $window, $rootScope){
 	        last: '→',
 	        next: 'Next',
 	        prev: 'Prev',
-	        maxVisible: 10
+	        maxVisible: 12
 	    });	    
 	};
 	
@@ -355,7 +354,8 @@ app.controller('restCtrl', function ($scope, $http, $window, $rootScope){
 
 	
 	RESTAURANT.addRestaurant = function(){
-		alert("HEllo");
+		b=true;
+		$scope.btnButton='Save';
 		var frmData = new FormData();
 		var tel = $('input[name=tel]');
 
@@ -384,6 +384,9 @@ app.controller('restCtrl', function ($scope, $http, $window, $rootScope){
 		frmData.append('province',$scope.province.id);
 		frmData.append('district', $scope.district.id);
 		frmData.append('commune', $scope.commune.id);
+		frmData.append('latitude', $scope.latitude);
+		frmData.append('longitude', $scope.longitude);
+		
 		
 		$http({
 			url:'http://localhost:8888/restaurant',
@@ -400,9 +403,110 @@ app.controller('restCtrl', function ($scope, $http, $window, $rootScope){
 			$scope.getRest();
 		});
 }		
+	var btnButton='';
+ 	$scope.event= function(){
+ 		if(b==true){ 
+ 			RESTAURANT.addRestaurant();
+ 		}
+ 		else{
+ 			console.log("UPDATEME");
+ 			RESTAURANT.updateRestaurant();
+ 		}
+ 	}
 	
+ 	$scope.addButton=function(){
+ 		b=true;
+ 		$scope.btnButton='ADD';
+ 	}
+	$scope.getupdateRestauratn= function(rest){
+	 	b=false;
+	 	$scope.btnButton='UPDATE';
+	 	console.log(rest);
+	 	id=rest.r.id;
+		 	$scope.name = rest.r.name;
+		 	$scope.category=rest.r.sub_id + '';
+		 	$scope.delivery = rest.r.delivery;
+		 	$scope.desc=rest.r.desc;
+		 	$scope.home=rest.r.home;
+		 	$scope.street=rest.r.street;
+		 	$scope.district = rest.r.district;
+		 	$scope.commune = rest.r.commune;
+		 	$scope.latitude =rest.r.latitude;
+		 	$scope.longitude =rest.r.longitude;
+		 	
+		 	angular.forEach($scope.myProvince, function(item){
+		 		if (item.khmer_name === rest.r.province){
+		 			$scope.province = item;
+		 			$scope.getDistrict(item.id);
+		 			return;
+		 		}
+		 	});
+		 	
+		 	angular.forEach($scope.myDisctrict, function(item){
+		 		if (item.khmer_name === rest.r.disctrict){
+		 			$scope.district = item;
+		 			return;
+		 		}
+		 	});
+		 	
+		 	angular.forEach($scope.myCommune, function(item){
+		 		if (item.khmer_name === rest.r.commune){
+		 			$scope.commune = item;
+		 			return;
+		 		}
+		 	});
+		 	
+	}
 	
+	RESTAURANT.updateRestaurant= function(){
+		//console.log(id);
+		var frmData = new FormData();
+		var tel = $('input[name=tel]');
+
+		$.each(tel, function(key, e){
+			console.log(e);
+			frmData.append('telephones', $(e).val());
+		});
+		var restaurant_files = angular.element('#img')[0].files;
+		for(var i=0; i<restaurant_files.length; i++){
+			frmData.append("image", restaurant_files[i]);
+		}
 		
+		var menu_files = angular.element('#menus')[0].files;
+		
+		for(var i=0; i<menu_files.length; i++){
+			frmData.append("menus", menu_files[i]);
+		}
+		frmData.append('id',id);
+		frmData.append('name', $scope.name);
+		frmData.append('type', $rootScope.subCategoryId);
+		frmData.append('description', $scope.desc);
+		frmData.append('delivery', $scope.delivery);
+		frmData.append('home', $scope.home);
+		frmData.append('street', $scope.street);
+		frmData.append('province',$scope.province.id);
+		frmData.append('district', $scope.district.id);
+		frmData.append('commune', $scope.commune.id);
+		frmData.append('latitude', $scope.latitude);
+		frmData.append('longitude', $scope.longitude);
+		
+		console.log(frmData);
+	
+		$http({
+			url:'http://localhost:8888/restaurantUpdate',
+			method: 'POST',
+			data: frmData,
+			transformRequest: angular.identity,
+            headers: {'Content-Type': undefined}
+		}).then(function(response){
+			console.log(response.data);
+			RESTAURANT.getRest();
+		}, function(error){
+			console.log(error.data);
+			alert('failed to upload data! Please Try again Youra !!!!!');
+			$scope.getRest();
+		});
+	}
 	
 });
 
@@ -413,7 +517,7 @@ app.controller('MyAdCtrl', function ($scope, $http, $window, $rootScope){
 	$scope.getRestByID = function(id){
 		$http({
 			url: 'http://localhost:8888/restaurant/'+id,
-			method:'GET'
+			method:'GET',
 		}).then(function(response){
 			console.log(response);
 			$scope.restByID=response.data.DATA;

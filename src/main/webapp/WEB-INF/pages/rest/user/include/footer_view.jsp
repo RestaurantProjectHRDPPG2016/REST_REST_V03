@@ -63,7 +63,6 @@
 <script src="${pageContext.request.contextPath}/resources/script/user/index.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/resources/script/admin/category.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/resources/static/js/bootstrap.js" type="text/javascript"></script>
-<script src="${pageContext.request.contextPath}/resources/script/owner/slide.js" type="text/javascript"></script>
 
 
 <!-- Owner if -->

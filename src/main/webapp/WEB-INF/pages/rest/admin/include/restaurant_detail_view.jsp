@@ -64,6 +64,14 @@
                                     	<th> Commune </th>
                                     	<td>{{ra.commune}}</td>
                                     </tr> 
+                                       <tr>
+                                    	<th> Latitude </th>
+                                    	<td>{{ra.latitude}}</td>
+                                    </tr> 
+                                       <tr>
+                                    	<th> Longitude </th>
+                                    	<td>{{ra.longitude}}</td>
+                                    </tr> 
                                     <tr>
                                     	<th> Telephone </th>
 	                                    	<td>
@@ -73,16 +81,20 @@
 	                                    	</td>
                                     </tr>
                                      <tr>
-                                     <th> Telephone </th>
+                                     <th> Images </th>
 	                                    	<td>
 	                                    		<span ng-repeat="img in ra.images" > 
-	                                    				<img src="http://localhost:8888/{{img.url}}"> 
+	                                    				<img class="img-responsive" width="200px" src="http://localhost:8888/{{img.url}}"> 
 	                                    		</span>
 	                                    	</td>
                                     </tr>
                                      <tr>
                                     	<th> Menu </th>
-                                    	<td>{{ra.url}}</td>
+                                    	<td>
+                                    	<span ng-repeat="imgm in ra.menus" > 
+                                    		<img class="img-responsive" width="200px" src="http://localhost:8888/{{imgm.url}}">
+                                    	</span>
+                                    	</td>
                                     </tr> 
                                     <tr>
 										<th> Action </th>
