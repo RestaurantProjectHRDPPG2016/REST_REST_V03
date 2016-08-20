@@ -55,13 +55,13 @@
 	<div>
 		<div class="collapse navbar-collapse mycontain" >
 		  <div  id="div0">
-			<div id="div1" class="thumbnail item" ng-repeat="c in myCat | limitTo :7">
+			<div id="div1" class="thumbnail item" ng-repeat="c in myCat | limitTo:7">
 				<a href="/owner/{{c.id}}">
 					<img  src="${pageContext.request.contextPath}/resources/upload/playlist/img/{{c.img1}}" >
 					    <span class="caption">{{c.name}}</span>
 				</a>
 	     	</div>
-	     	<div id="div2" class="thumbnail item" ng-repeat="c in myCat">
+	     	<div id="div2" class="thumbnail item div2" ng-repeat="c in myCat | limitTo:myCat.length:7">
 				<a href="/owner/{{c.id}}">
 					<img  src="${pageContext.request.contextPath}/resources/upload/playlist/img/{{c.img1}}" >
 					    <span class="caption">{{c.name}}</span>
@@ -74,12 +74,12 @@
 	<script>
 	$(document).ready(function(){
 	$("#div0").hover(function(){
-		$("#div2").css('display','inline-block');
-   /*  $("#div2").addClass("element-animation");
- */
+		$(".div2").css('display','inline-block');
+	    $(".div2").addClass("element-animation");
+
     }, function(){
-          $("#div2").slideUp('slow');
-        $("#div2").removeClass("element-animation");
+          $(".div2").slideUp('slow');
+        $(".div2").removeClass("element-animation");
         //});
         
       });
