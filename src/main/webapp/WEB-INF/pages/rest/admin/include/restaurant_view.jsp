@@ -547,9 +547,7 @@
 
 /* 
 Image JQUER */
-
-
-    var app = angular.module('myApp', []);
+     var app = angular.module('myApp', []);
     app.controller('Ctrl', function ($scope) {
         $scope.sample = [
             {
@@ -586,11 +584,5 @@ Image JQUER */
         // => validatedFiles
         // => deletedImageName
 
-    }]);
-        
-
-
-
-
-
+    }]); 
 </script>

@@ -290,7 +290,7 @@ app.controller('restCtrl', function ($scope, $http, $window, $rootScope){
 	$scope.paging = {};
 	
 	//TODO: 
-	var PAGINATION = angular.element('#pagination'); 
+	var PAGINATION = angular.element('#paginationRest'); 
 	
 	//TODO: load Pagination
 	RESTAURANT.loadPagination = function(response){

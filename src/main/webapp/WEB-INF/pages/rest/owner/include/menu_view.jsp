@@ -36,7 +36,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="pagination">
+		<div id="paginationRest">
 	</div>
 </div>
 
