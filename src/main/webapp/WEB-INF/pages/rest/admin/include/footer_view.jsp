@@ -18,6 +18,7 @@
 
 <!-- 	Yuth -->
 <script src="${pageContext.request.contextPath}/resources/script/admin/restaurant.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/resources/script/admin/slide.js" type="text/javascript"></script>
 
 </body>
 </html>
