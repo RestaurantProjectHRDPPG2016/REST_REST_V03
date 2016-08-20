@@ -8,8 +8,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">Restaurant</h1>
-						<button type="button" class="btn btn-success" data-dismiss="modal" id="myRestProduct-info">Product</button>
-										       					       
+									       					       
                         <ol class="breadcrumb">
                             <li>
                                 <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
@@ -24,8 +23,14 @@
                 
                 <div class="row">
                     <div class="col-lg-12" id="Res-info">
+                    
+                     <button class="btn btn-primary">DELETE &nbsp &nbsp <span class="glyphicon glyphicon-trash"></span></button>
+					<button class="btn btn-primary">UPDATE &nbsp &nbsp <span class="glyphicon glyphicon-pencil"></span></button>
+					<button class="btn btn-primary">ADD NEW &nbsp &nbsp <span class="glyphicon glyphicon-plus"></span></button>
+					<br>
                         <h2>Restaurant Information</h2>
                        <div>
+                   				
                             <table class="table table-bordered table-hover">
                                 <thead ng-repeat="ra in restByID">
                                     <tr>
@@ -83,27 +88,19 @@
                                      <tr>
                                      <th> Images </th>
 	                                    	<td>
-	                                    		<span ng-repeat="img in ra.images" > 
-	                                    				<img class="img-responsive" width="200px" src="http://localhost:8888/{{img.url}}"> 
-	                                    		</span>
+	                                    		<span ng-repeat="img in ra.images" class="col-md-2 imgadmin" > 
+	                                    				<img class="img-thumbnail" src="http://localhost:8888/{{img.url}}"> 
+	                                    </span>
 	                                    	</td>
                                     </tr>
                                      <tr>
                                     	<th> Menu </th>
                                     	<td>
-                                    	<span ng-repeat="imgm in ra.menus" > 
-                                    		<img class="img-responsive" width="200px" src="http://localhost:8888/{{imgm.url}}">
-                                    	</span>
+                                    	<span ng-repeat="imgm in ra.menus" class="col-md-2 imgadmin"> 
+                                    		<img class="img-thumbnail" src="http://localhost:8888/{{imgm.url}}">
+                   						</span>
                                     	</td>
                                     </tr> 
-                                    <tr>
-										<th> Action </th>
-										<td>
-										<button class="btn btn-primary"><span class="glyphicon glyphicon-trash"></span></button>
-											<button class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button>
-										</td>
-									
-									</tr>
 									</tr>
                                 </thead>
                             </table>

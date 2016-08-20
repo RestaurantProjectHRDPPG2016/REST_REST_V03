@@ -1,4 +1,5 @@
 <%@include file="header_view.jsp"%>
+					
 <%-- <%@include file="menu_top_view.jsp" %> --%>
 <%@include file="menu_right_view.jsp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -80,7 +81,7 @@
 
 						<!-- Modal -->
 					<div class="modal fade" id="myModal1" role="dialog">
-						<div class="modal-dialog">
+						<div class="modal-dialog modal-lg">
 
 							<!-- Modal content -->
 							<div class="modal-content">
@@ -88,14 +89,13 @@
 									<button type="button" class="close" data-dismiss="modal">&times;</button>
 									<h4 class="modal-title">Add Restaurant Information</h4>
 								</div>
-								<div class="modal-body"
-									style="border: 1px solid black; background-color: white; height: 100%;">
+								<div class="modal-body">
 									<div class="container">
 
 										<div class="form-group">
-											<label for="name" class="cols-sm-2 control-label">Name:</label>
+											<label for="name" class="cols-sm-2 col-md-2 control-label">Name:</label>
 											<div class="cols-sm-10">
-												<div class="input-group col-md-5 col-sm-8">
+												<div class="input-group col-md-6 col-sm-12">
 													<span class="input-group-addon"><i
 														class="fa fa-user" aria-hidden="true"></i></span> <input
 														type="text" class="form-control" name="name" id="name"
@@ -105,9 +105,9 @@
 										</div>
 										<div>
 											<div class="form-group" ng-controller="adminCtrl">
-												<label for="name" class="cols-sm-2 control-label">Restaurant Category:</label>
+												<label for="name" class="cols-sm-2 col-md-2 control-label">Restaurant Category:</label>
 												<div class="cols-sm-10">
-													<div class="input-group col-md-5 col-sm-8">
+													<div class="input-group col-md-6 col-sm-8">
 													<select class="form-control" ng-model="category" name="category">
 														<option ng-repeat="c in myCat" value="{{c.id}}">{{c.name}}</option>
 													</select>
@@ -118,28 +118,28 @@
 										</div>
 										
 										<div class="form-group">
-											<label for="name" class="cols-sm-2 control-label">Description:</label>
+											<label for="name" class="cols-sm-2 col-md-2 control-label">Description:</label>
 											<div class="cols-sm-10">
-												<div class="input-group col-md-5 col-sm-8">
-													<textarea name="desc" id="desc" ng-model="desc"> </textarea>
+												<div class="input-group col-md-6 col-sm-8">
+													<textarea class="form-control" name="desc" id="desc" ng-model="desc"> </textarea>
 												</div>
 											</div>
 										</div>
 										
 										<div class="form-group">
-											<label for="name" class="cols-sm-2 control-label">Delivery:</label>
+											<label for="name" class="cols-sm-2 col-md-2 control-label">Delivery:</label>
 											<div class="cols-sm-10">
-												<div class="input-group col-md-5 col-sm-8">
+												<div class="input-group col-md-6 col-sm-8">
 													<input type="checkbox" name="delivery" id="delivery"
-														ng-model="delivery">Yes
+														ng-model="delivery"> &nbsp &nbspYes
 												</div>
 											</div>
 										</div>
 
 										<div class="form-group">
-											<label for="name" class="cols-sm-2 control-label">Home:</label>
+											<label for="name" class="cols-sm-2 col-md-2 control-label">Home:</label>
 											<div class="cols-sm-10">
-												<div class="input-group col-md-5 col-sm-8">
+												<div class="input-group col-md-6 col-sm-8">
 													<span class="input-group-addon"><i
 														class="fa fa-user" aria-hidden="true"></i></span> <input
 														type="text" class="form-control" name="home" id="home"
@@ -149,9 +149,9 @@
 										</div>
 
 										<div class="form-group">
-											<label for="name" class="cols-sm-2 control-label">Street:</label>
+											<label for="name" class="cols-sm-2 col-md-2 control-label">Street:</label>
 											<div class="cols-sm-10">
-												<div class="input-group col-md-5 col-sm-8">
+												<div class="input-group col-md-6 col-sm-8">
 													<span class="input-group-addon"><i
 														class="fa fa-user" aria-hidden="true"></i></span> <input
 														type="text" class="form-control" name="street" id="street"
@@ -161,9 +161,9 @@
 										</div>
 										
 										<div class="form-group">
-											<label for="name" class="cols-sm-2 control-label">City / Province:</label>
+											<label for="name" class="cols-sm-2 col-md-2 control-label">City / Province:</label>
 											<div class="cols-sm-10">
-												<div class="input-group col-md-5 col-sm-8">
+												<div class="input-group col-md-6 col-sm-8">
 													<select class="form-control" name="province" id="type" ng-model="province"  ng-change="getDistrict(province.id)"
 													ng-options="p as p.khmer_name for p in myProvince track by p.khmer_name">
 
@@ -178,9 +178,9 @@
 										</div>
 
 											<div class="form-group">
-												<label for="name" class="cols-sm-2 control-label">District:</label>
+												<label for="name" class="cols-sm-2 col-md-2 control-label">District:</label>
 												<div class="cols-sm-10">
-													<div class="input-group col-md-5 col-sm-8">
+													<div class="input-group col-md-6 col-sm-8">
 														<select class="form-control" name="district" id="type" ng-model="district" ng-change="getCommune(district.id)" 
 															ng-options="d as d.khmer_name for d in myDistrict track by d.khmer_name">
 															<option value="" style="display:none">-- Please Select District --</option>
@@ -190,9 +190,9 @@
 												</div>
 											</div>
 											<div class="form-group">
-											<label for="name" class="cols-sm-2 control-label">Commune:</label>
+											<label for="name" class="cols-sm-2 col-md-2 control-label">Commune:</label>
 											<div class="cols-sm-10">
-												<div class="input-group col-md-5 col-sm-8">
+												<div class="input-group col-md-6 col-sm-8">
 													<select class="form-control" name="commune" id="type" ng-model="commune"
 													ng-options="c as c.khmer_name for c in myCommune track by c.khmer_name">
 
@@ -206,9 +206,9 @@
 											</div>
 										</div>
 											<div class="form-group">
-											<label for="name" class="cols-sm-2 control-label">Latitude:</label>
+											<label for="name" class="cols-sm-2 col-md-2 control-label">Latitude:</label>
 											<div class="cols-sm-10">
-												<div class="input-group col-md-5 col-sm-8">
+												<div class="input-group col-md-6 col-sm-8">
 													<span class="input-group-addon"><i
 														class="fa fa-user" aria-hidden="true"></i></span> <input
 														type="text" class="form-control" name="latitude" id="latitude"
@@ -217,9 +217,9 @@
 											</div>
 										</div>
 											<div class="form-group">
-											<label for="name" class="cols-sm-2 control-label">Longitude:</label>
+											<label for="name" class="cols-sm-2 col-md-2 control-label">Longitude:</label>
 											<div class="cols-sm-10">
-												<div class="input-group col-md-5 col-sm-8">
+												<div class="input-group col-md-6 col-sm-8">
 													<span class="input-group-addon"><i
 														class="fa fa-user" aria-hidden="true"></i></span> <input
 														type="text" class="form-control" name="longitude" id="longitude"
@@ -229,11 +229,11 @@
 										</div>
 
 										<div class="form-group">
-											<label for="name" class="cols-sm-2 control-label">Telephone:</label>
+										<!-- 	<label for="name" class="cols-sm-2 col-md-2 control-label">Telephone:</label>
 											<input type="button" id="mypho" title="p1"
 												class="btn btn-success" value="+" />
 											<div class="cols-sm-10" id="myphone">
-												<div class="input-group col-md-5 col-sm-8">
+												<div class="input-group col-md-6 col-sm-8">
 													<span class="input-group-addon"><i
 														class="fa fa-user" aria-hidden="true"></i></span> <input
 														type="number" class="form-control" name="tel" id="tel"
@@ -257,23 +257,57 @@
 														type="number" class="form-control" name="tel" id="tel"
 														ng-model="tel" placeholder="Enter Telephone 2" />
 												</div>
-											</div>
+											</div> -->
+											
+											<div class="contacts">
+											<div class="col-md-2">
+                <label>Contacts:</label>
+                </div>
+                    <div class="form-group multiple-form-group input-group col-md-6 col-md-offset-2">
+                        <div class="input-group-btn input-group-select">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <span class="concept">Phone</span> </span>
+                            </button>
+                           
+                            <input type="hidden" class="input-group-select-val" name="contacts['type'][]" value="phone">
+                        </div>
+                        <input type="text" name="contacts['value'][]" class="form-control">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-success btn-add">+</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+											
 										</div>
 
 										<div class="form-group">
-											<label for="name" class="cols-sm-2 control-label">Images:</label>
+											<label for="name" class="cols-sm-2 col-md-2 control-label">Images:</label>
 											<div class="cols-sm-10">
-												<div class="input-group col-md-5">
-													<input type="file" name="img" id="img" ng-model="images"
-														multiple class="file-loading" multiple>
+												<div class="input-group col-md-6">
+													<!-- <input type="file" name="img" id="img" ng-model="images"
+														multiple class="file-loading" multiple> -->
+
+												<!-- 	<div id="content">
+
+														<h4 ng-repeat="s in sample" my-filter>Example 2:</h4>
+														<input type="file" name="files[]" id="gallery"
+															multiple="multiple">
+														<h1 ng-click="show()">Show</h1>
+													</div> -->
+
 												</div>
 											</div>
 										</div>
 
 										<div class="form-group">
-											<label for="name" class="cols-sm-2 control-label">Menus:</label>
+											<label for="name" class="cols-sm-2 col-md-2 control-label">Menus:</label>
 											<div class="cols-sm-10">
-												<div class="input-group col-md-5">
+												<!-- <div class="input-group col-md-6">
+													<input type="file" name="menus" id="menus" ng-model="menus"
+														multiple class="file-loading" multiple>
+												</div> -->
+												<div class="input-group col-md-6">
 													<input type="file" name="menus" id="menus" ng-model="menus"
 														multiple class="file-loading" multiple>
 												</div>
@@ -281,15 +315,16 @@
 										</div>
 
 									</div>
-								</div>
-								<div class="modal-footer">
+									
+										<div class="modal-footer" style="background-color:#ffffff;">
 								 <button ng-click='event()' type="button" data-dismiss="modal" class="btn btn-primary" 
 								 ng-disabled="">{{btnButton}}</button> 
-									<!-- <button type="button" class="btn btn-success"
-										data-dismiss="modal" ng-click="addRestaurant()">Save</button>-->
+	
 									<button type="button" class="btn btn-default" 
 										data-dismiss="modal">Close</button>
 								</div>
+								</div>
+							
 							</div>
 
 						</div>
@@ -447,3 +482,115 @@
 <!-- /#page-wrapper -->
 <!-- /#wrapper -->
 <%@include file="footer_view.jsp"%>
+
+<script>
+(function ($) {
+    $(function () {
+
+        var addFormGroup = function (event) {
+            event.preventDefault();
+
+            var $formGroup = $(this).closest('.form-group');
+            var $multipleFormGroup = $formGroup.closest('.multiple-form-group');
+            var $formGroupClone = $formGroup.clone();
+
+            $(this)
+                .toggleClass('btn-success btn-add btn-danger btn-remove')
+                .html('–');
+
+            $formGroupClone.find('input').val('');
+            $formGroupClone.find('.concept').text('Phone');
+            $formGroupClone.insertAfter($formGroup);
+
+            var $lastFormGroupLast = $multipleFormGroup.find('.form-group:last');
+            if ($multipleFormGroup.data('max') <= countFormGroup($multipleFormGroup)) {
+                $lastFormGroupLast.find('.btn-add').attr('disabled', true);
+            }
+        };
+
+        var removeFormGroup = function (event) {
+            event.preventDefault();
+
+            var $formGroup = $(this).closest('.form-group');
+            var $multipleFormGroup = $formGroup.closest('.multiple-form-group');
+
+            var $lastFormGroupLast = $multipleFormGroup.find('.form-group:last');
+            if ($multipleFormGroup.data('max') >= countFormGroup($multipleFormGroup)) {
+                $lastFormGroupLast.find('.btn-add').attr('disabled', false);
+            }
+
+            $formGroup.remove();
+        };
+
+        var selectFormGroup = function (event) {
+            event.preventDefault();
+
+            var $selectGroup = $(this).closest('.input-group-select');
+            var param = $(this).attr("href").replace("#","");
+            var concept = $(this).text();
+
+            $selectGroup.find('.concept').text(concept);
+            $selectGroup.find('.input-group-select-val').val(param);
+
+        }
+
+        var countFormGroup = function ($form) {
+            return $form.find('.form-group').length;
+        };
+
+        $(document).on('click', '.btn-add', addFormGroup);
+        $(document).on('click', '.btn-remove', removeFormGroup);
+        $(document).on('click', '.dropdown-menu a', selectFormGroup);
+
+    });
+})(jQuery);
+
+/* 
+Image JQUER */
+
+
+    var app = angular.module('myApp', []);
+    app.controller('Ctrl', function ($scope) {
+        $scope.sample = [
+            {
+                name: "1",
+                type: "image/jpg",
+                size: '',
+                file: "http://www.gettyimages.com/gi-resources/images/Homepage/Hero/US/MAR2016/prestige-587705839_full.jpg"
+            },
+            {
+                name: "2",
+                size: '',
+                type: "image/jpg",
+                file: "http://i.imgur.com/RRUe0Mo.png"
+            }
+        ];
+
+        $scope.show = function(){
+            console.log('File To Send', validatedFiles);
+            console.log('Image Name to Delete', deletedImageName);
+        }
+    });
+
+    app.directive('myFilter', [function() {
+        return {
+            restrict: 'A',       
+            link: function(scope, element) {
+                // wait for the last item in the ng-repeat then call init
+                if(scope.$last) {
+                    initJqueryFiler('#gallery', scope.sample);
+                }
+            }
+        };
+        /**** Usable array ****/
+        // => validatedFiles
+        // => deletedImageName
+
+    }]);
+        
+
+
+
+
+
+</script>

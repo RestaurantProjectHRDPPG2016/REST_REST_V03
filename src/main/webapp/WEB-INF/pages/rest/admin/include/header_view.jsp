@@ -42,5 +42,24 @@
 	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 	
 	<script src="${pageContext.request.contextPath}/resources/static/js/jquery.bootpage.min.js" type="text/javascript"></script>
+	
+	
+							<!--Stylesheets-->
+	<link href="${pageContext.request.contextPath}/resources/static/css/jquery.filer.css" type="text/css" rel="stylesheet" />
+	<link href="${pageContext.request.contextPath}/resources/static/css/themes/jquery.filer-dragdropbox-theme.css" type="text/css" rel="stylesheet" />
+	<link href="${pageContext.request.contextPath}/resources/assets/fonts/jquery.filer-icons/jquery.filer.css" type="text/css" rel="stylesheet" />
+	
+	
+	
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/static/js/jquery.filer.min.js?v=1.0.5"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/static/js/custom.js?v=1.0.5"></script>
+					
+					
+					
+	
+	
+	
+	
 </head>
 <body>

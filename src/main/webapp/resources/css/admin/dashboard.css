@@ -55,3 +55,9 @@ h1{
 .container li ,a, i:hover{ 
   color: #000000;
 }
+.imgadmin{
+	background:#dddddd; margin:5px; border-radius:5px;
+}
+.imgadmin img{
+	margin:10px;
+}
