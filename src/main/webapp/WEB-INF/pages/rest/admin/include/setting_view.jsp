@@ -5,7 +5,7 @@
     pageEncoding="UTF-8"%>
     
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<div id="page-wrapper">
+<div id="page-wrapper" ng-controller="slidecontroller">
 	<div class="container-fluid">
 		<!-- Page Heading -->
 		<div class="row">

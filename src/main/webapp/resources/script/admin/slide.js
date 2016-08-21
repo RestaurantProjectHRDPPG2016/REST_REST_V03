@@ -1,6 +1,6 @@
 var app = angular.module('myApp', []);
 
-app.controller('adminCtrl', function($scope, $http, $window, $rootScope){
+app.controller('slidecontroller', function($scope, $http, $window, $rootScope){
 	
 	$scope.getSlide = function(){
 		$http({
