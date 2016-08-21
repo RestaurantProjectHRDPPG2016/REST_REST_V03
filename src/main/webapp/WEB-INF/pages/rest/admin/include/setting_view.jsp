@@ -124,7 +124,7 @@
 											<label for="status" class="cols-sm-2 control-label">Status:</label>
 											<div class="cols-sm-10">
 												<div class="input-group col-md-5 col-sm-8">
-													<input type="radio" name="status" value="1"> 1 &nbsp;
+													<input type="radio" name="status" value="1" checked="checked"> 1 &nbsp;
 													<input type="radio" name="status" value="0"> 0
 												
 													<!-- <span class="input-group-addon"><i
