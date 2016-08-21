@@ -60,7 +60,6 @@
 
 <script src="${pageContext.request.contextPath}/resources/static/js/bootstrap.min.js"
 	type="text/javascript"></script>
-<script src="${pageContext.request.contextPath}/resources/script/user/index.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/resources/script/admin/category.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/resources/static/js/bootstrap.js" type="text/javascript"></script>
 

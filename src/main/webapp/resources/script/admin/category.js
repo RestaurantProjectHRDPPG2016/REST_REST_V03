@@ -1,38 +1,57 @@
+$("#searchbtn").click(function(){
+		$("#mysearchbtn").toggle();
+	});
+	
+	$("#location").click(function(){
+		$("#	mylocation").toggle();
+	});
+
+	$(document).on('mouseenter','.default',function(){
+		$(this).hide();
+		$(this).next().show();
+	});
+	
+	$(document).on('mouseleave','.cover',function(){
+		$(this).hide();
+		$(this).prev().show();
+	});
+
+
 
 var app = angular.module('myApp', []);
 
 app.controller('adminCtrl', function($scope, $http, $window, $rootScope){
 	
 
-	//TODO: define base url
-//	var BASE_URL = "http://localhost:";
+	// TODO: define base url
+// var BASE_URL = "http://localhost:";
 	
-	//TODO: declare user object
+	// TODO: declare user object
 	var MAINCATEGORY = {};
 	
-	//TODO: default filter
+	// TODO: default filter
 	$scope.filter = {
 		page: 1,
 		limit: 18
 	};
 	
-	//TODO: 
+	// TODO:
 	$scope.paging = {};
 	
-	//TODO: 
+	// TODO:
 	var PAGINATION = angular.element('#pagination'); 
 	
-	//TODO: load Pagination
+	// TODO: load Pagination
 	MAINCATEGORY.loadPagination = function(response){
 		
-		//TODO: Initialize pagination setting
+		// TODO: Initialize pagination setting
 		$scope.paging = {
 			totalPages: response.Pagination.TOTAL_PAGES,
 			totalRecords: response.Pagination.TOTAL_COUNT,
 			currentPage: response.Pagination.PAGE,
 			limit: response.Pagination.LIMIT
 		};
-		//TODO:
+		// TODO:
 		PAGINATION.bootpag({
 	        total: $scope.paging.totalPages,
 	        page: $scope.paging.currentPage,
@@ -46,7 +65,7 @@ app.controller('adminCtrl', function($scope, $http, $window, $rootScope){
 	    });	    
 	};
 	
-	//TODO: add listener to page click
+	// TODO: add listener to page click
 	PAGINATION.on("page", function(event, pageNumber){
 		$scope.filter.page = pageNumber;
 		MAINCATEGORY.selectCategory();
@@ -71,7 +90,7 @@ app.controller('adminCtrl', function($scope, $http, $window, $rootScope){
 	}
 	
 	
-	//TODO: Reload data again
+	// TODO: Reload data again
 	MAINCATEGORY.reload = function(filter){
 		$scope.filter = filter;
 		MAINCATEGORY.selectCategory();
@@ -157,7 +176,7 @@ app.controller('adminCtrl', function($scope, $http, $window, $rootScope){
 	}
 
 
-	/*Start Restaurant Type*/
+	/* Start Restaurant Type */
 
 		// GetALL Type of restaurant
 		$scope.getRestType = function(){
@@ -229,7 +248,7 @@ app.controller('adminCtrl', function($scope, $http, $window, $rootScope){
 		}
 
 
-	/*End Restaurant Type*/
+	/* End Restaurant Type */
 		
 
 		// GetProvince
@@ -247,7 +266,7 @@ app.controller('adminCtrl', function($scope, $http, $window, $rootScope){
 		
 		// GetDistrict
 		$scope.getDistrict = function(cityId){
-			//$scope.city = $scope.province;
+			// $scope.city = $scope.province;
 			$http({
 				url: 'http://localhost:8888/cities/'+cityId+'/districts',
 				method:'GET'
@@ -272,37 +291,52 @@ app.controller('adminCtrl', function($scope, $http, $window, $rootScope){
 		}
 });
 
-/*Start Resturant Controller*/
+/* Start Resturant Controller */
 
 app.controller('restCtrl', function ($scope, $http, $window, $rootScope){
-//Pagination
+// Pagination
 	
-	//TODO: declare user object
+	// TODO: declare user object
 	var RESTAURANT = {};
 	
-	//TODO: default filter
+	$scope.name= name;
+	$scope.category = category;
+	$scope.province = province;
+	$scope.district = district;
+	$scope.commune = commune;
+	alert("Province" +$scope.province);
+	// TODO: default filter
 	$scope.filter = {
-		page: 1,
-		limit: 12
+		page		: 1,
+		limit		: 12,
+		name 		: $scope.name,	
+		c_id 		: $scope.category,
+		type_id		: '',
+		province 	: $scope.province,	
+		district 	: $scope.district,	
+		commune		: $scope.commneu
 	};
 	
-	//TODO: 
+	
+	
+	
+	// TODO:
 	$scope.paging = {};
 	
-	//TODO: 
+	// TODO:
 	var PAGINATION = angular.element('#paginationRest'); 
 	
-	//TODO: load Pagination
+	// TODO: load Pagination
 	RESTAURANT.loadPagination = function(response){
 		
-		//TODO: Initialize pagination setting
+		// TODO: Initialize pagination setting
 		$scope.paging = {
 			totalPages: response.Pagination.TOTAL_PAGES,
 			totalRecords: response.Pagination.TOTAL_COUNT,
 			currentPage: response.Pagination.PAGE,
 			limit: response.Pagination.LIMIT
 		};
-		//TODO:
+		// TODO:
 		PAGINATION.bootpag({
 	        total: $scope.paging.totalPages,
 	        page: $scope.paging.currentPage,
@@ -316,7 +350,7 @@ app.controller('restCtrl', function ($scope, $http, $window, $rootScope){
 	    });	    
 	};
 	
-	//TODO: add listener to page click
+	// TODO: add listener to page click
 	PAGINATION.on("page", function(event, pageNumber){
 		$scope.filter.page = pageNumber;
 		RESTAURANT.getRest();
@@ -330,19 +364,36 @@ app.controller('restCtrl', function ($scope, $http, $window, $rootScope){
 	RESTAURANT.getRest = function(){
 		$http({
 			url: 'http://localhost:8888/restaurant',
-			params: $scope.filter,
-			method:'GET'
+			method:'GET',
+			params: $scope.filter
 		}).then(function(response){
 			console.log(response);
 			$scope.rest=response.data.DATA;
 			RESTAURANT.loadPagination(response.data);
+			if($scope.rest.length <=0){
+				$window.location.href=("/404");
+			}
+			
 		}, function(response){
 			console.log(response);
 			alert('failed To call all data');
 		});
 	}
 	
-	//TODO: Reload data again
+	$scope.search = function(){
+		$scope.filter.name =$scope.name;
+		$scope.filter.c_id = $scope.category.id;
+		$scope.filter.type_id='';
+		$scope.filter.province =$scope.province.id;
+		$scope.filter.district =$scope.district.id;
+		$scope.filter.commune =$scope.commune.id;
+		RESTAURANT.getRest();
+		$window.location.href="/search_result?name="+$scope.name+"&category="
+		+$scope.filter.c_id+"&province="+$scope.filter.province+"&district="+$scope.filter.district+"&commune="+$scope.filter.commune;
+		
+	}
+	
+	// TODO: Reload data again
 	$scope.reload = function(filter){
 		$scope.filter = filter;
 		RESTAURANT.getRest();
@@ -459,7 +510,7 @@ app.controller('restCtrl', function ($scope, $http, $window, $rootScope){
 	}
 	
 	RESTAURANT.updateRestaurant= function(){
-		//console.log(id);
+		// console.log(id);
 		var frmData = new FormData();
 		var tel = $('input[name=tel]');
 
@@ -532,38 +583,38 @@ app.controller('MyAdCtrl', function ($scope, $http, $window, $rootScope){
 	
 });
 
-/*ENd Restuarant Controller*/
+/* ENd Restuarant Controller */
 
 app.controller('MyCatCtrl', function ($scope, $http, $window, $rootScope){
 	// GetRestaurant By ID
-//getRestaurantByCategory(Cate ID)
+// getRestaurantByCategory(Cate ID)
 	
-	//TODO: declare user object
+	// TODO: declare user object
 	var RESTAURANT = {};
 	
-	//TODO: default filter
+	// TODO: default filter
 	$scope.filter = {
 		page: 1,
-		limit: 10
+		limit: 12
 	};
 	
-	//TODO: 
+	// TODO:
 	$scope.paging = {};
 	
-	//TODO: 
-	var PAGINATION = angular.element('#pagination'); 
+	// TODO:
+	var PAGINATION = angular.element('#paginationbyCategory'); 
 	
-	//TODO: load Pagination
+	// TODO: load Pagination
 	RESTAURANT.loadPagination = function(response){
 		
-		//TODO: Initialize pagination setting
+		// TODO: Initialize pagination setting
 		$scope.paging = {
 			totalPages: response.Pagination.TOTAL_PAGES,
 			totalRecords: response.Pagination.TOTAL_COUNT,
 			currentPage: response.Pagination.PAGE,
 			limit: response.Pagination.LIMIT
 		};
-		//TODO:
+		// TODO:
 		PAGINATION.bootpag({
 	        total: $scope.paging.totalPages,
 	        page: $scope.paging.currentPage,
@@ -573,11 +624,11 @@ app.controller('MyCatCtrl', function ($scope, $http, $window, $rootScope){
 	        last: '→',
 	        next: 'Next',
 	        prev: 'Prev',
-	        maxVisible: 10
+	        maxVisible: 12
 	    });	    
 	};
 	
-	//TODO: add listener to page click
+	// TODO: add listener to page click
 	PAGINATION.on("page", function(event, pageNumber){
 		$scope.filter.page = pageNumber;
 		RESTAURANT.getRest();
@@ -594,29 +645,26 @@ app.controller('MyCatCtrl', function ($scope, $http, $window, $rootScope){
 		console.log(response);
 		$scope.MyCategories=response.data.DATA;
 		RESTAURANT.loadPagination(response.data);
-		
 		if($scope.MyCategories.length <=0){
-			$scope.getNotFound();
+			$window.location.href=("/404");
 		}
 		
 	}, function(response){
 		console.log(response);
-		/*alert('failed to call Categories');*/
 	});
 }
 	
-	$scope.getNotFound= function(){
-		$window.location.href=("/404");
-	}
-	
-	//TODO: Reload data again
+	// TODO: Reload data again
 	$scope.reload = function(filter){
 		$scope.filter = filter;
 		RESTAURANT.getRestaurantByCategory(cat_id);
 	};
 	RESTAURANT.getRestaurantByCategory(cat_id);
+});
 
-//	getRestaurantByType(Type ID)
+
+app.controller('MyTypeCtrl', function ($scope, $http, $window, $rootScope){
+// getRestaurantByType(Type ID)
 	RESTAURANT.getRestaurantByType = function(type_id){
 		$http({
 			url: 'http://localhost:8888/restaurant/type/'+type_id,
@@ -633,10 +681,10 @@ app.controller('MyCatCtrl', function ($scope, $http, $window, $rootScope){
 			
 		}, function(response){
 			console.log(response);
-			/*alert('failed To call Restaurant Type');*/
+			/* alert('failed To call Restaurant Type'); */
 		});
 	}
-	//TODO: Reload data again
+	// TODO: Reload data again
 	$scope.reload = function(filter){
 		$scope.filter = filter;
 		RESTAURANT.getRestaurantByType(type_id);
@@ -645,5 +693,5 @@ app.controller('MyCatCtrl', function ($scope, $http, $window, $rootScope){
 	
 });
 //
-//GET rest By ID
+// GET rest By ID
 

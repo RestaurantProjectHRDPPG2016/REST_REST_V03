@@ -1,3 +1,12 @@
+<%-- 
+	<!--Stylesheets-->
+	<link href="${pageContext.request.contextPath}/resources/static/css/jquery.filer.css" type="text/css" rel="stylesheet" />
+	<link href="${pageContext.request.contextPath}/resources/static/css/themes/jquery.filer-dragdropbox-theme.css" type="text/css" rel="stylesheet" />
+
+	<!--jQuery-->
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/static/js/jquery.filer.min.js?v=1.0.5"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/static/js/custom.js?v=1.0.5"></script>
+	 --%>
 <%@include file="header_view.jsp"%>
 					
 <%-- <%@include file="menu_top_view.jsp" %> --%>
@@ -6,20 +15,14 @@
     pageEncoding="UTF-8"%>
     
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
 <div id="page-wrapper" ng-controller="restCtrl">
 	<div class="container-fluid">
 		<!-- Page Heading -->
 		<div class="row">
 			<div class="col-lg-12">
 				<h1 class="page-header">Restaurant</h1>
-				<button type="button" class="btn btn-success" data-dismiss="modal"
-					id="myTel-info">Telephone</button>
-				<button type="button" class="btn btn-success" data-dismiss="modal"
-					id="myRestImg-info">Image</button>
-				<button type="button" class="btn btn-success" data-dismiss="modal"
-					id="myRestMenu-info">Menu</button>
-				<button type="button" class="btn btn-success" data-dismiss="modal"
-					id="myRestProduct-info">Product</button>
+				
 
 				<ol class="breadcrumb">
 					<li><i class="fa fa-dashboard"></i> <a href="index.html">Dashboard</a>
@@ -69,21 +72,17 @@
 										<a href="/restaurant_detail_view/{{r.id}}" class="btn btn-primary">
 											<span class="glyphicon glyphicon-level-up"></span>
 										</a>
-									
-										
-										
 									</td>
 								</tr>
 							</tbody>
 						</table>
-					<div id="pagination">
-					</div>
+						<div id="paginationRest"></div>
 
 						<!-- Modal -->
 					<div class="modal fade" id="myModal1" role="dialog">
 						<div class="modal-dialog modal-lg">
 
-							<!-- Modal content -->
+							Modal content
 							<div class="modal-content">
 								<div class="modal-header">
 									<button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -103,7 +102,7 @@
 												</div>
 											</div>
 										</div>
-										<div>
+			
 											<div class="form-group" ng-controller="adminCtrl">
 												<label for="name" class="cols-sm-2 col-md-2 control-label">Restaurant Category:</label>
 												<div class="cols-sm-10">
@@ -115,7 +114,6 @@
 
 												</div>
 											</div>
-										</div>
 										
 										<div class="form-group">
 											<label for="name" class="cols-sm-2 col-md-2 control-label">Description:</label>
@@ -257,12 +255,12 @@
 														type="number" class="form-control" name="tel" id="tel"
 														ng-model="tel" placeholder="Enter Telephone 2" />
 												</div>
-											</div> -->
+											</div>
 											
 											<div class="contacts">
-											<div class="col-md-2">
+											<div class="col-md-2"> -->
                 <label>Contacts:</label>
-                </div>
+             
                     <div class="form-group multiple-form-group input-group col-md-6 col-md-offset-2">
                         <div class="input-group-btn input-group-select">
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -276,25 +274,16 @@
                             <button type="button" class="btn btn-success btn-add">+</button>
                         </span>
                     </div>
-                </div>
-            </div>
-											
-										</div>
+                </div>			
 
 										<div class="form-group">
 											<label for="name" class="cols-sm-2 col-md-2 control-label">Images:</label>
 											<div class="cols-sm-10">
 												<div class="input-group col-md-6">
-													<!-- <input type="file" name="img" id="img" ng-model="images"
-														multiple class="file-loading" multiple> -->
+													<input type="file" name="img" id="img" ng-model="images"
+														multiple class="file-loading" multiple> 
 
-												<!-- 	<div id="content">
-
-														<h4 ng-repeat="s in sample" my-filter>Example 2:</h4>
-														<input type="file" name="files[]" id="gallery"
-															multiple="multiple">
-														<h1 ng-click="show()">Show</h1>
-													</div> -->
+		
 
 												</div>
 											</div>
@@ -303,14 +292,11 @@
 										<div class="form-group">
 											<label for="name" class="cols-sm-2 col-md-2 control-label">Menus:</label>
 											<div class="cols-sm-10">
-												<!-- <div class="input-group col-md-6">
-													<input type="file" name="menus" id="menus" ng-model="menus"
-														multiple class="file-loading" multiple>
-												</div> -->
 												<div class="input-group col-md-6">
 													<input type="file" name="menus" id="menus" ng-model="menus"
 														multiple class="file-loading" multiple>
 												</div>
+												
 											</div>
 										</div>
 
@@ -328,261 +314,60 @@
 							</div>
 
 						</div>
-					</div>
+					</div> 
 						
 					</div>
 				</div>
-			</div>
-		</div>
-		<!-- /.row -->
-
-		<div class="col-lg-12 display-none" id="Tel-info">
-			<h2>Telephone</h2>
-			<div class="table-responsive">
-				<table class="table table-bordered table-hover">
-					<thead>
-						<tr>
-							<th>Brand_ID</th>
-							<th>Name</th>
-							<th>Tel</th>
-							<th>Action</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th>1</th>
-							<th>Sovanna</th>
-							<th>0909</th>
-							<th>
-								<button class="btn btn-primary">
-									<span class="glyphicon glyphicon-trash"></span>
-								</button>
-								<button class="btn btn-primary">
-									<span class="glyphicon glyphicon-pencil"></span>
-								</button>
-							</th>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-
-		<div class="col-lg-12 display-none" id="RestImg-info">
-			<h2>Image</h2>
-			<div class="table-responsive">
-				<table class="table table-bordered table-hover">
-					<thead>
-						<tr>
-							<th>Brand_ID</th>
-							<th>Brand_Name</th>
-							<th>Image</th>
-							<th>Action</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th>1</th>
-							<th>Pizza</th>
-							<th>Image</th>
-							<th>
-								<button class="btn btn-primary">
-									<span class="glyphicon glyphicon-trash"></span>
-								</button>
-								<button class="btn btn-primary">
-									<span class="glyphicon glyphicon-pencil"></span>
-								</button>
-							</th>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-
-		<div class="col-lg-12 display-none" id="RestMenu-info">
-			<h2>Menu</h2>
-			<div class="table-responsive">
-				<table class="table table-bordered table-hover">
-					<thead>
-						<tr>
-							<th>Brand_ID</th>
-							<th>Brand_Name</th>
-							<th>Menu Img</th>
-							<th>Action</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th>1</th>
-							<th>Pizza</th>
-							<th>Image</th>
-							<th>
-								<button class="btn btn-primary">
-									<span class="glyphicon glyphicon-trash"></span>
-								</button>
-								<button class="btn btn-primary">
-									<span class="glyphicon glyphicon-pencil"></span>
-								</button>
-							</th>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-lg-12 display-none" id="RestProduct-info">
-				<h2>Products</h2>
-				<div class="table-responsive">
-					<table class="table table-bordered table-hover">
-						<thead>
-							<tr>
-								<th>Rest_ID</th>
-								<th>Pro_ID</th>
-								<th>Pro_Name</th>
-								<th>Pro_Detail</th>
-								<th>Pro_Price</th>
-								<th>Pro_Type</th>
-								<th>Pro_Date</th>
-								<th>Action</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<th>1</th>
-								<th>1</th>
-								<th>Pro_Name</th>
-								<th>Pro_Detail</th>
-								<th>Pro_Price</th>
-								<th>Pro_Type</th>
-								<th>Pro_Date</th>
-								<th>
-									<button class="btn btn-warning">
-										<span class="glyphicon glyphicon-trash"></span>
-									</button>
-									<button class="btn btn-success">
-										<span class="glyphicon glyphicon-pencil"></span>
-									</button>
-									<button class="btn btn-primary">
-										<span class="glyphicon glyphicon-th"></span>
-									</button>
-								</th>
-							</tr>
-						</tbody>
-					</table>
 				</div>
 			</div>
 		</div>
-
-	</div>
 	<!-- /.row -->
 </div>
 <!-- /.container-fluid -->
-
-
 <!-- /#page-wrapper -->
 <!-- /#wrapper -->
 <%@include file="footer_view.jsp"%>
 
-<script>
-(function ($) {
-    $(function () {
-
-        var addFormGroup = function (event) {
-            event.preventDefault();
-
-            var $formGroup = $(this).closest('.form-group');
-            var $multipleFormGroup = $formGroup.closest('.multiple-form-group');
-            var $formGroupClone = $formGroup.clone();
-
-            $(this)
-                .toggleClass('btn-success btn-add btn-danger btn-remove')
-                .html('–');
-
-            $formGroupClone.find('input').val('');
-            $formGroupClone.find('.concept').text('Phone');
-            $formGroupClone.insertAfter($formGroup);
-
-            var $lastFormGroupLast = $multipleFormGroup.find('.form-group:last');
-            if ($multipleFormGroup.data('max') <= countFormGroup($multipleFormGroup)) {
-                $lastFormGroupLast.find('.btn-add').attr('disabled', true);
-            }
-        };
-
-        var removeFormGroup = function (event) {
-            event.preventDefault();
-
-            var $formGroup = $(this).closest('.form-group');
-            var $multipleFormGroup = $formGroup.closest('.multiple-form-group');
-
-            var $lastFormGroupLast = $multipleFormGroup.find('.form-group:last');
-            if ($multipleFormGroup.data('max') >= countFormGroup($multipleFormGroup)) {
-                $lastFormGroupLast.find('.btn-add').attr('disabled', false);
-            }
-
-            $formGroup.remove();
-        };
-
-        var selectFormGroup = function (event) {
-            event.preventDefault();
-
-            var $selectGroup = $(this).closest('.input-group-select');
-            var param = $(this).attr("href").replace("#","");
-            var concept = $(this).text();
-
-            $selectGroup.find('.concept').text(concept);
-            $selectGroup.find('.input-group-select-val').val(param);
-
-        }
-
-        var countFormGroup = function ($form) {
-            return $form.find('.form-group').length;
-        };
-
-        $(document).on('click', '.btn-add', addFormGroup);
-        $(document).on('click', '.btn-remove', removeFormGroup);
-        $(document).on('click', '.dropdown-menu a', selectFormGroup);
-
-    });
-})(jQuery);
-
-/* 
-Image JQUER */
-     var app = angular.module('myApp', []);
-    app.controller('Ctrl', function ($scope) {
-        $scope.sample = [
-            {
-                name: "1",
-                type: "image/jpg",
-                size: '',
-                file: "http://www.gettyimages.com/gi-resources/images/Homepage/Hero/US/MAR2016/prestige-587705839_full.jpg"
-            },
-            {
-                name: "2",
-                size: '',
-                type: "image/jpg",
-                file: "http://i.imgur.com/RRUe0Mo.png"
-            }
-        ];
-
-        $scope.show = function(){
-            console.log('File To Send', validatedFiles);
-            console.log('Image Name to Delete', deletedImageName);
-        }
-    });
-
-    app.directive('myFilter', [function() {
-        return {
-            restrict: 'A',       
-            link: function(scope, element) {
-                // wait for the last item in the ng-repeat then call init
-                if(scope.$last) {
-                    initJqueryFiler('#gallery', scope.sample);
+ <script type="text/javascript">
+        var app = angular.module('myApp', []);
+        app.controller('Ctrl', function ($scope) {
+            $scope.sample = [
+                {
+                    name: "1",
+                    type: "image/jpg",
+                    size: '',
+                    file: "http://www.gettyimages.com/gi-resources/images/Homepage/Hero/US/MAR2016/prestige-587705839_full.jpg"
+                },
+                {
+                    name: "2",
+                    size: '',
+                    type: "image/jpg",
+                    file: "http://i.imgur.com/RRUe0Mo.png"
                 }
-            }
-        };
-        /**** Usable array ****/
-        // => validatedFiles
-        // => deletedImageName
+            ];
 
-    }]); 
-</script>
+            $scope.show = function(){
+                console.log('File To Send', validatedFiles);
+                console.log('Image Name to Delete', deletedImageName);
+            }
+        });
+
+        app.directive('myFilter', [function() {
+            return {
+                restrict: 'A',       
+                link: function(scope, element) {
+                    // wait for the last item in the ng-repeat then call init
+                    if(scope.$last) {
+                        initJqueryFiler('#gallery', scope.sample);
+                    }
+                }
+            };
+            /**** Usable array ****/
+            // => validatedFiles
+            // => deletedImageName
+
+        }]);
+            
+    </script>
+
+

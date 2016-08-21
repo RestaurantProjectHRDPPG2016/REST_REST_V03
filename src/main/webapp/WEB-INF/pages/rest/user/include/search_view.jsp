@@ -9,71 +9,97 @@
 		<img class="img-responsive" style="padding:10px;" src="${pageContext.request.contextPath}/resources/upload/playlist/img/freshologo.png"/>
 	</a>
 	</div>
+	 
 <div class="col-md-10"  ng-controller="adminCtrl" style="margin-top:30px;" >
+<form class="navbar-search" role="search" >
  	<div class="col-md-8">
-            <form class="navbar-search" role="search">
+           
+            <span ng-controller='restCtrl'>
                 <div class="input-group">
-        
-                    <input type="text" class="form-control">
+        			<script>
+        				var name = '${name }';
+        				var category = '${category }';
+        				
+        			</script>
+                    <input type="text" class="form-control" ng-model="name" >
                 
                     <div class="input-group-btn">
-                        <button type="button" class="btn btn-search btn-success">
+                        <button type="button" class="btn btn-search btn-success" ng-click="search()">
                             <span class="glyphicon glyphicon-search"></span>
                             <span class="label-icon">Search</span>
                         </button>
-                        <button type="button" id="listcategory" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
-                            <span class="caret"></span>
+                        <button type="button" class="btn btn-success dropdown-toggle" >
+                          <select
+											name="category" id="category" ng-model="category"
+											ng-options="c as c.name for c in myCat track by c.id">
+
+											<option value="" style="display: none"> Category </option>
+
+										</select>
                         </button>
-                        <ul class="dropdown-menu pull-right" role="menu" id="mylistcategory">
-                          <li ng-repeat="c in myCat">
-                                <a href="">
-                                    <span class="glyphicon glyphicon-chevron-right"></span>
-                                    <span class="label-icon">{{c.name}}</span>
-                                </a>
-                            </li>
-                        </ul>
                     </div>
                 </div>  
-            </form>   
+                </span>
+           
         
 </div>
   <div class="col-md-4" style="margin-top:0px; float:right;"> 
  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+ 					<script>
+        				
+        				var province = '${province}';
+        			//	var province ="abc"
+                        var district = '${district}';
+        				var commune = '${commune}';
+        				alert("province=>"+province)
+        			</script>
                 <input type="button" class="form-control" id="location"  value="Phnom Penh, Tul Kork"/>
                 <div class="input-group-btn">
+              
                     <div class="btn-group" role="group">
                         <div class="dropdown dropdown-lg">
                            
                             <div class="dropdown-menu dropdown-menu-right" role="menu" id="mylocation">
-                                <form class="form-horizontal" role="form">
+                               
                                   <div class="form-group">
-                                    <label for="filter">Filter by</label> <select class="form-control"
+                                    <label for="filter">Filter by</label> 
+                                    <select class="form-control"
 											name="province" id="type" ng-model="province"
 											ng-change="getDistrict(province.id)"
 											ng-options="p as p.khmer_name for p in myProvince track by p.id">
 
-											<option value="" style="display: none">-- Please
-												Select City or Province --</option>
+											<option value="" style="display: none"> City or Province </option>
 
-										</select> <select class="form-control" name="district"
+										</select> 
+										</div>
+										
+										<br>
+										 <div class="form-group">
+										<select class="form-control" name="district"
 											id="type" ng-model="district"
 											ng-change="getCommune(district.id)"
 											ng-options="d as d.khmer_name for d in myDistrict track by d.id">
-											<option value="" style="display: none">-- Please
-												Select District --</option>
-										</select> <select class="form-control" name="commune"
+											<option value="" style="display: none"> District </option>
+										</select> 
+										</div>
+										<br>
+										 <div class="form-group">
+										<select class="form-control" name="commune"
 											id="type" ng-model="commune"
 											ng-options="c as c.khmer_name for c in myCommune track by c.id">
 
-											<option value="" style="display: none">-- Please
-												Select Commune --</option>
+											<option value="" style="display: none"> Commune </option>
 
 										</select>
 									</div>
-                                   <div class="form-group">
-                                    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"> &nbspAuto search youra location here</span></button>
-                                  </div>
-                                </form>
+									<br>
+									<div style="clear: both;"></div>
+                                 <div class="form-group">
+                                    <button type="submit" class="btn btn-default btn-sm">
+                                    	<span class="glyphicon glyphicon-map-marker" aria-hidden="true">Auto search youra location here</span>
+                                    </button>
+                                  </div> 
+                            
                             </div>
                         </div>
                         <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-map-marker" aria-hidden="false"></span></button>
@@ -84,12 +110,15 @@
   </div>
   <br><br>
             Type : &nbsp <a  ng-repeat="r in myrestType" style="font-size:12px;" href="/typerestaurant/{{r.id}}">{{r.name}}</a>
+              </form>  
 </div>
+
 </div>
 		
 
   <div id="out" style="display:none"></div>
 <script>
+
 
 $(document).ready(function() {
 
@@ -117,7 +146,7 @@ $(document).ready(function() {
 			var longitude = position.coords.longitude;
 
 			output.innerHTML = '<p>Latitude is ' + latitude
-					+ '° <br>Longitude is ' + longitude + '°</p>';
+					+ '<br>Longitude is ' + longitude + '°</p>';
 
 			var img = new Image();
 			img.src = "https://maps.googleapis.com/maps/api/staticmap?center="

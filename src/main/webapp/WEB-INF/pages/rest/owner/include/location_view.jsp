@@ -19,7 +19,7 @@
                 <section>  
 			    <span ng-repeat="image in r.images">
 				    <center><img class="thumbnail example-image-link img-responsive"  style=" width: 350px; height: 350px; "
-				    src="${pageContext.request.contextPath}/resources/upload/owner/img/1111.jpg"/>
+				    src="http://localhost:8888/{{image.url}}"/>
 				    </center>
 			  </span>
 			  </section>

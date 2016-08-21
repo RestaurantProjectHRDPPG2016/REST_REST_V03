@@ -30,14 +30,12 @@
 	<!-- My Styles -->
 			<link rel="stylesheet" type="text/css"
 				href="${pageContext.request.contextPath}/resources/css/admin/dashboard.css">
-	<!-- Youra of Script -->
-	<script src="${pageContext.request.contextPath}/resources/script/user/index.js" type="text/javascript"></script>
 
 	<!-- Rany Script -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		
 		
-<script src="${pageContext.request.contextPath}/resources/static/js/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<!-- W3CSS -->
 	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 	
