@@ -163,3 +163,4 @@
 <!-- /#page-wrapper -->
 <!-- /#wrapper -->
 <%@include file="footer_view.jsp"%>
+<script src="${pageContext.request.contextPath}/resources/script/admin/slide.js" type="text/javascript"></script>	

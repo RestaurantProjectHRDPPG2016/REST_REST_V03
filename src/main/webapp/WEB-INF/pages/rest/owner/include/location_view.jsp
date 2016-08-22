@@ -57,6 +57,7 @@
 	src='https://embedmaps.com/google-maps-authorization/script.js?id=e42d15d3ac86099fdc2aea26f3228eea98aeab26'></script>
 <script type='text/javascript'>
 	function init_map() {
+
 		var myOptions = {
 			zoom : 16,
 			center : new google.maps.LatLng(11.576680820313506,
@@ -72,7 +73,7 @@
 		});
 		infowindow = new google.maps.InfoWindow(
 				{
-					content : '<strong>Youra Houwse</strong><br>3333<br> Phnom Penh <br><br><img src="IMG_4728.JPG" style="width:20px;"/>'
+					content : '<strong>Youra</strong><br>3333<br> Phnom Penh <br><br><img src="IMG_4728.JPG" style="width:20px;"/>'
 				});
 		google.maps.event.addListener(marker, 'click', function() {
 			infowindow.open(map, marker);
