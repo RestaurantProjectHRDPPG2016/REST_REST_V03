@@ -298,7 +298,7 @@ app.controller('restCtrl', function ($scope, $http, $window, $rootScope){
 	
 	// TODO: declare user object
 	var RESTAURANT = {};
-	
+//	fasdfasdfsa
 //	$scope.name= name;
 //	$scope.category = category;
 //	$scope.province = province;
