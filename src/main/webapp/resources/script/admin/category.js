@@ -299,11 +299,11 @@ app.controller('restCtrl', function ($scope, $http, $window, $rootScope){
 	// TODO: declare user object
 	var RESTAURANT = {};
 	
-	$scope.name= name;
-	$scope.category = category;
-	$scope.province = province;
-	$scope.district = district;
-	$scope.commune = commune;
+//	$scope.name= name;
+//	$scope.category = category;
+//	$scope.province = province;
+//	$scope.district = district;
+//	$scope.commune = commune;
 	alert("Province" +$scope.province);
 	// TODO: default filter
 	$scope.filter = {
@@ -381,6 +381,18 @@ app.controller('restCtrl', function ($scope, $http, $window, $rootScope){
 	}
 	
 	$scope.search = function(){
+		console.log($scope.province);
+		if($scope.province==undefined){
+			$scope.province='';
+			alert("province undefinded yes yse");
+		}
+		if($scope.province==undefined){
+			$scope.district='';
+		}
+		if($scope.province==undefined){
+			$scope.commune='';
+		}
+		
 		$scope.filter.name =$scope.name;
 		$scope.filter.c_id = $scope.category.id;
 		$scope.filter.type_id='';

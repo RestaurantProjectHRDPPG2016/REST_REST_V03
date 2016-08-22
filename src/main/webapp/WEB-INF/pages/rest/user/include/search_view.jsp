@@ -11,9 +11,9 @@
 	</div>
 	 
 <div class="col-md-10"  ng-controller="adminCtrl" style="margin-top:30px;" >
-<form class="navbar-search" role="search" >
+  <form class="navbar-search" role="search"  ng-submit="$event.preventDefault()">
  	<div class="col-md-8">
-           
+         
             <span ng-controller='restCtrl'>
                 <div class="input-group">
         			<script>
@@ -38,6 +38,7 @@
 										</select>
                         </button>
                     </div>
+                 
                 </div>  
                 </span>
            
@@ -106,11 +107,11 @@
                     </div>
                 </div>
             </div>
- 
+    </form>  
   </div>
   <br><br>
             Type : &nbsp <a  ng-repeat="r in myrestType" style="font-size:12px;" href="/typerestaurant/{{r.id}}">{{r.name}}</a>
-              </form>  
+
 </div>
 
 </div>

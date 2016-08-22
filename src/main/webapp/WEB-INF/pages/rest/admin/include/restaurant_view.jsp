@@ -32,16 +32,18 @@
 			</div>
 		</div>
 		<!-- /.row -->
-
-		<div class="row">
-			<div class="col-lg-12" id="Res-info">
+<div class="panel panel-default">
+		
+			<div class="panel-heading" id="Res-info">
 				<h2>Restaurant Information</h2>
+			</div>
+			<div class="panel-body">
 				<div class="table-responsive">
 
 					<button class="btn btn-success" data-toggle="modal"
 						data-target="#myModal1" ng-click="addButton()">Add New</button>
 
-					
+					<p>&nbsp</p>
 					<div>
 						<table class="table table-bordered table-hover">
 							<thead>
@@ -320,6 +322,7 @@
 				</div>
 				</div>
 			</div>
+			</div>
 		</div>
 	<!-- /.row -->
 </div>
@@ -328,46 +331,5 @@
 <!-- /#wrapper -->
 <%@include file="footer_view.jsp"%>
 
- <script type="text/javascript">
-        var app = angular.module('myApp', []);
-        app.controller('Ctrl', function ($scope) {
-            $scope.sample = [
-                {
-                    name: "1",
-                    type: "image/jpg",
-                    size: '',
-                    file: "http://www.gettyimages.com/gi-resources/images/Homepage/Hero/US/MAR2016/prestige-587705839_full.jpg"
-                },
-                {
-                    name: "2",
-                    size: '',
-                    type: "image/jpg",
-                    file: "http://i.imgur.com/RRUe0Mo.png"
-                }
-            ];
-
-            $scope.show = function(){
-                console.log('File To Send', validatedFiles);
-                console.log('Image Name to Delete', deletedImageName);
-            }
-        });
-
-        app.directive('myFilter', [function() {
-            return {
-                restrict: 'A',       
-                link: function(scope, element) {
-                    // wait for the last item in the ng-repeat then call init
-                    if(scope.$last) {
-                        initJqueryFiler('#gallery', scope.sample);
-                    }
-                }
-            };
-            /**** Usable array ****/
-            // => validatedFiles
-            // => deletedImageName
-
-        }]);
-            
-    </script>
 
 
