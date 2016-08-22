@@ -5,70 +5,15 @@
 <div class="container"
 	style="border: solid 1px #dddddd; border-radius: 5px; margin-top: 10px; margin-bottom: 10px; padding: 0px;"
 	ng-controller="restCtrl">
-
-	<div class="col-md-3"
-		style="padding: 0px; border-right: 5px solid white;" ng-controller="restCtrl" >
-		<div class="row" ng-controller="adminCtrl">
-			<div class="col-lg-12 col-md-12 col-md-offset-3 col-lg-offset-0">
-				<div class="well">
-					<h3 align="center">Search Filter</h3>
-					<form class="form-horizontal">
-						<div class="form-group">
-							<label for="location1" class="control-label">Province</label> <select
-								class="form-control" name="province" id="type"
-								ng-model="province" ng-change="getDistrict(province.id)"
-								ng-options="p as p.khmer_name for p in myProvince track by p.khmer_name">
-
-								<option value="" style="display: none">City or Province
-								</option>
-
-							</select>
-						</div>
-						<div class="form-group">
-							<label for="location1" class="control-label">District</label> <select
-								class="form-control" name="district" id="type"
-								ng-model="district" ng-change="getCommune(district.id)"
-								ng-options="d as d.khmer_name for d in myDistrict track by d.khmer_name">
-								<option value="" style="display: none">District</option>
-							</select>
-						</div>
-						<div class="form-group">
-							<label for="location1" class="control-label">Commune</label> <select
-								class="form-control" name="commune" id="type" ng-model="commune"
-								ng-options="c as c.khmer_name for c in myCommune track by c.khmer_name">
-
-								<option value="" style="display: none">Commune</option>
-
-							</select>
-						</div>
-						<div class="form-group">
-							<label for="type1" class="control-label">Type</label> <select
-								class="form-control" name="commune" id="type" ng-model="commune"
-								ng-options="c as c.name for c in myCat track by c.id">
-
-								<option value="" style="display: none">ប្រភេទ</option>
-							</select>
-
-						</div>
-						<div class="form-group">
-							<button class="btn btn-primary btn-sm btn-block" type="submit"
-								ng-click="search()">
-								Search &nbsp &nbsp <span class="glyphicon glyphicon-search"></span>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
 	<div class="col-md-9" style="border:solid 1px #dddddd">
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"
 			ng-repeat="r in rest">
 			<div class="col-md-4">
-			<a href="/detail/{{r.id}}"> <span ng-repeat="img in r.images">
+			<!-- <a href="/detail/{{r.id}}"> <span ng-repeat="img in r.images">
 					<img class="img-responsive" style="width: 100px; height: 100px;"
 					src="http://localhost:8888/{{img.url}}" />
 			</span>
-			</a>
+			</a> -->
 		</div>
 		<div class="col-md-8">
 				<div>
@@ -107,10 +52,10 @@
 </div>
 
 <script>
+category ="${category}";
+province ="${province}";
+district ="${district}";
+commune ="${commune}";
+name = "${name}";
 
-/* c_id = "$c_id";
-type_id ="$type_id";
-province ="$proviince";
-district ="$district";
-commune ="$commune"; */
 </script> 

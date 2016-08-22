@@ -1,3 +1,4 @@
+$(document).ready(function(){
 $("#searchbtn").click(function(){
 		$("#mysearchbtn").toggle();
 	});
@@ -16,7 +17,7 @@ $("#searchbtn").click(function(){
 		$(this).prev().show();
 	});
 
-
+});
 
 var app = angular.module('myApp', []);
 
@@ -72,10 +73,18 @@ app.controller('adminCtrl', function($scope, $http, $window, $rootScope){
 	});
 	
 	
-	$scope.$watch('category', function(newValue){
-		$rootScope.subCategoryId = newValue;
+	$scope.$watch('province', function(newValue){
+		$rootScope.subprovinceId = newValue;
 	});
 
+	$scope.$watch('district', function(newValue){
+		$rootScope.subdistrictId = newValue;
+	});
+	
+	$scope.$watch('commune', function(newValue){
+		$rootScope.subcommuneId = newValue;
+	});
+	
 	MAINCATEGORY.selectCategory = function(){
 		$http({
 			url : 'http://localhost:8888/maincategory',
@@ -265,10 +274,15 @@ app.controller('adminCtrl', function($scope, $http, $window, $rootScope){
 		$scope.getProvince();
 		
 		// GetDistrict
-		$scope.getDistrict = function(cityId){
+		$scope.getDistrict = function(province){
+			
+			
+			$scope.filter.province = province.id;
+			
+			console.log($scope.filter);
 			// $scope.city = $scope.province;
 			$http({
-				url: 'http://localhost:8888/cities/'+cityId+'/districts',
+				url: 'http://localhost:8888/cities/'+province.id+'/districts',
 				method:'GET'
 			}).then(function(response){
 				
@@ -279,15 +293,24 @@ app.controller('adminCtrl', function($scope, $http, $window, $rootScope){
 		}
 	
 		// Getcommune
-		$scope.getCommune = function(districtId){
+		$scope.getCommune = function(district){
+			console.log(district);
+			$scope.filter.district =district.id;
+			
+			
 			$http({
-				url: 'http://localhost:8888/districts/'+districtId+'/commnunes',
+				url: 'http://localhost:8888/districts/'+district.id+'/commnunes',
 				method:'GET'
 			}).then(function(response){
 				$scope.myCommune=response.data.DATA;
 			}, function(response){
 				alert('failed To call all data');
 			});
+		}
+		$scope.communeChange = function(communeforsearch){
+			console.log(communeforsearch);
+			$scope.filter.commune =communeforsearch.id;
+			
 		}
 });
 
@@ -303,20 +326,32 @@ app.controller('restCtrl', function ($scope, $http, $window, $rootScope){
 //	$scope.provinceforsearch = provinceforsearch;
 //	$scope.districtforsearch = districtforsearch;
 //	$scope.communeforsearch = communeforsearch;
-//	alert("Province in js is" +$scope.provinceforsearch);
 	// TODO: default filter
+	
+//	$scope.filter = {
+//		page		: 1,
+//		limit		: 12,
+//		name 		: (name) ? name : $scope.nameforsearch,	
+//		c_id 		:  (category) ? category: $scope.categoryforsearch,
+//		province 	: (province) ? province : $scope.provinceforsearch,	
+//		district 	: (district) ? district : $scope.districtforsearch,	
+//		commune		: (commune) ? commune : $scope.communeforsearch
+//	};
+		
 	$scope.filter = {
 		page		: 1,
 		limit		: 12,
-		name 		: $scope.nameforsearch,	
-		c_id 		: $scope.categoryforsearch,
-		type_id		: '',
-		province 	: $scope.provinceforsearch,	
-		district 	: $scope.districtforsearch,	
-		commune		: $scope.communeforsearch
+		name 		: (typeof name === "undefined") ? '' : name,	
+		c_id 		: (typeof category === "undefined") ? '' : category,
+		province 	: (typeof province === "undefined") ? '' : province,	
+		district 	: (typeof district === "undefined") ? '' : district,	
+		commune		: (typeof commune === "undefined") ? '' : commune,	
 	};
 	
 	
+	$scope.categoryChange = function(c){
+		console.log(c);
+	};
 	
 	
 	// TODO:
@@ -363,57 +398,51 @@ app.controller('restCtrl', function ($scope, $http, $window, $rootScope){
 	RESTAURANT.getRest = function(){
 		$http({
 			url: 'http://localhost:8888/restaurant',
-			method:'GET',
-			params: $scope.filter
+			params: $scope.filter,
+			method:'GET'
+		
 		}).then(function(response){
 			console.log(response);
 			$scope.rest=response.data.DATA;
 			RESTAURANT.loadPagination(response.data);
-			if($scope.rest.length <=0){
-				$window.location.href=("/404");
-			}
+//			if($scope.rest.length <=0){
+//				$window.location.href=("/404");
+//			}
 			
 		}, function(response){
 			console.log(response);
-			alert('failed To call all data');
+			alert('failed To call all data From GEt all Restaurant By search');
 		});
 	}
+	RESTAURANT.getRest();
 	
 	$scope.search = function(){
-		console.log($scope.province);
-		if($scope.provinceforsearch==undefined){
-			$scope.provinceforsearch='';
-			alert("province undefinded yes yse");
-		}
-		if($scope.districtforsearch==undefined){
-			$scope.district='';
-		}
-		if($scope.provinceforsearch==undefined){
-			$scope.communeforsearch='';
-		}
+		$scope.filter.name = ($scope.nameforsearch==undefined) ? '' : $scope.nameforsearch ;
+		$scope.filter.c_id = ($scope.categoryforsearch==undefined) ? '' : $scope.categoryforsearch.id ;
+		$scope.filter.province=($scope.provinceforsearch==undefined) ? '' : $scope.provinceforsearch.id ;
+		$scope.filter.district=($scope.districtforsearch==undefined) ? '' : $scope.districtforsearch.id ;
+		$scope.filter.commune=($scope.communeforsearch==undefined) ? '' : $scope.communeforsearch.id ;
 		
-		$scope.filter.name =$scope.nameforsearch;
-		$scope.filter.c_id = $scope.categoryforsearch.id;
-		$scope.filter.type_id='';
-		$scope.filter.province =$scope.provinceforsearch.id;
-		$scope.filter.district =$scope.districtforsearch.id;
-		$scope.filter.commune =$scope.communeforsearch.id;
-		RESTAURANT.getRest();
-		$window.location.href="/search_result?name="+$scope.name+"&category="
+		console.log('Param');
+		console.log($scope.filter.name);
+		console.log($scope.filter.c_id);
+		console.log($scope.filter.province);
+		console.log($scope.filter.district);
+		console.log($scope.filter.commune);  
+		
+		
+		$window.location.href="/search_result?name="+$scope.filter.name+"&category="
 		+$scope.filter.c_id+"&province="+$scope.filter.province+"&district="+$scope.filter.district+"&commune="+$scope.filter.commune;
-		
+
 	}
+	
+	
 	
 	// TODO: Reload data again
 	$scope.reload = function(filter){
 		$scope.filter = filter;
 		RESTAURANT.getRest();
 	};
-	
-	RESTAURANT.getRest();
-	
-
-
 	
 	RESTAURANT.addRestaurant = function(){
 		b=true;

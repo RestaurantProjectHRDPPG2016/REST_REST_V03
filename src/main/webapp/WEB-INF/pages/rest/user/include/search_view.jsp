@@ -11,35 +11,26 @@
 	</div>
 	 
 <div class="col-md-10"  ng-controller="adminCtrl" style="margin-top:30px;" >
-  <form class="navbar-search" role="search"  ng-submit="$event.preventDefault()">
+  <form class="navbar-search" role="search">
  	<div class="col-md-8">
          
             <span ng-controller='restCtrl'>
                 <div class="input-group">
-        			<script>
-        			
-												var nameforsearch = '${nameforsearch }';
-												var categoryforsearch = '${categoryforsearch }';
-												var provinceforsearch = '${provinceforsearch}';
-												var districtforsearch = '${districtforsearch}';
-												var communeforsearch = '${communeforsearch}';
-												alert("province=>" + provinceforsearch)
-											</script>
                     <input type="text" class="form-control" ng-model="nameforsearch" >
                 
                     <div class="input-group-btn">
-                        <button type="button" class="btn btn-search btn-success" ng-click="search()">
+                        <button type="button" class="btn btn-search btn-success" ng-click="search(); $event.stopPropagation();">
                             <span class="glyphicon glyphicon-search"></span>
                             <span class="label-icon">Search</span>
                         </button>
                         <button type="button" class="btn btn-success dropdown-toggle" >
                           <select
 											name="categoryforsearch" id="categoryforsearch" ng-model="categoryforsearch"
+											ng-change = "categoryChange(categoryforsearch)"
 											ng-options="c as c.name for c in myCat track by c.id">
-
 											<option value="" style="display: none"> Category </option>
 
-										</select>
+						</select>
                         </button>
                     </div>
                  
@@ -62,7 +53,7 @@
                                     <label for="filter">Filter by</label> 
                                     <select class="form-control"
 											name="provinceforsearch" id="provinceforsearch" ng-model="provinceforsearch"
-											ng-change="getDistrict(province.id)"
+											ng-change="getDistrict(provinceforsearch)"
 											ng-options="p as p.khmer_name for p in myProvince track by p.id">
 
 											<option value="" style="display: none"> City or Province </option>
@@ -74,7 +65,7 @@
 										 <div class="form-group">
 										<select class="form-control" name="districtforsearch"
 											id="districtforsearch" ng-model="districtforsearch"
-											ng-change="getCommune(district.id)"
+											ng-change="getCommune(districtforsearch)"
 											ng-options="d as d.khmer_name for d in myDistrict track by d.id">
 											<option value="" style="display: none"> District </option>
 										</select> 
@@ -83,6 +74,7 @@
 										 <div class="form-group">
 										<select class="form-control" name="communeforsearch"
 											id="communeforsearch" ng-model="communeforsearch"
+											ng-change= "communeChange(communeforsearch)"
 											ng-options="c as c.khmer_name for c in myCommune track by c.id">
 
 											<option value="" style="display: none"> Commune </option>
@@ -181,6 +173,12 @@ $(document).ready(function() {
 
 	});
 
+	nameforsearch ="${nameforsearch}";
+	categoryforsearch ="${categoryforsearch}";
+	provinceforsearch ="${provinceforsearch}";
+	districtforsearch ="${districtforsearch}";
+	communeforsearch ="${communeforsearch}";
+	
 	
 </script>
 
