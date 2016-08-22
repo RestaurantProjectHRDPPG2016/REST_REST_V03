@@ -298,23 +298,22 @@ app.controller('restCtrl', function ($scope, $http, $window, $rootScope){
 	
 	// TODO: declare user object
 	var RESTAURANT = {};
-//	fasdfasdfsa
-//	$scope.name= name;
-//	$scope.category = category;
-//	$scope.province = province;
-//	$scope.district = district;
-//	$scope.commune = commune;
-	alert("Province" +$scope.province);
+//	$scope.nameforsearch= nameforsearch;
+//	$scope.categoryforsearch = categoryforsearch;
+//	$scope.provinceforsearch = provinceforsearch;
+//	$scope.districtforsearch = districtforsearch;
+//	$scope.communeforsearch = communeforsearch;
+//	alert("Province in js is" +$scope.provinceforsearch);
 	// TODO: default filter
 	$scope.filter = {
 		page		: 1,
 		limit		: 12,
-		name 		: $scope.name,	
-		c_id 		: $scope.category,
+		name 		: $scope.nameforsearch,	
+		c_id 		: $scope.categoryforsearch,
 		type_id		: '',
-		province 	: $scope.province,	
-		district 	: $scope.district,	
-		commune		: $scope.commneu
+		province 	: $scope.provinceforsearch,	
+		district 	: $scope.districtforsearch,	
+		commune		: $scope.communeforsearch
 	};
 	
 	
@@ -382,23 +381,23 @@ app.controller('restCtrl', function ($scope, $http, $window, $rootScope){
 	
 	$scope.search = function(){
 		console.log($scope.province);
-		if($scope.province==undefined){
-			$scope.province='';
+		if($scope.provinceforsearch==undefined){
+			$scope.provinceforsearch='';
 			alert("province undefinded yes yse");
 		}
-		if($scope.province==undefined){
+		if($scope.districtforsearch==undefined){
 			$scope.district='';
 		}
-		if($scope.province==undefined){
-			$scope.commune='';
+		if($scope.provinceforsearch==undefined){
+			$scope.communeforsearch='';
 		}
 		
-		$scope.filter.name =$scope.name;
-		$scope.filter.c_id = $scope.category.id;
+		$scope.filter.name =$scope.nameforsearch;
+		$scope.filter.c_id = $scope.categoryforsearch.id;
 		$scope.filter.type_id='';
-		$scope.filter.province =$scope.province.id;
-		$scope.filter.district =$scope.district.id;
-		$scope.filter.commune =$scope.commune.id;
+		$scope.filter.province =$scope.provinceforsearch.id;
+		$scope.filter.district =$scope.districtforsearch.id;
+		$scope.filter.commune =$scope.communeforsearch.id;
 		RESTAURANT.getRest();
 		$window.location.href="/search_result?name="+$scope.name+"&category="
 		+$scope.filter.c_id+"&province="+$scope.filter.province+"&district="+$scope.filter.district+"&commune="+$scope.filter.commune;

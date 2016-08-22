@@ -229,7 +229,7 @@
 										</div>
 
 										<div class="form-group">
-										<!-- 	<label for="name" class="cols-sm-2 col-md-2 control-label">Telephone:</label>
+										<label for="name" class="cols-sm-2 col-md-2 control-label">Telephone:</label>
 											<input type="button" id="mypho" title="p1"
 												class="btn btn-success" value="+" />
 											<div class="cols-sm-10" id="myphone">
@@ -259,9 +259,9 @@
 												</div>
 											</div>
 											
-											<div class="contacts">
-											<div class="col-md-2"> -->
-                <label>Contacts:</label>
+									    <!--  		<div class="contacts">
+											<div class="col-md-2"> 
+           <label>Contacts:</label>
              
                     <div class="form-group multiple-form-group input-group col-md-6 col-md-offset-2">
                         <div class="input-group-btn input-group-select">
@@ -275,7 +275,7 @@
                         <span class="input-group-btn">
                             <button type="button" class="btn btn-success btn-add">+</button>
                         </span>
-                    </div>
+                    </div> -->
                 </div>			
 
 										<div class="form-group">
