@@ -1,4 +1,9 @@
+
+
 $(document).ready(function() {
+	
+	
+	
 	$("#searchbtn").click(function() {
 		$("#mysearchbtn").toggle();
 	});
@@ -616,40 +621,8 @@ app
 											$scope.getRest();
 										});
 					}
-					// image gallery
-					$scope.sample = [
-							{
-								name : "1",
-								type : "image/jpg",
-								size : '',
-								file : "http://www.gettyimages.com/gi-resources/images/Homepage/Hero/US/MAR2016/prestige-587705839_full.jpg"
-							}, {
-								name : "2",
-								size : '',
-								type : "image/jpg",
-								file : "http://i.imgur.com/RRUe0Mo.png"
-							} ];
-
-					$scope.show = function() {
-						console.log('File To Send', validatedFiles);
-						console.log('Image Name to Delete', deletedImageName);
-					}
 				});
 
-	app.directive('myFilter', [ function() {
-		return {
-			restrict : 'A',
-			link : function(scope, element) {
-				// wait for the last item in the ng-repeat then call init
-				if (scope.$last) {
-					initJqueryFiler('#gallery', scope.sample);
-				}
-			}
-		};
-		/** ** Usable array *** */
-		// => validatedFiles
-		// => deletedImageName
-	} ]);
 app.controller('MyAdCtrl', function($scope, $http, $window, $rootScope) {
 	// GetRestaurant By ID
 
@@ -778,4 +751,38 @@ app.controller('MyTypeCtrl', function($scope, $http, $window, $rootScope) {
 });
 //
 // GET rest By ID
+
+app.directive('myFilter', [function() {
+    return {
+        restrict: 'A',       
+        link: function(scope, element) {
+            // wait for the last item in the ng-repeat then call init
+            angular.element(document).ready(function() {
+                initJqueryFiler(['#img'], [[]]);
+            });
+            // OR use $braodcast & $on in Controller
+        }
+    };
+    /**** Usable array ****/
+    // If your input file, id = '#gallery' use:
+    // => newFiles['gallery']
+    // => deletedImageIDs['gallery']
+
+}]);
+
+$(".filer-fancybox").fancybox({
+    padding: 0,
+
+    openEffect : 'elastic',
+    openSpeed  : 150,
+
+    closeEffect : 'elastic',
+    closeSpeed  : 150,
+
+    closeClick : true,
+
+    helpers : {
+        overlay : null
+    }
+});
 

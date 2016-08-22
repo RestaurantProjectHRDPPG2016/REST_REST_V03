@@ -39,6 +39,31 @@
 	<!-- W3CSS -->
 	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 	
-	<script src="${pageContext.request.contextPath}/resources/static/js/jquery.bootpage.min.js" type="text/javascript"></script>	
+	<script src="${pageContext.request.contextPath}/resources/static/js/jquery.bootpage.min.js" type="text/javascript"></script>
+	
+					<link rel="stylesheet" type="text/css"
+				href="${pageContext.request.contextPath}/resources/static/jQuery.filer/fancybox/source/jquery.fancybox.css?v=2.1.5"/>	
+				<script src="${pageContext.request.contextPath}/resources/static/jQuery.filer/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+		
+			
+				<script src="${pageContext.request.contextPath}/resources/static/jQuery.filer/fancybox/jquery.mousewheel-3.0.6.pack.js"></script>
+				
+				<link rel="stylesheet" type="text/css"
+				href="${pageContext.request.contextPath}/resources/static/jQuery.filer/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />	
+				
+				<script src="${pageContext.request.contextPath}/resources/static/jQuery.filer/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+				
+									<link rel="stylesheet" type="text/css"
+				href="${pageContext.request.contextPath}/resources/static/jQuery.filer/css/themes/jquery.filer-dragdropbox-theme.css">
+	<link rel="stylesheet" type="text/css"
+				href="${pageContext.request.contextPath}/resources/static/jQuery.filer/css/jquery.filer.css?v=1.0.5"/>
+	
+		<script src="${pageContext.request.contextPath}/resources/static/jQuery.filer/js/jquery.filer.js?v=1.0.5"></script>
+				
+				<script src="${pageContext.request.contextPath}/resources/static/jQuery.filer/js/custom.js?v=1.0.5"></script>
+				
+				<!--[if IE]>
+			          <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			    <![endif]-->	
 </head>
 <body>

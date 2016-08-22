@@ -1,6 +1,11 @@
 	 
 <%@include file="header_view.jsp"%>
 					
+
+		
+
+				
+					
 <%-- <%@include file="menu_top_view.jsp" %> --%>
 <%@include file="menu_right_view.jsp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -271,16 +276,14 @@
                 </div>			
 
 										<div class="form-group">
-											<!-- <label for="name" class="cols-sm-2 col-md-2 control-label">Images:</label>
+											 <label for="name" class="cols-sm-2 col-md-2 control-label">Images:</label>
 											<div class="cols-sm-10">
-												<div class="input-group col-md-6">
+												<div class="input-group col-md-6" my-filter>
 													<input type="file" name="img" id="img" ng-model="images"
 														multiple class="file-loading" multiple> 
 
-							 <input type="file" name="files[]" id="gallery" multiple="multiple">
-
 												</div>
-											</div> -->
+											</div>
 											</div>
 
 										<div class="form-group">
