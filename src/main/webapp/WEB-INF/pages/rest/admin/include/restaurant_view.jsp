@@ -1,12 +1,4 @@
-<%-- 
-	<!--Stylesheets-->
-	<link href="${pageContext.request.contextPath}/resources/static/css/jquery.filer.css" type="text/css" rel="stylesheet" />
-	<link href="${pageContext.request.contextPath}/resources/static/css/themes/jquery.filer-dragdropbox-theme.css" type="text/css" rel="stylesheet" />
-
-	<!--jQuery-->
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/static/js/jquery.filer.min.js?v=1.0.5"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/static/js/custom.js?v=1.0.5"></script>
-	 --%>
+	 
 <%@include file="header_view.jsp"%>
 					
 <%-- <%@include file="menu_top_view.jsp" %> --%>
@@ -279,17 +271,17 @@
                 </div>			
 
 										<div class="form-group">
-											<label for="name" class="cols-sm-2 col-md-2 control-label">Images:</label>
+											<!-- <label for="name" class="cols-sm-2 col-md-2 control-label">Images:</label>
 											<div class="cols-sm-10">
 												<div class="input-group col-md-6">
 													<input type="file" name="img" id="img" ng-model="images"
 														multiple class="file-loading" multiple> 
 
-		
+							 <input type="file" name="files[]" id="gallery" multiple="multiple">
 
 												</div>
+											</div> -->
 											</div>
-										</div>
 
 										<div class="form-group">
 											<label for="name" class="cols-sm-2 col-md-2 control-label">Menus:</label>
@@ -331,5 +323,4 @@
 <!-- /#wrapper -->
 <%@include file="footer_view.jsp"%>
 
-
-
+ 
