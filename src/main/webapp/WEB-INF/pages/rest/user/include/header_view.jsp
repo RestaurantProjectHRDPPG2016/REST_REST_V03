@@ -37,9 +37,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/script/owner/category.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/resources/script/owner/detail.js" type="text/javascript"></script>
-
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/owner/lightbox.min.css">
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/owner/lightbox.css">
 <!-- W3CSS -->
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <!-- Login of Page -->
@@ -47,7 +44,6 @@
 <link href="${pageContext.request.contextPath}/resources/css/user/user_login.css" rel="stylesheet">
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/script/user/ui_main.js" type="text/javascript"></script>
-<script src="${pageContext.request.contextPath}/resources/script/owner/photo-gallery.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/resources/static/js/jquery.bootpage.min.js" type="text/javascript"></script>
 
 </head>

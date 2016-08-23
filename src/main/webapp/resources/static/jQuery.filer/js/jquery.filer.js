@@ -368,7 +368,7 @@
 										var src = $(img).attr('src');
 										var extension = src.substring(src.lastIndexOf('.')+1);
 	                                    if (extension.length >= 3 && extension.length <= 4){
-	                                        switch(extension){
+	                                        switch(extension.toLowerCase()){
 	                                            case 'jpeg':
 	                                            case 'jpg': 
 	                                            case 'png':

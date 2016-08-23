@@ -1,6 +1,6 @@
     <div id="wrapper">
   <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" >
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin</a>
+                <a class="navbar-brand" href="/admin">FREST MENU</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -94,7 +94,7 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+                    <a href="/admin" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -119,28 +119,28 @@
                         <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="members"><i class="fa fa-fw fa-bar-chart-o"></i> Member</a>
+                        <a href="/members"><i class="fa fa-fw fa-bar-chart-o"></i> Member</a>
                     </li>
                     <li>
-                        <a href="restaurant"><i class="fa fa-fw fa-table"></i> Restaurant</a>
+                        <a href="/restaurant"><i class="fa fa-fw fa-table"></i> Restaurant</a>
                     </li>
                     <li>
-                        <a href="location"><i class="fa fa-fw fa-edit"></i>Location</a>
+                        <a href="/location"><i class="fa fa-fw fa-edit"></i>Location</a>
                     </li>
                     <li>
-                        <a href="category"><i class="fa fa-fw fa-desktop"></i>Category</a>
+                        <a href="/category"><i class="fa fa-fw fa-desktop"></i>Category</a>
                     </li>
                     <li>
-                        <a href="event"><i class="fa fa-fw fa-wrench"></i>Event</a>
+                        <a href="/event"><i class="fa fa-fw fa-wrench"></i>Event</a>
                     </li>
                         <li>
-                        <a href="views"><i class="fa fa-fw fa-wrench"></i>Views</a>
+                        <a href="/views"><i class="fa fa-fw fa-wrench"></i>Views</a>
                     </li>
                         <li>
-                        <a href="setting"><i class="fa fa-fw fa-wrench"></i>Setting</a>
+                        <a href="/setting"><i class="fa fa-fw fa-wrench"></i>Setting</a>
                     </li>
                        <li>
-                        <a href="history"><i class="fa fa-fw fa-wrench"></i>History</a>
+                        <a href="/history"><i class="fa fa-fw fa-wrench"></i>History</a>
                     </li>
            
                     <li>

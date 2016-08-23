@@ -1,9 +1,11 @@
 
+var checkIsDefined = function(val){
+	if (typeof name !== "undefined" && val != undefined)
+		return val;
+	return '';
+}
 
 $(document).ready(function() {
-	
-	
-	
 	$("#searchbtn").click(function() {
 		$("#mysearchbtn").toggle();
 	});
@@ -66,7 +68,7 @@ app.controller('adminCtrl', function($scope, $http, $window, $rootScope) {
 			last : '→',
 			next : 'Next',
 			prev : 'Prev',
-			maxVisible : 18
+			maxVisible : 100
 		});
 	};
 
@@ -87,6 +89,10 @@ app.controller('adminCtrl', function($scope, $http, $window, $rootScope) {
 	$scope.$watch('commune', function(newValue) {
 		$rootScope.subcommuneId = newValue;
 	});
+	
+	$scope.$watch('category', function(newValue) {
+		$rootScope.subCategoryId = newValue;
+	});
 
 	MAINCATEGORY.selectCategory = function() {
 		$http({
@@ -100,6 +106,19 @@ app.controller('adminCtrl', function($scope, $http, $window, $rootScope) {
 			alert("fail");
 		});
 	}
+	
+	MAINCATEGORY.selectCategoryNoPagin = function() {
+		$http({
+			url : 'http://localhost:8888/maincategory',
+			method : 'GET'
+		}).then(function(response) {
+			console.log("COMBO BOX==>",response);
+			$scope.myCatNP = response.data.DATA;
+		}, function(response) {
+			alert("fail");
+		});
+	}
+	MAINCATEGORY.selectCategoryNoPagin();
 
 	// TODO: Reload data again
 	MAINCATEGORY.reload = function(filter) {
@@ -274,8 +293,8 @@ app.controller('adminCtrl', function($scope, $http, $window, $rootScope) {
 
 	// GetDistrict
 	$scope.getDistrict = function(province) {
-
-		$scope.filter.province = province.id;
+//
+//		$scope.filter.province = province.id;
 
 		console.log($scope.filter);
 		// $scope.city = $scope.province;
@@ -292,8 +311,8 @@ app.controller('adminCtrl', function($scope, $http, $window, $rootScope) {
 
 	// Getcommune
 	$scope.getCommune = function(district) {
-		console.log(district);
-		$scope.filter.district = district.id;
+//		console.log(district);
+//		$scope.filter.district = district.id;
 
 		$http(
 				{
@@ -315,10 +334,7 @@ app.controller('adminCtrl', function($scope, $http, $window, $rootScope) {
 
 /* Start Resturant Controller */
 
-app
-		.controller(
-				'restCtrl',
-				function($scope, $http, $window, $rootScope) {
+app.controller('restCtrl',function($scope, $http, $window, $rootScope) {
 					// Pagination
 
 					// TODO: declare user object
@@ -396,9 +412,7 @@ app
 						RESTAURANT.getRest();
 					});
 
-					$scope.$watch('category', function(newValue) {
-						$rootScope.subCategoryId = newValue;
-					});
+
 
 					// GetALL
 					RESTAURANT.getRest = function() {
@@ -459,10 +473,12 @@ app
 						$scope.filter = filter;
 						RESTAURANT.getRest();
 					};
-
+					var images =[];
+					var menus =[];
 					RESTAURANT.addRestaurant = function() {
 						b = true;
 						$scope.btnButton = 'Save';
+						
 						var frmData = new FormData();
 						var tel = $('input[name=tel]');
 
@@ -470,28 +486,42 @@ app
 							frmData.append('telephones', $(e).val());
 						});
 
-						var restaurant_files = angular.element('#img')[0].files;
-						for (var i = 0; i < restaurant_files.length; i++) {
-							frmData.append("image", restaurant_files[i]);
+						//var restaurant_files = angular.element('#img')[0].files;
+						for (var i = 0; i < newFiles['img'].length; i++) {
+							frmData.append("image", newFiles['img'][i]);
 						}
 
-						var menu_files = angular.element('#menus')[0].files;
+						//var menu_files = angular.element('#menus')[0].files;
 
-						for (var i = 0; i < menu_files.length; i++) {
-							frmData.append("menus", menu_files[i]);
+						for (var i = 0; i < newFiles['menus'].length; i++) {
+							frmData.append("menus", newFiles['menus'][i]);
 						}
+//						
+//						console.log('Name', checkIsDefined($scope.name);
+//						console.log('type', checkIsDefined($rootScope.subCategoryId);
+//						console.log('description', checkIsDefined($scope.desc);
+//						console.log('home', checkIsDefined($scope.home);
+//						console.log('street', checkIsDefined($scope.street);
+//						console.log('province', ($scope.province == undefined) ? '' : $scope.province.id);
+//						console.log('commune', ($scope.district == undefined) ? '' : $scope.district.id);
+//						console.log('district', ($scope.commune == undefined) ? '' : $scope.commune.id);
+//						console.log('latitude', checkIsDefined($scope.latitude);
+//						console.log('longitude', checkIsDefined($scope.longitude);
+//						
+						
 
-						frmData.append('name', $scope.name);
-						frmData.append('type', $rootScope.subCategoryId);
-						frmData.append('description', $scope.desc);
-						frmData.append('delivery', $scope.delivery);
-						frmData.append('home', $scope.home);
-						frmData.append('street', $scope.street);
-						frmData.append('province', $scope.province.id);
-						frmData.append('district', $scope.district.id);
-						frmData.append('commune', $scope.commune.id);
-						frmData.append('latitude', $scope.latitude);
-						frmData.append('longitude', $scope.longitude);
+						frmData.append('name',checkIsDefined($scope.name));
+						frmData.append('type', checkIsDefined($rootScope.subCategoryId));
+						frmData.append('description', checkIsDefined($scope.desc));
+						frmData.append('delivery', ($scope.delivery == undefined) ? false : true); 
+						frmData.append('home', checkIsDefined($scope.home));
+						frmData.append('street', checkIsDefined($scope.street));
+						frmData.append('province', ($scope.province == undefined) ? '' : $scope.province.id);
+						frmData.append('commune',($scope.commune == undefined) ? '' : $scope.commune.id);
+						frmData.append('district', ($scope.district == undefined) ? '' : $scope.district.id);
+						
+						frmData.append('latitude', checkIsDefined($scope.latitude));
+						frmData.append('longitude', checkIsDefined($scope.longitude));
 
 						$http({
 							url : 'http://localhost:8888/restaurant',
@@ -505,15 +535,16 @@ app
 								.then(
 										function(response) {
 											console.log(response.data);
-											$scope.getRest();
+											RESTAURANT.getRest();
 										},
 										function(error) {
 											console.log(error.data);
 											alert('failed to upload data! Please Try again Youra !!!!!');
-											$scope.getRest();
+											RESTAURANT.getRest();
 										});
 					}
 					var btnButton = '';
+					var title ='';
 					$scope.event = function() {
 						if (b == true) {
 							RESTAURANT.addRestaurant();
@@ -526,10 +557,18 @@ app
 					$scope.addButton = function() {
 						b = true;
 						$scope.btnButton = 'ADD';
+						$scope.title = 'Add New Restaurant';
 					}
 					$scope.getupdateRestauratn = function(rest) {
+						
+							$("#myprovince").hide();
+							$("#mydistrict").hide();
+							$("#mycommune").hide();
+					
+						
 						b = false;
 						$scope.btnButton = 'UPDATE';
+						$scope.title='Update Restaurant Information';
 						console.log(rest);
 						id = rest.r.id;
 						$scope.name = rest.r.name;
@@ -538,34 +577,101 @@ app
 						$scope.desc = rest.r.desc;
 						$scope.home = rest.r.home;
 						$scope.street = rest.r.street;
-						$scope.district = rest.r.district;
-						$scope.commune = rest.r.commune;
+//						$scope.district = rest.r.district;
+//						$scope.commune = rest.r.commune;
 						$scope.latitude = rest.r.latitude;
 						$scope.longitude = rest.r.longitude;
 
-						angular.forEach($scope.myProvince, function(item) {
-							if (item.khmer_name === rest.r.province) {
-								$scope.province = item;
-								$scope.getDistrict(item.id);
-								return;
-							}
-						});
+//						angular.forEach($scope.myProvince, function(item) {
+//							if (item.khmer_name === rest.r.province) {
+//								$scope.province = item;
+//								$scope.getDistrict(item.id);
+//								return;
+//					}
+//						
+//					});
 
-						angular.forEach($scope.myDisctrict, function(item) {
-							if (item.khmer_name === rest.r.disctrict) {
-								$scope.district = item;
-								return;
-							}
-						});
-
-						angular.forEach($scope.myCommune, function(item) {
-							if (item.khmer_name === rest.r.commune) {
-								$scope.commune = item;
-								return;
-							}
-						});
-
+//						angular.forEach($scope.myDisctrict, function(item) {
+//							if (item.khmer_name === rest.r.disctrict) {
+//								$scope.district = item;
+//								return;
+//							}
+//						});
+//
+//						angular.forEach($scope.myCommune, function(item) {
+//							if (item.khmer_name === rest.r.commune) {
+//								$scope.commune = item;
+//								return;
+//							}
+//						});
+//						
+						/********
+						                        $scope.sample1 = [
+                {
+                    id  : 10,
+                    name: "1",
+                    type: "image/jpg",
+                    size: '',
+                    file: "http://www.gettyimages.com/gi-resources/images/Homepage/Hero/US/MAR2016/prestige-587705839_full.jpg"
+                },
+                {
+                    id  : 20,
+                    name: "2",
+                    size: '',
+                    type: "image/jpg",
+                    file: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQt3XVxyI5sLL8f1_vPQkAxGRBIfYa6e4lESTqVQk3j_JN_O0M6LA"
+                }
+            ];
+					     */
+						
+						$scope.sampleRest = [];
+						$scope.sampleMenu = [];
+						
+						
+						 
+						for(var i in rest.r.images){
+							var restImage = {
+				                    id  : i.id,
+				                    name: '',
+				                    type: "image/jpg",
+				                    size: '',
+				                    file: 'http://localhost:8888/' + i.url
+				             }
+							$scope.sampleRest.push(restImage);
+						}
+						console.log("images Restaurant is "+restImage);
+						
+						$scope.myfun();
+						
+						for(var i in rest.r.menus){
+							var menuImage = {
+				                    id  : i.id,
+				                    name: '',
+				                    type: "image/jpg",
+				                    size: '',
+				                    file: 'http://localhost:8888/' + i.url
+				             }
+							$scope.sampleMenu.push(menuImage);
+						}
+						
+						
+						
+						  console.log("Menus Image is "+menuImage);
+						  $scope.mymenus();
 					}
+					
+					$scope.myfun=function(){
+						for(var i in images){
+							$scope.sample1 = images[i].url
+							console.log("sample1 is are "+$scope.sample1);
+							}
+					}
+					$scope.mymenus=function(){
+						for(var i in menus){
+							$scope.sample2 =menus[i].url
+							console.log("my sample 2 is "+$scope.sample2);
+						}
+					}			  
 
 					RESTAURANT.updateRestaurant = function() {
 						// console.log(id);
@@ -576,15 +682,15 @@ app
 							console.log(e);
 							frmData.append('telephones', $(e).val());
 						});
-						var restaurant_files = angular.element('#img')[0].files;
-						for (var i = 0; i < restaurant_files.length; i++) {
-							frmData.append("image", restaurant_files[i]);
+						//var restaurant_files = angular.element('#img')[0].files;
+						for (var i = 0; i < newFiles['img'].length; i++) {
+							frmData.append("image", newFiles['img'][i]);
 						}
 
-						var menu_files = angular.element('#menus')[0].files;
+						//var menu_files = angular.element('#menus')[0].files;
 
-						for (var i = 0; i < menu_files.length; i++) {
-							frmData.append("menus", menu_files[i]);
+						for (var i = 0; i < newFiles['menus'].length; i++) {
+							frmData.append("menus", newFiles['menus'][i]);
 						}
 						frmData.append('id', id);
 						frmData.append('name', $scope.name);
@@ -593,13 +699,11 @@ app
 						frmData.append('delivery', $scope.delivery);
 						frmData.append('home', $scope.home);
 						frmData.append('street', $scope.street);
-						frmData.append('province', $scope.province.id);
-						frmData.append('district', $scope.district.id);
-						frmData.append('commune', $scope.commune.id);
+//						frmData.append('province', $scope.province.id);
+//						frmData.append('district', $scope.district.id);
+//						frmData.append('commune', $scope.commune.id);
 						frmData.append('latitude', $scope.latitude);
 						frmData.append('longitude', $scope.longitude);
-
-						console.log(frmData);
 
 						$http({
 							url : 'http://localhost:8888/restaurantUpdate',
@@ -623,25 +727,37 @@ app
 					}
 				});
 
-app.controller('MyAdCtrl', function($scope, $http, $window, $rootScope) {
-	// GetRestaurant By ID
+app
+		.controller(
+				'MyAdCtrl',
+				function($scope, $http, $window, $rootScope) {
+					// GetRestaurant By ID
 
-	$scope.getRestByID = function(id) {
-		$http({
-			url : 'http://localhost:8888/restaurant/' + id,
-			method : 'GET',
-		}).then(function(response) {
-			console.log(response);
-			$scope.restByID = response.data.DATA;
+					$scope.getRestByID = function(id) {
+						$http({
+							url : 'http://localhost:8888/restaurant/' + id,
+							method : 'GET',
+						}).then(function(response) {
+							console.log(response);
+							$scope.restByID = response.data.DATA;
+							init_map($scope.restByID[0].latitude, $scope.restByID[0].longitude,$scope.restByID[0].name,$scope.restByID[0].province,$scope.restByID[0].street);
 
-		}, function(response) {
-			console.log(response);
-			alert('failed To call all data');
-		});
-	}
-	$scope.getRestByID(rest_id);
-
-});
+						}, function(response) {
+							console.log(response);
+							alert('failed To call all data');
+						});
+					}
+					$scope.getRestByID(rest_id);
+//					
+//						var latitude=1;
+//						
+//						latitude.push(1);
+//						var longitude2;
+//						longitude.push(2);
+//						console.log("Lan"+latitude);
+//						
+					
+				});
 
 /* ENd Restuarant Controller */
 
@@ -752,23 +868,58 @@ app.controller('MyTypeCtrl', function($scope, $http, $window, $rootScope) {
 //
 // GET rest By ID
 
-app.directive('myFilter', [function() {
-    return {
-        restrict: 'A',       
-        link: function(scope, element) {
-            // wait for the last item in the ng-repeat then call init
-            angular.element(document).ready(function() {
-                initJqueryFiler(['#img'], [[]]);
-            });
-            // OR use $braodcast & $on in Controller
-        }
-    };
-    /**** Usable array ****/
-    // If your input file, id = '#gallery' use:
-    // => newFiles['gallery']
-    // => deletedImageIDs['gallery']
+//app.directive('myFilter', [function() {
+//    return {
+//        restrict: 'A',       
+//        link: function(scope, element) {
+//            // wait for the last item in the ng-repeat then call init
+//            angular.element(document).ready(function() {
+//                initJqueryFiler(['#img','#menus'], [[],[]]);
+//            });
+//            // OR use $braodcast & $on in Controller
+//        }
+//    };
+//    /**** Usable array ****/
+//    // If your input file, id = '#gallery' use:
+//    // => newFiles['gallery']
+//    // => deletedImageIDs['gallery']
+//
+//}]);
 
-}]);
+//				add and update
+				app.directive('myFilter', [function() {
+				return {
+				  restrict: 'A',       
+				  link: function(scope, element) {
+				      // wait for the last item in the ng-repeat then call init
+				      angular.element(document).ready(function() {
+				          initJqueryFiler(['#img','#menus'], [[],[]]);
+				      });
+				      // OR use $braodcast & $on in Controller
+				  }
+				};
+				/**** Usable array ****/
+				// If your input file, id = '#gallery' use:
+				// => newFiles['gallery']
+				// => deletedImageIDs['gallery']
+				
+				}]);
+				
+				app.directive('filerInit', [function() {
+					return {
+					  restrict: 'A',       
+					  link: function(scope, element) {
+					      // wait for the last item in the ng-repeat then call init
+					      if (scope.$last){
+					    	    $('div.jFiler.jFiler-theme-dragdropbox').remove();
+					    		$('#restSampleInit > span:last-child').after('<input type="file" name="files[]" id="img" multiple="multiple">');
+					    		$('#menuSampleInit > span:last-child').after('<input type="file" name="files[]" id="menus" multiple="multiple">');
+					    	   initJqueryFiler(['#img','#menus'], [scope.sampleRest, scope.sampleMenu]);
+					      }
+					      // OR use $braodcast & $on in Controller
+					  }
+					};
+				}]);
 
 $(".filer-fancybox").fancybox({
     padding: 0,
@@ -785,4 +936,15 @@ $(".filer-fancybox").fancybox({
         overlay : null
     }
 });
+
+// Clear Sample Uploaded Image Item
+$('#myModal1').on('hidden.bs.modal', function () {
+	$('div.jFiler.jFiler-theme-dragdropbox').remove();
+	$('#restSampleInit > span:last-child').after('<input type="file" name="files[]" id="img" multiple="multiple">');
+	$('#menuSampleInit > span:last-child').after('<input type="file" name="files[]" id="menus" multiple="multiple">');
+	initJqueryFiler(['#img','#menus'], [[],[]]);
+});
+
+
+
 

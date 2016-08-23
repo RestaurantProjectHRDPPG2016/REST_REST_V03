@@ -2,10 +2,10 @@
  
  <style>
 <!--
-#div0 img{
-			margin-top:5px;
+#div0{
+			margin-top:3px;
 			float: left;
-			padding: 13.2px;
+			padding: 3px;
 		}
     .element-animation{
   animation: animationFrames ease 1s;
@@ -55,13 +55,13 @@
 	<div>
 		<div class="collapse navbar-collapse mycontain" >
 		  <div  id="div0">
-			<div id="div1" class="thumbnail item" ng-repeat="c in myCat | limitTo:7">
+			<div id="div1" class="thumbnail item" ng-repeat="c in myCatNP | limitTo:9">
 				<a href="/owner/{{c.id}}">
 					<img  src="${pageContext.request.contextPath}/resources/upload/playlist/img/{{c.img1}}" >
 					    <span class="caption">{{c.name}}</span>
 				</a>
 	     	</div>
-	     	<div id="div2" class="thumbnail item div2" ng-repeat="c in myCat | limitTo:myCat.length:7">
+	     	<div id="div2" class="thumbnail item div2" ng-repeat="c in myCatNP | limitTo:myCat.length:7">
 				<a href="/owner/{{c.id}}">
 					<img  src="${pageContext.request.contextPath}/resources/upload/playlist/img/{{c.img1}}" >
 					    <span class="caption">{{c.name}}</span>

@@ -1,4 +1,4 @@
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
 <footer>
 <!-- footer vies_jsp -->
     <div class="footer" id="footer">
@@ -26,8 +26,8 @@
                 <div class="col-lg-3  col-md-3 col-sm-4 col-xs-6">
                     <h3> Download Mobile App </h3>
                     <ul>
-                        <li> <a href="#"><img src="resources/upload/playlist/img/appstore.png"/></a> </li>
-                        <li> <a href="#"><img src="resources/upload/playlist/img/googleplay.png"/> </a> </li>
+                        <li> <a href="#"><img src="${pageContext.request.contextPath}/resources/upload/playlist/img/appstore.png"/></a> </li>
+                        <li> <a href="#"><img src="${pageContext.request.contextPath}/resources/upload/playlist/img/googleplay.png"/> </a> </li>
                     </ul>
                 </div>
                 <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
@@ -67,7 +67,5 @@
 <!-- Owner if -->
 
 <script src="${pageContext.request.contextPath}/resources/script/owner/detail.js" type="text/javascript"></script>
-  <script src="${pageContext.request.contextPath}/resources/script/owner/lightbox-plus-jquery.min.js"></script>
-<!-- hello footer -->
 </body>
 </html>

@@ -1,6 +1,6 @@
 /* slide */
 #slide{
-	margin-top:-15px;
+	/* margin-top:-15px; */
 }
 
 /* Detail */
@@ -243,8 +243,5 @@ footer */
 	border-radius:10px;
 }
 .carousel-inner{
-	border-radius:10px;
-}
-.carousel-inner img{
 	border-radius:10px;
 }

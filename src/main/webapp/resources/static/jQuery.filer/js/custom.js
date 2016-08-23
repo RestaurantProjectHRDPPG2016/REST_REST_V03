@@ -97,7 +97,7 @@
 
                     if (isImageFromServer){
                         // Get Deleted Image name
-                        deletedImageIDs[inputName].push(currentFile.name);
+                        deletedImageIDs[inputName].push(currentFile.id);
                     } else {
                         var temp;
                         $.each(newFiles[inputName], function(index, item) {

@@ -7,7 +7,7 @@
                 <div class="span12">
 
                     <div id="divLogo" class="pull-left">
-                        <a href="index.html" id="divSiteTitle">JONGNHAM</a><br />
+                        <a href="/admin" id="divSiteTitle">JONGNHAM</a><br />
                     </div>
 
                     <div id="divMenuRight" class="pull-right">

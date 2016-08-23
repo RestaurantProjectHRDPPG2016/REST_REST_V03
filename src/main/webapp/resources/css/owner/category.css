@@ -6,6 +6,7 @@
 #mynavbarcat{
 	border-radius:0px;
 	margin-top:5px;
+	background:#ECECEC;
 }
 #col-3{
    margin-bottom: 0px;
@@ -105,13 +106,16 @@ div.item {
     vertical-align: top;
     display: inline-block;
     text-align: center;
-    width: 164.2px;
-    background-color:rgb(236,236,236);
+    width: 127px;
+    background-color:#ECECEC;
 }
 .item img {
-    width: 150px;
-    height: 150px;
-    border-radius:5px;
+    width: 109px;
+    height: 109px;
+    border-radius:10px !important;
+}
+.item a {
+  text-decoration:none;
 }
 .caption {
     display: block;

@@ -4,6 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <div class="container bg-info" id="search">
+<div class="row">
 <div class="col-md-2 col-sm-2 col-xs-3" style="float:left">
 	<a href="/">
 		<img class="img-responsive" style="padding:10px;" src="${pageContext.request.contextPath}/resources/upload/playlist/img/freshologo.png"/>
@@ -27,7 +28,7 @@
                           <select
 											name="categoryforsearch" id="categoryforsearch" ng-model="categoryforsearch"
 											ng-change = "categoryChange(categoryforsearch)"
-											ng-options="c as c.name for c in myCat track by c.id">
+											ng-options="c as c.name for c in myCatNP track by c.id">
 											<option value="" style="display: none"> Category </option>
 
 						</select>
@@ -103,8 +104,7 @@
 </div>
 
 </div>
-		
-
+</div>
   <div id="out" style="display:none"></div>
 <script>
 

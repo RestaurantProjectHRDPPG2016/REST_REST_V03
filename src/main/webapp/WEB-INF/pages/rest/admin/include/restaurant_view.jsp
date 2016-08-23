@@ -1,6 +1,30 @@
 	 
 <%@include file="header_view.jsp"%>
-					
+<link rel="stylesheet" type="text/css"
+				href="${pageContext.request.contextPath}/resources/static/jQuery.filer/fancybox/source/jquery.fancybox.css?v=2.1.5"/>	
+				<script src="${pageContext.request.contextPath}/resources/static/jQuery.filer/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+		
+			
+				<script src="${pageContext.request.contextPath}/resources/static/jQuery.filer/fancybox/jquery.mousewheel-3.0.6.pack.js"></script>
+				
+				<link rel="stylesheet" type="text/css"
+				href="${pageContext.request.contextPath}/resources/static/jQuery.filer/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />	
+				
+				<script src="${pageContext.request.contextPath}/resources/static/jQuery.filer/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+				
+									<link rel="stylesheet" type="text/css"
+				href="${pageContext.request.contextPath}/resources/static/jQuery.filer/css/themes/jquery.filer-dragdropbox-theme.css">
+	<link rel="stylesheet" type="text/css"
+				href="${pageContext.request.contextPath}/resources/static/jQuery.filer/css/jquery.filer.css?v=1.0.5"/>
+	
+		<script src="${pageContext.request.contextPath}/resources/static/jQuery.filer/js/jquery.filer.js?v=1.0.5"></script>
+				
+				
+				
+				<!--[if IE]>
+			          <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			    <![endif]-->	
+<script src="${pageContext.request.contextPath}/resources/static/jQuery.filer/js/custom.js?v=1.0.5"></script>
 
 		
 
@@ -85,7 +109,7 @@
 							<div class="modal-content">
 								<div class="modal-header">
 									<button type="button" class="close" data-dismiss="modal">&times;</button>
-									<h4 class="modal-title">Add Restaurant Information</h4>
+									<center><h4 class="modal-title" style="color:blue;">{{title}}</h4></center>
 								</div>
 								<div class="modal-body">
 									<div class="container">
@@ -107,7 +131,7 @@
 												<div class="cols-sm-10">
 													<div class="input-group col-md-6 col-sm-8">
 													<select class="form-control" ng-model="category" name="category">
-														<option ng-repeat="c in myCat" value="{{c.id}}">{{c.name}}</option>
+														<option ng-repeat="c in myCatNP" value="{{c.id}}">{{c.name}}</option>
 													</select>
 													</div>
 
@@ -157,11 +181,11 @@
 											</div>
 										</div>
 										
-										<div class="form-group">
+										<div class="form-group" id="myprovince">
 											<label for="name" class="cols-sm-2 col-md-2 control-label">City / Province:</label>
 											<div class="cols-sm-10">
 												<div class="input-group col-md-6 col-sm-8">
-													<select class="form-control" name="province" id="type" ng-model="province"  ng-change="getDistrict(province.id)"
+													<select class="form-control" name="province" id="type" ng-model="province"  ng-change="getDistrict(province)"
 													ng-options="p as p.khmer_name for p in myProvince track by p.khmer_name">
 
 														<option value="" style="display:none">
@@ -174,11 +198,11 @@
 											</div>
 										</div>
 
-											<div class="form-group">
+											<div class="form-group" id="mydistrict" id="mydistrict">
 												<label for="name" class="cols-sm-2 col-md-2 control-label">District:</label>
 												<div class="cols-sm-10">
 													<div class="input-group col-md-6 col-sm-8">
-														<select class="form-control" name="district" id="type" ng-model="district" ng-change="getCommune(district.id)" 
+														<select class="form-control" name="district" id="type" ng-model="district" ng-change="getCommune(district)" 
 															ng-options="d as d.khmer_name for d in myDistrict track by d.khmer_name">
 															<option value="" style="display:none">-- Please Select District --</option>
 														</select>
@@ -186,7 +210,7 @@
 
 												</div>
 											</div>
-											<div class="form-group">
+											<div class="form-group" id="mycommune">
 											<label for="name" class="cols-sm-2 col-md-2 control-label">Commune:</label>
 											<div class="cols-sm-10">
 												<div class="input-group col-md-6 col-sm-8">
@@ -278,7 +302,8 @@
 										<div class="form-group">
 											 <label for="name" class="cols-sm-2 col-md-2 control-label">Images:</label>
 											<div class="cols-sm-10">
-												<div class="input-group col-md-6" my-filter>
+												<div class="input-group col-md-6" id="restSampleInit" my-filter>
+													<span ng-repeat="rest in sampleRest" filer-init>&nbsp;</span>
 													<input type="file" name="img" id="img" ng-model="images"
 														multiple class="file-loading" multiple> 
 
@@ -289,7 +314,8 @@
 										<div class="form-group">
 											<label for="name" class="cols-sm-2 col-md-2 control-label">Menus:</label>
 											<div class="cols-sm-10">
-												<div class="input-group col-md-6">
+												<div class="input-group col-md-6" id="menuSampleInit">
+													<span ng-repeat="menu in sampleMenu" filer-init>&nbsp;</span>
 													<input type="file" name="menus" id="menus" ng-model="menus"
 														multiple class="file-loading" multiple>
 												</div>

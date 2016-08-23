@@ -10,7 +10,7 @@
 			<div class="default">
 		 	<a href="/owner/{{c.id}}">
 				<img class="img-responsive img-circle" src="resources/upload/playlist/img/{{c.img1}}">
-						<span style="position:absolute; top:70px; left:55px; background-color:rgba(0,0,0,0.6);
+						<span style="position:absolute; top:70px; left:58px; background-color:rgba(0,0,0,0.6);
 	color:#ffffff;padding:5px; border-radius:3px;">{{c.name}}</span> 
 				</a>
 			</div>  
