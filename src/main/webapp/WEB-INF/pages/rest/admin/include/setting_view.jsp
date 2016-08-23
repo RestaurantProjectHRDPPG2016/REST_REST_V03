@@ -109,13 +109,10 @@
 										</div>
 
 										<div class="form-group">
-											<label for="url" class="cols-sm-2 control-label">URL:</label>
+											<label for="img" class="col-sm-2 control-label">Images:</label>
 											<div class="cols-sm-10">
-												<div class="input-group col-md-5 col-sm-8">
-													<span class="input-group-addon"><i
-														class="fa fa-user" aria-hidden="true"></i></span> <input
-														type="text" class="form-control" name="url" id="url"
-														ng-model="url" placeholder="Enter URL" />
+												<div class="input-group col-md-3 col-sm-8">
+													<input type="file" class="form-control" name="img" id="img" ng-model="img" multiple>
 												</div>
 											</div>
 										</div>
@@ -124,13 +121,9 @@
 											<label for="status" class="cols-sm-2 control-label">Status:</label>
 											<div class="cols-sm-10">
 												<div class="input-group col-md-5 col-sm-8">
-													<input type="radio" name="status" value="1" checked="checked"> 1 &nbsp;
-													<input type="radio" name="status" value="0"> 0
+													<input type="radio" name="status" ng-model="status" value="1" checked="checked"> 1 &nbsp;
+													<input type="radio" name="status" ng-model="status" value="0"> 0
 												
-													<!-- <span class="input-group-addon"><i
-														class="fa fa-user" aria-hidden="true"></i></span> <input
-														type="text" class="form-control" name="status" id="status"
-														ng-model="status" placeholder="Enter Status" /> -->
 												</div>
 											</div>
 										</div>
