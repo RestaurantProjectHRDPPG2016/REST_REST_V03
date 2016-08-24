@@ -39,6 +39,7 @@ public class WebClientSecurityConfiguration extends WebSecurityConfigurerAdapter
 			.permitAll();
 		
 		http.authorizeRequests()
-			.antMatchers("/admin/**").hasAnyRole("ADMIN", "USER");	
+			.antMatchers("/admin/**").hasAnyRole("ADMIN")
+			.antMatchers("/**").hasAnyRole("ADMIN", "USER");
 	}
 }
