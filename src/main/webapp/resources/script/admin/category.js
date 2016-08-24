@@ -513,7 +513,7 @@ app.controller('restCtrl',function($scope, $http, $window, $rootScope) {
 						frmData.append('name',checkIsDefined($scope.name));
 						frmData.append('type', checkIsDefined($rootScope.subCategoryId));
 						frmData.append('description', checkIsDefined($scope.desc));
-						frmData.append('delivery', ($scope.delivery == undefined) ? false : true); 
+						frmData.append('delivery', ($scope.delivery == undefined) ? 'No' : 'Yes'); 
 						frmData.append('home', checkIsDefined($scope.home));
 						frmData.append('street', checkIsDefined($scope.street));
 						frmData.append('province', ($scope.province == undefined) ? '' : $scope.province.id);

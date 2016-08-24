@@ -17,12 +17,12 @@
 						</span>
 			</a> 
 		</div>
-		<div class="col-md-8">
-				<div>
-					<span style="font-size: 14px; font-weight: bolder;">{{r.name | limitTo:20:'...'}}</span>
-				</div>
-				<div>
-					<a href="/detail/{{r.id}}"> <!-- <div><span  style="font-size:20px; font-weight: bolder;">{{cat.name}}</span></div> -->
+		<div class="col-md-8" style="border-left:1px solid #dddddd;">
+			<a href="/detail/{{r.id}}">
+					<p style="white-space: nowrap;width: 100%;overflow: hidden;text-overflow: ellipsis;"><span style="font-size: 14px; font-weight: bolder;">{{r.name}}</span>
+			</p>
+					
+					 <!-- <div><span  style="font-size:20px; font-weight: bolder;">{{cat.name}}</span></div> -->
 						<div>
 							<span style="font-size: 13px;">{{r.home}} St
 								{{cat.street}} {{r.commune}}</span>

@@ -1,14 +1,4 @@
 
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/owner/lightbox.min.css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/owner/lightbox.css">
-
-<script
-	src="${pageContext.request.contextPath}/resources/script/owner/lightbox-plus-jquery.min.js"></script>
-<script
-	src="${pageContext.request.contextPath}/resources/script/owner/photo-gallery.js"
-	type="text/javascript"></script>
 <!-- detail -->
 <div class="container" id="catdetail" style="border:solid 1px #dddddd; border-radius:5px; margin-top:10px;">
   <div ng-controller="MyAdCtrl">
@@ -53,10 +43,11 @@
            <div class="col-md-12">
 	        <section>  
 			    <div class="col-md-2" ng-repeat="image in r.images">
-				   <a class="example-image-link img-responsive" style="text-align:center; width: 300px; height: 300px; margin-bottom: 20px;" href="http://localhost:8888{{image.url}}" 
-				     data-lightbox="example-set">
- 				   <!--  <img class="example-image" src="http://localhost:8888/{{image.url}}" alt="" /></a> -->
- 				   <img class="example-image" src="http://localhost:8888{{image.url}}" alt="" /></a> 
+				   <a class="example-image-link img-responsive" style="text-align:center; width: 300px; height: 300px; margin-bottom: 20px;" 
+				   href="http://localhost:8888{{image.url}}" data-lightbox="example-set">
+ 				   <img class="example-image" src="http://localhost:8888{{image.url}}" alt="" />
+ 				   
+ 				   </a> 
 			  </div>
 			  </section>
           </div>  
@@ -64,14 +55,17 @@
        </div>     
     </div> <!-- /container -->
     
+    
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/owner/lightbox.css">
 
-<script src="${pageContext.request.contextPath}/resources/script/owner/lightbox-plus-jquery.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/script/owner/lightbox.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/script/owner/lightbox-plus-jquery.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/script/owner/photo-gallery.js"
+	type="text/javascript"></script>    
+
 <script src="${pageContext.request.contextPath}/resources/script/owner/lightbox.js"></script>
-
-<!-- 
-detaile -->
-
 
 <script>
 		rest_id = "${id}";
