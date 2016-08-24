@@ -20,7 +20,7 @@
 
 			<div class="col-md-8">
 				<div>
-					<span style="font-size: 14px; font-weight: bolder;">{{cat.name}}</span>
+					<span style="font-size: 14px; font-weight: bolder;">{{cat.name | limitTo:20:'...'}}</span>
 				</div>
 				<div>
 					<a href="/detail/{{cat.id}}"> <!-- <div><span  style="font-size:20px; font-weight: bolder;">{{cat.name}}</span></div> -->

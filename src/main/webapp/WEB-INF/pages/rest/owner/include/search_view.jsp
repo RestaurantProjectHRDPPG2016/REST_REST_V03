@@ -5,10 +5,10 @@
 <div class="container"
 	style="border: solid 1px #dddddd; border-radius: 5px; margin-top: 10px; margin-bottom: 10px; padding: 0px;"
 	ng-controller="restCtrl">
-	<div class="col-md-12" style="border:solid 1px #dddddd">
+	<div class="col-md-12">
 		<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12"
 			ng-repeat="r in rest">
-			<div class="col-md-12" style="border:solid 1px #dddddd;padding:5px; margin-top:5px;">
+			<div class="col-md-12" style="border:solid 1px #dddddd;padding:5px; margin-top:5px; border-radius:5px;">
 			<div class="col-md-4">
 			 <a href="/detail/{{r.id}}">
 				<span ng-repeat="img in r.images | limitTo: 1"> <img
@@ -19,7 +19,7 @@
 		</div>
 		<div class="col-md-8">
 				<div>
-					<span style="font-size: 14px; font-weight: bolder;">{{r.name}}</span>
+					<span style="font-size: 14px; font-weight: bolder;">{{r.name | limitTo:20:'...'}}</span>
 				</div>
 				<div>
 					<a href="/detail/{{r.id}}"> <!-- <div><span  style="font-size:20px; font-weight: bolder;">{{cat.name}}</span></div> -->
@@ -36,12 +36,12 @@
 						</div>
 					</a>
 					<div style="margin-bottom: 10px;">
-						<iframe
+		<!-- 				<iframe
 							src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fkplous%2F&width=450&layout=standard&action=like&size=small&show_faces=false&share=false&height=35&appId=1489855064642155"
 							width="450" height="35" style="border: none; overflow: hidden"
 							scrolling="no" frameborder="0" allowTransparency="true"></iframe>
 						<a href="/locations"><span class="btn btn-default btn-sm">Visit
-								Map</span></a>
+								Map</span></a> -->
 					</div>
 				</div>
 			</div>

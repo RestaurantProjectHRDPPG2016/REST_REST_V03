@@ -626,38 +626,33 @@ app.controller('restCtrl',function($scope, $http, $window, $rootScope) {
 						
 						$scope.sampleRest = [];
 						$scope.sampleMenu = [];
-						
-						
 						 
-						for(var i in rest.r.images){
+						$.each(rest.r.images, function(index, item){
 							var restImage = {
-				                    id  : i.id,
-				                    name: '',
-				                    type: "image/jpg",
-				                    size: '',
-				                    file: 'http://localhost:8888/' + i.url
-				             }
+									id  : item.id,
+									name: '',
+									type: "image/jpg",
+									size: '',
+									file: 'http://localhost:8888/' + item.url
+							}
 							$scope.sampleRest.push(restImage);
-						}
-						console.log("images Restaurant is "+restImage);
+						});
 						
 						$scope.myfun();
 						
-						for(var i in rest.r.menus){
+						$.each(rest.r.menus, function(index, item){
 							var menuImage = {
-				                    id  : i.id,
-				                    name: '',
-				                    type: "image/jpg",
-				                    size: '',
-				                    file: 'http://localhost:8888/' + i.url
-				             }
+									id  : item.id,
+									name: '',
+									type: "image/jpg",
+									size: '',
+									file: 'http://localhost:8888/' + item.url
+							}
 							$scope.sampleMenu.push(menuImage);
-						}
+						});
 						
 						
-						
-						  console.log("Menus Image is "+menuImage);
-						  $scope.mymenus();
+						$scope.mymenus();
 					}
 					
 					$scope.myfun=function(){
@@ -692,6 +687,19 @@ app.controller('restCtrl',function($scope, $http, $window, $rootScope) {
 						for (var i = 0; i < newFiles['menus'].length; i++) {
 							frmData.append("menus", newFiles['menus'][i]);
 						}
+
+						// deletedImageIDs['img']
+						// deletedImagesIDs['menus']
+						for (var i = 0; i < deletedImageIDs['img'].length; i++) {
+							frmData.append("imageDelete", deletedImageIDs['img'][i]);
+						}
+						
+						for (var i = 0; i < deletedImageIDs['menus'].length; i++) {
+							frmData.append("menuDelete", deletedImageIDs['menus'][i]);
+						}
+						
+						
+						
 						frmData.append('id', id);
 						frmData.append('name', $scope.name);
 						frmData.append('type', $rootScope.subCategoryId);
