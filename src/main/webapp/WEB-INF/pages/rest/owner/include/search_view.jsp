@@ -10,11 +10,12 @@
 			ng-repeat="r in rest">
 			<div class="col-md-12" style="border:solid 1px #dddddd;padding:5px; margin-top:5px;">
 			<div class="col-md-4">
-			<!-- <a href="/detail/{{r.id}}"> <span ng-repeat="img in r.images">
-					<img class="img-responsive" style="width: 100px; height: 100px;"
-					src="http://localhost:8888/{{img.url}}" />
-			</span>
-			</a> -->
+			 <a href="/detail/{{r.id}}">
+				<span ng-repeat="img in r.images | limitTo: 1"> <img
+							class="img-responsive img-thumbnail" style="width: 100px; height: 100px;"
+							src="http://localhost:8888{{img.url}}" />
+						</span>
+			</a> 
 		</div>
 		<div class="col-md-8">
 				<div>
