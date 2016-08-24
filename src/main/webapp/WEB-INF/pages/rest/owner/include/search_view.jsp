@@ -5,9 +5,10 @@
 <div class="container"
 	style="border: solid 1px #dddddd; border-radius: 5px; margin-top: 10px; margin-bottom: 10px; padding: 0px;"
 	ng-controller="restCtrl">
-	<div class="col-md-9" style="border:solid 1px #dddddd">
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"
+	<div class="col-md-12" style="border:solid 1px #dddddd">
+		<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12"
 			ng-repeat="r in rest">
+			<div class="col-md-12" style="border:solid 1px #dddddd;padding:5px; margin-top:5px;">
 			<div class="col-md-4">
 			<!-- <a href="/detail/{{r.id}}"> <span ng-repeat="img in r.images">
 					<img class="img-responsive" style="width: 100px; height: 100px;"
@@ -43,7 +44,7 @@
 					</div>
 				</div>
 			</div>
-
+		</div>
 		</div>
 	</div>
 	<div class="col-md-12" style="clear:both;">
