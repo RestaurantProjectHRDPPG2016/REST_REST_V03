@@ -10,9 +10,9 @@
 			<a href="/detail/{{cat.id}}">
 				<div class="col-md-4" style="margin-top: 5px;">
 					<div style="float: left; width: 200px; height: auto;">
-						<span ng-repeat="img in cat.images | limitTo: 1"> <img
+						<span ng-repeat="img in cat.images"> <img
 							class="img-responsive img-thumbnail" style="width: 100px; height: 100px;"
-							src="http://localhost:8888/{{img.url}}" />
+							src="http://localhost:8888/{{img.url[img.length - 1]}}" />
 						</span>
 					</div>
 				</div>
