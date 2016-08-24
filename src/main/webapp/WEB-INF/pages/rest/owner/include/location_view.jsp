@@ -1,40 +1,15 @@
-<div class="container" style="padding:0px; margin-top:5px; margin-bottom:5px; border-radius:5px;">
-
-	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="padding: 0px; background-color: #dddddd; border-right: 1px white solid;">
-		<div ng-controller="MyAdCtrl">
-
-			<div ng-repeat="r in restByID"> 
-			    <p style="margin-top: 10px;text-transform: uppercase; color: red;">
-			    
-			    
-			        <span ng-repeat="image in r.images | limitTo : 1">
-				    <center><img class="img-circle img-responsive" 
-				    src="http://localhost:8888/{{image.url}}"/>
-				    </center>
-			  </span>
-			    
-			    &nbsp {{r.name}} </p>
-                <p><span>&nbsp # </span> {{r.home}} , St {{r.street}} , {{r.commune}} , {{r.district}} , {{r.province}} </p>
-                <p><span ng-repeat="t in r.tel"> &nbsp {{t.tel}} | </span></p>
-                <hr>
-                <section>  
-			    <span ng-repeat="image in r.images | limitTo : 1">
-				    <center><img class="thumbnail example-image-link img-responsive" 
-				    src="http://localhost:8888/{{image.url}}"/>
-				    </center>
-			  </span>
-			  </section>
-			</div>
-		</div>
-	</div>
-	<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="padding: 0px;">		
-	
-		<!-- //map -->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<div class="container margintop5">
+<div class="row panel-group">
+	<div class="panel panel-info">
+	<div class="panel-heading">ផែនទី</div>
+	<div class="panel-body">
 
 <script
 	src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAyC68lp95UX4v5CwpaiAaHrfcjLWqE6-8'></script>
-<div style='overflow: hidden; height: 600px; width: 100%;'>
-	<div id='gmap_canvas' style='height: 600px; width: 100%;'></div>
+<div style='overflow: hidden; height: 400px; width: 100%;'>
+	<div id='gmap_canvas' style='height: 400px; width: 100%;'></div>
 	<style>
 #gmap_canvas img {
 	max-width: none !important;
@@ -68,10 +43,42 @@
 		});
 		infowindow.open(map, marker);
 	}
-	//google.maps.event.addDomListener(window, 'load', init_map);
 </script>
 	</div>
-  </div>
+	</div>
+	</div>
+	</div>
+	
+<div class="container">
+<div class="row panel-group">
+	<div class="panel panel-info">
+	<div class="panel-heading">ព័ណមានបន្ថែម​ និង រូបភាព</div>
+	<div class="panel-body" ng-controller="MyAdCtrl">
+
+			<div ng-repeat="r in restByID"> 
+			<div class="col-md-3">
+			<div class="col-md-12" style="border:solid 1px #dddddd; border-radius:5px;">
+			    <p style="margin-top: 10px;text-transform: uppercase; color: red; text-align:center;"">
+			    &nbsp {{r.name}} </p>
+                <p><span>House Number : </span> {{r.home}} </p>
+                <p> Street : {{r.street}} </p>
+                <p>សង្កាត់ : {{r.commune}} </p>
+                <p>ខ័ណ្ឌ : {{r.district}} </p>
+                <p>ទីក្រុង : {{r.province}} </p>
+                <p><span ng-repeat="t in r.tel"> ទូរស័ព្ទ : {{t.tel}} | </span></p>
+               </div>
+               </div>
+          <div class="col-md-9">
+			  <div class="col-md-4" ng-repeat="image in r.images | limitTo : 3">
+				    <img class="thumbnail example-image-link img-responsive" 
+				    src="http://localhost:8888/{{image.url}}"/>
+			 </div>
+			 </div>
+			</div>
+	</div>
+	</div>
+	</div>
+	</div>
 
 
 <script>

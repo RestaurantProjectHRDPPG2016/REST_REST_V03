@@ -1,7 +1,7 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<div class="container" ng-controller="restCtrl" style="margin-top:5px;">
+<div class="container margintop5" ng-controller="restCtrl">
 <div class="row panel-group">
 	<div class="panel panel-info">
 	<div class="panel-heading">លទ្ធផលបានស្វែងរក</div>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<div class="container" style="margin-top:5px;">
+<div class="container margintop5">
 
 <div class="row panel-group">
 	<div class="panel panel-info">

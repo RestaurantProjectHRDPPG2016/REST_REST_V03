@@ -1,6 +1,57 @@
+/* angular JS Star */
+
+/* ***************** */
 /* slide */
 #slide{
 	/* margin-top:-15px; */
+}
+.margintop5{
+	margin-top:5px;
+}
+.text-center{
+	text-align: center; font-weight: bolder; font-family: ;font-size: 130%;
+}
+.mystar span{
+	font-size:40px;
+}
+.fab {
+	  border:none;
+    font-size:1em;
+    color:white;
+    background-color: #53b6f2;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    -webkit-box-shadow: 2px 3px 3px 0px rgba(41, 41, 41, .3);
+       -moz-box-shadow: 2px 3px 3px 0px rgba(41, 41, 41, .3);
+            box-shadow: 2px 3px 3px 0px rgba(41, 41, 41, .3);
+}
+
+.fab:hover {
+  background-color: #53b6f2;
+}
+
+
+body {
+  margin: 1em;
+  background-color: white;
+  font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+}
+
+h2 {
+  color: #ccc;
+}
+
+h4 {
+  margin: 4px;
+  padding: 2px;
+}
+
+
+
+.row span b{
+	text-align:center;
 }
 a:hover{
 	text-decoration:none;
@@ -24,6 +75,7 @@ a:hover{
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
+
 #img-cat img:hover{
 	padding:5px; 
 	margin-top:5px;

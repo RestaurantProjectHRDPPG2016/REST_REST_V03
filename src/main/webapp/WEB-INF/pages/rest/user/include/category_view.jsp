@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<div class="container" id="img-cat" ng-controller="adminCtrl" style="margin-top:5px;">
+<div class="container margintop5" id="img-cat" ng-controller="adminCtrl">
 	<div class="row panel-group">
 	<div class="panel panel-info">
 	<div class="panel-heading">ប្រភេទ</div>
