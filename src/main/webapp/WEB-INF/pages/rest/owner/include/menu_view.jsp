@@ -6,7 +6,7 @@
 		<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12"
 			ng-repeat="cat in MyCategories">
 			<div class="col-md-12"  style="border:solid 1px #dddddd; 
-		padding:5px; margin-top:5px;">
+		padding:5px; margin-top:5px; margin-bottom:5px;">
 			<a href="/detail/{{cat.id}}">
 				<div class="col-md-4" style="margin-top: 5px;">
 					<div style="float: left; width: 200px; height: auto;">
