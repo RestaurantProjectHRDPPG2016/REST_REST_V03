@@ -1,23 +1,23 @@
 
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<div class="container"
-	style="border: solid 1px #dddddd; border-radius: 5px; margin-top: 10px; margin-bottom: 10px; padding: 0px;"
-	ng-controller="restCtrl">
-	<div class="col-md-12">
+<div class="container" ng-controller="restCtrl" style="margin-top:5px;">
+<div class="row panel-group">
+	<div class="panel panel-info">
+	<div class="panel-heading">លទ្ធផលបានស្វែងរក</div>
+	<div class="panel-body">
 		<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12"
 			ng-repeat="r in rest">
-			<div class="col-md-12" style="border:solid 1px #dddddd;padding:5px; margin-top:5px; border-radius:5px;">
+			<div class="col-md-12" style="border:solid 1px #dddddd;padding:5px; margin:5px; border-radius:5px;">
 			<div class="col-md-4">
 			 <a href="/detail/{{r.id}}">
 				<span ng-repeat="img in r.images | limitTo: 1"> <img
-							class="img-responsive img-thumbnail" style="width: 100px; height: 100px;"
+							class="img-responsive img-thumbnail" style="width: 100px; height: 100px; margin:2px 0px;"
 							src="http://localhost:8888{{img.url}}" />
 						</span>
 			</a> 
 		</div>
-		<div class="col-md-8" style="border-left:1px solid #dddddd;">
+		<div class="col-md-8">
 			<a href="/detail/{{r.id}}">
 					<p style="white-space: nowrap;width: 100%;overflow: hidden;text-overflow: ellipsis;"><span style="font-size: 14px; font-weight: bolder;">{{r.name}}</span>
 			</p>
@@ -48,9 +48,8 @@
 		</div>
 		</div>
 	</div>
-	<div class="col-md-12" style="clear:both;">
-	<div id="paginationRest"></div>
 	</div>
+	<div id="paginationRest"></div>
 </div>
 
 <script>

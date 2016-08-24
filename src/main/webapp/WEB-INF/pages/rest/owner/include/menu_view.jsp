@@ -1,8 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<div class="container" style="margin-top:5px;">
 
-<div class="container"
-	style="margin-bottom: 5px; padding: 0px; margin-top: 5px;">
-	<div class="col-md-12" style="padding: 10px; border-radius: 5px; border:solid 1px #dddddd;"
-		ng-controller="MyCatCtrl">
+<div class="row panel-group">
+	<div class="panel panel-info">
+	<div class="panel-heading">ភោជនីយដ្ឋានដែលនៅជិតលោកអ្នកបំផុត</div>
+	<div class="panel-body">
+	<div class="panel=body" ng-controller="MyCatCtrl">
 		<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12"
 			ng-repeat="cat in MyCategories">
 			<div class="col-md-12"  style="border:solid 1px #dddddd; 
@@ -20,10 +24,13 @@
 
 			<div class="col-md-8">
 				<div>
-					<span style="font-size: 14px; font-weight: bolder;">{{cat.name | limitTo:20:'...'}}</span>
+				<a href="/detail/{{cat.id}}">
+						<p style="white-space: nowrap;width: 100%;overflow: hidden;text-overflow: ellipsis;">
+					<span style="font-size: 14px; font-weight: bolder;">{{cat.name}}</span>
+					</p>
 				</div>
 				<div>
-					<a href="/detail/{{cat.id}}"> <!-- <div><span  style="font-size:20px; font-weight: bolder;">{{cat.name}}</span></div> -->
+					
 						<div>
 							<span style="font-size: 13px;">{{cat.home}} St
 								{{cat.street}} {{cat.commune}}</span>
@@ -45,10 +52,13 @@
 								Map</span></a> -->
 					</div>
 				</div>
+				</div>
+				</div>
+				</div>
+				</div>
+				</div>
+				</div>
 			</div>
-		</div>
-		</div>
-	</div>
 	<div id="paginationbyCategory"></div>
 </div>
 

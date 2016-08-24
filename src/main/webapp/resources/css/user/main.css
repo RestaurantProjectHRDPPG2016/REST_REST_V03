@@ -2,7 +2,9 @@
 #slide{
 	/* margin-top:-15px; */
 }
-
+a:hover{
+	text-decoration:none;
+}
 /* Detail */
 #catdetail img{
 	padding:10px; 

@@ -66,8 +66,8 @@ app.controller('adminCtrl', function($scope, $http, $window, $rootScope) {
 			firstLastUse : true,
 			first : '←',
 			last : '→',
-			next : 'Next',
 			prev : 'Prev',
+			next : 'Next',
 			maxVisible : 100
 		});
 	};
@@ -399,9 +399,9 @@ app.controller('restCtrl',function($scope, $http, $window, $rootScope) {
 							leaps : true,
 							firstLastUse : true,
 							first : '←',
-							last : '→',
 							next : 'Next',
 							prev : 'Prev',
+							last : '→',
 							maxVisible : 12
 						});
 					};
