@@ -7,20 +7,11 @@
                 <div class="col-lg-3  col-md-3 col-sm-4 col-xs-6">
                     <h3> Fresh Menu</h3>
                     <ul>
-                        <li> <a href="#"> about us </a> </li>
-                        <li> <a href="#"> contact us </a> </li>
-                        <li> <a href="#"> our sponsor </a> </li>
-                        <li> <a href="#"> view image galary  </a> </li>
-                    </ul>
-                </div>
-      
-                <div class="col-lg-3  col-md-3 col-sm-4 col-xs-6">
-                    <h3> Lorem Ipsum </h3>
-                    <ul>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> ទំព័រដើម </a> </li>
+                        <li> <a href="#"> អំពីយើង </a> </li>
+                        <li> <a href="#"> ទំនាក់ទំនង </a> </li>
+                        <li> <a href="#"> ចុះឈ្មោះ </a> </li>
+                        <li> <a href="#"> ចូលប្រើ </a> </li>
                     </ul>
                 </div>
                 <div class="col-lg-3  col-md-3 col-sm-4 col-xs-6">
@@ -51,7 +42,7 @@
     <div class="footer-bottom">
         <div class="container">
         <center>
-            <p class="pull-center"> Copyright � Footer E-commerce Plugin 2014. All right reserved. </p>
+            <p class="pull-center"> Copyright © Footer E-commerce Plugin 2014. All right reserved. </p>
         </center>
         </div>
     </div>

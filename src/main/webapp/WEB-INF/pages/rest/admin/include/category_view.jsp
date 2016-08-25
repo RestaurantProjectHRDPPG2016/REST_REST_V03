@@ -26,6 +26,9 @@
     <div class="row">
       <div class="col-lg-12">
           <h2>Restuarant Category</h2>
+          <button class="btn btn-success" data-toggle="modal" data-target="#myRestType1">
+			<span class="glyphicon glyphicon-plus"  ng-click="changeRestType(1)" ></span>Add New Category <br>
+		</button>
                 <div class="table-responsive">
                      <table class="table table-bordered table-hover">
                          <thead>
@@ -46,9 +49,7 @@
 									 <button class="btn btn-primary" data-toggle="modal" data-target="#myRestType1" ng-click="editRestType(this)">
 										<span class="glyphicon glyphicon-pencil"></span>
 									</button>
-									<button class="btn btn-primary">
-										<span class="glyphicon glyphicon-plus"  ng-click="changeRestType(1)" data-toggle="modal" data-target="#myRestType1"></span>
-									</button>
+									
 									 
 								</td>
 							</tr>
