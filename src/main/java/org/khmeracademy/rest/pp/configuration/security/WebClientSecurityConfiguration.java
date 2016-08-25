@@ -40,6 +40,6 @@ public class WebClientSecurityConfiguration extends WebSecurityConfigurerAdapter
 		
 		http.authorizeRequests()
 			.antMatchers("/admin/**").hasAnyRole("ADMIN")
-			.antMatchers("/**").hasAnyRole("ADMIN", "USER");
+			.antMatchers("/user/**").hasAnyRole("ADMIN", "USER");
 	}
 }
